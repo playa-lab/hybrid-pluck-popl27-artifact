@@ -1,0 +1,27 @@
+
+
+
+data real[4] y;
+
+real[3] mu;
+mu[1] ~ normal(-2, 1);
+mu[2] ~ normal(0, 1);
+mu[3] ~ normal(2, 1);
+
+vector[3] init = to_vector([0.5, 0.3, 0.2]);
+vector[3][3] trans;
+trans[1] = to_vector([0.6, 0.3, 0.1]);
+trans[2] = to_vector([0.2, 0.6, 0.2]);
+trans[3] = to_vector([0.1, 0.3, 0.6]);
+
+int<3> z1 ~ categorical(init);
+int<3> z2 ~ categorical(trans[z1]);
+int<3> z3;
+if (z1 > z2) { z3 ~ categorical(trans[z1]); } else { z3 ~ categorical(trans[z2]); }
+int<3> z4;
+if (z2 > z3) { z4 ~ categorical(trans[z2]); } else { z4 ~ categorical(trans[z3]); }
+
+y[1] ~ normal(mu[z1], 1);
+y[2] ~ normal(mu[z2], 1);
+y[3] ~ normal(mu[z3], 1);
+y[4] ~ normal(mu[z4], 1);

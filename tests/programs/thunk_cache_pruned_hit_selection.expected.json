@@ -1,0 +1,30 @@
+[
+  {
+    "query": "(let((b(flip 0.5)) (m {(if b 1.0 2.0) }) (s1(sum m)) (s2(sum m))) (Posterior(+.(if b s1(+. s1 10.0)) (if b s2(+. s2 10.0))) True))",
+    "kind": {
+      "result_kind": "distribution",
+      "items": [
+        {
+          "display": "2",
+          "log_probability": -0.6931471805599453,
+          "posteriors": {
+            "beta": [],
+            "dirichlet": [],
+            "gamma": [],
+            "gaussian": []
+          }
+        },
+        {
+          "display": "24",
+          "log_probability": -0.6931471805599453,
+          "posteriors": {
+            "beta": [],
+            "dirichlet": [],
+            "gamma": [],
+            "gaussian": []
+          }
+        }
+      ]
+    }
+  }
+]

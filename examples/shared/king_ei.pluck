@@ -1,0 +1,43 @@
+;; Ecological inference (EI) is the problem of recovering individual-level
+;; behaviour from aggregate (precinct-level) margins ONLY. For a 2x2 table per
+;; precinct i we know how many voters are White (Nw_i) and non-White (Nb_i) and
+;; the TOTAL votes T_i a candidate received -- but NOT how those T_i votes split
+;; across the two race groups. King, Rosen & Tanner's (1999) binomial-beta model
+;; treats that split as a latent and puts a Beta prior on the per-group support
+;; rates:
+;;
+;;   bw ~ Beta(a,b)              ;; P(a White voter backs the candidate)
+;;   bb ~ Beta(a,b)              ;; P(a non-White voter backs the candidate)
+;;   kw_i ~ Binomial(Nw_i, bw)   ;; White backers in precinct i   (LATENT)
+;;   kb_i ~ Binomial(Nb_i, bb)   ;; non-White backers in precinct i (LATENT)
+;;   T_i  = kw_i + kb_i          ;; OBSERVED margin
+;;
+;; The accounting identity T_i = kw_i + kb_i is the only link to the data; the
+;; individual cell counts kw_i, kb_i are never observed. pluck does the exact
+;; thing the EI literature does numerically: it marginalises the unknown cells
+;; out and reports the posterior over the district-wide rates bw, bb.
+
+;; a precinct: White trials, non-White trials, observed candidate votes (Peano nats)
+(define-type precinct (Precinct any any any))
+
+;; count the `true`s among `n` flips of a shared probability `p` ~ Binomial(n,p).
+;; n is a Peano nat; the returned count is a Peano nat.
+(define (count-flips p n)
+  (match n
+    O => 0
+    S m => (let ((rest (count-flips p m)))
+             (if (flip p) (S rest) rest))))
+
+;; observe one precinct: require the White backers (kw ~ Binomial(wc, bw)) plus
+;; non-White backers (kb ~ Binomial(bc, bb)) to equal the observed votes tc.
+(define (observe-precinct bw bb pr)
+  (match pr
+    Precinct wc bc tc =>
+      (== (+ (count-flips bw wc) (count-flips bb bc)) tc)))
+
+;; conjoin the margin constraint across every precinct (rates bw, bb shared).
+(define (observe-precincts bw bb prs)
+  (match prs
+    Nil => (True)
+    Cons pr rest => (and (observe-precinct bw bb pr)
+                         (observe-precincts bw bb rest))))

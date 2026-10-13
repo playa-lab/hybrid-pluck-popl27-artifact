@@ -1,0 +1,23 @@
+(define (transition state)
+  (if state (flip 0.4) (flip 0.6)))
+
+(define (generate-observation state)
+  (if state (flip 0.9) (flip 0.4)))
+
+(define (hmm state)
+  (let ((next-state (transition state)))
+    (Cons
+     (Pair state (generate-observation state))
+     (hmm next-state))))
+
+(define (all bs)
+  (match bs
+    Nil => (True)
+    Cons b bs => (and b (all bs))))
+
+(query
+ posterior-11th-latent
+ (let ((chain (hmm (flip 0.5))))
+   (Posterior
+    (fst (index 10 chain))
+    (all (take 50 (map snd chain))))))

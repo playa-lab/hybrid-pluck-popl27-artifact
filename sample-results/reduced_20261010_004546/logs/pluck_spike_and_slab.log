@@ -1,0 +1,51 @@
+===== ok  wall=0.1190s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 18
+BDD vars allocated (discrete bits)    : 212
+BDD recursive calls (compile work)    : 48690
+BDD guard nodes  : sum=224  max=112  mean=112
+SPN nodes (TREE) : sum=18  max=9  mean=9
+SPN nodes (DAG)  : per-world-max=9  all-worlds-unique=18  intern-table=623
+SPN leaf nodes   : sum=16  (max sum-arity=1, max prod-arity=0)
+posterior mixture components (total)  : 16
+time (s): parse=0.0001  symbolic-exec=0.0141  wmc=0.0009  posterior=0.0007  flatten=0.0000  display/naming=0.0001  total=0.0158
+===================
+inference_seconds: 0.01580496
+variable-selection:
+  True  0.9993457534819051
+  False  0.0006542465180969036
+===== ok  wall=0.1095s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 18
+BDD vars allocated (discrete bits)    : 212
+BDD recursive calls (compile work)    : 48690
+BDD guard nodes  : sum=224  max=112  mean=112
+SPN nodes (TREE) : sum=18  max=9  mean=9
+SPN nodes (DAG)  : per-world-max=9  all-worlds-unique=18  intern-table=623
+SPN leaf nodes   : sum=16  (max sum-arity=1, max prod-arity=0)
+posterior mixture components (total)  : 16
+time (s): parse=0.0001  symbolic-exec=0.0111  wmc=0.0013  posterior=0.0008  flatten=0.0000  display/naming=0.0001  total=0.0134
+===================
+inference_seconds: 0.01335683
+variable-selection:
+  True  0.9993457534819051
+  False  0.0006542465180969036
+===== ok  wall=0.1069s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 18
+BDD vars allocated (discrete bits)    : 212
+BDD recursive calls (compile work)    : 48690
+BDD guard nodes  : sum=224  max=112  mean=112
+SPN nodes (TREE) : sum=18  max=9  mean=9
+SPN nodes (DAG)  : per-world-max=9  all-worlds-unique=18  intern-table=623
+SPN leaf nodes   : sum=16  (max sum-arity=1, max prod-arity=0)
+posterior mixture components (total)  : 16
+time (s): parse=0.0001  symbolic-exec=0.0103  wmc=0.0019  posterior=0.0009  flatten=0.0000  display/naming=0.0000  total=0.0133
+===================
+inference_seconds: 0.01328842
+variable-selection:
+  True  0.9993457534819051
+  False  0.0006542465180969036

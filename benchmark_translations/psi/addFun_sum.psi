@@ -1,0 +1,6 @@
+def main() {
+    x1 := gauss(0, 1);
+    x2 := gauss(0, 1);
+    x3 := gauss(0, 1);
+    return x1 + x2 + x3;
+}

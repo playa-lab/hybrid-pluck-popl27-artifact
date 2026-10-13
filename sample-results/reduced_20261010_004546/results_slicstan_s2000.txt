@@ -1,0 +1,54 @@
+
+======================================== RESULTS ========================================
+SYSTEM  PROGRAM                STATUS         RUNS WALL(s)          INFER(s)           RESULT        
+------  -------                ------         ---- -------          --------           ------        
+slicstan changepoint_coal_k1    ok                3 12.7161          3.16±0.02         3.03333       
+slicstan dawid_skene_n08        ok                3 38.8482          27.72±0.0071      0.6745        
+slicstan dawid_skene_n16        TIMEOUT           0 300.0380         -                  -             
+slicstan f81_rate               ERROR(stanc)      0 -                -                  -             
+slicstan hmm_factorial_n02      ERROR(slic)       0 -                -                  -             
+slicstan hmm_factorial_n04      ERROR(slic)       0 -                -                  -             
+slicstan hmm_factorial_n06      ERROR(slic)       0 -                -                  -             
+slicstan hmm_first_order_n02    ok                3 7.6623           0.4528±0.0025     -2.02167      
+slicstan hmm_first_order_n08    ok                3 14.4220          3.621±0.043       -1.61833      
+slicstan hmm_first_order_n14    ok                3 35.4743          19.62±0.13        -2.33233      
+slicstan hmm_second_order_n04   ok                3 10.0263          1.293±0.0058      -2.76533      
+slicstan hmm_second_order_n08   ERROR(stanc)      0 -                -                  -             
+slicstan hmm_second_order_n14   ERROR(stanc)      0 -                -                  -             
+slicstan outliers_n08           ok                3 13.6593          3.649±0.052       1.99933       
+slicstan outliers_n18           ok                3 56.6588          40.96±0.0072      2.00167       
+slicstan polyreg                ok                3 197.2157         163.3±8.7         0.152333      
+slicstan run_walk_hrm           ok                3 14.3191          3.056±0.037       91.3333       
+slicstan sir_model_n12          ok                3 28.2771          11.19±0.1         0.474733      
+slicstan sir_model_n72          TIMEOUT           0 300.0551         -                  -             
+slicstan soft_kmeans_n04        ok                3 10.7264          1.85±0.014        2.086         
+slicstan soft_kmeans_n12        ok                3 43.7321          27.66±0.063       0.888333      
+slicstan spike_and_slab         ERROR(stanc)      0 -                -                  -             
+=========================================================================================
+RUNS     = successful runs measured (1 if the first run timed out / errored / was BAD).
+WALL(s)  = median ± sample-stddev of total process wall-clock over RUNS runs.
+INFER(s) = median ± sample-stddev of inference-only time.
+           pluck: inference_seconds (via PLUCK_STATS); hybit: reported t.time.
+           psi:   '-' (no inference line) — use WALL(s) as the comparable number.
+           slicstan: WALL(s)=total pipeline (slic+stanc+build+sample); INFER(s)=slic
+           +sample (SlicStan->Stan compile + HMC; EXCLUDES the stanc + C++ build that
+           are CmdStan overhead). mean(param)+Rhat and the per-component breakdown are
+           in the SlicStan timing table above (also logs/slicstan_<name>.log).
+STATUS   = ok | TIMEOUT | OOM | ERROR(rc=N) | BAD | ERROR(run)
+           | ERROR(slic) | ERROR(stanc) | ERROR(build) | NODATA.
+           OOM = SIGKILLed before the timeout = out of memory (the container hit its
+           memory limit); WALL is the actual time it ran before dying, not a real
+           inference time. Give Docker more memory to measure these.
+           slicstan: ERROR(slic) = .slicstan uses a feature SlicStan's DSL lacks;
+           ERROR(stanc)/ERROR(build) = its generated Stan is invalid / fails to
+           compile (SlicStan codegen); ERROR(run) = HMC could not initialize;
+           NODATA = compiles but no slicstan-data/<name>.json.
+           BAD = process exited 0 but did not actually infer. For PSI this is
+           'Pr[error] = 1' (posterior collapsed, e.g. observing a continuous
+           variable at an exact value — measure-zero in PSI's exact semantics).
+           A BAD/ERROR/TIMEOUT row's WALL is the single failing run, NOT a real
+           inference time — do not compare it against ok rows.
+
+logs:    /results/reduced_20261010_004546/logs/<system>_<program>.log   (every run preserved)
+table:   /results/reduced_20261010_004546/results_slicstan_s2000.txt
+csv:     /results/reduced_20261010_004546/results_slicstan_s2000.csv

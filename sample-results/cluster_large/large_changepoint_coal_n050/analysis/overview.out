@@ -1,0 +1,39 @@
+BDD decision nodes = 7 (order ['f0', 'o1F', 'o1N', 'rec', 'inf', 'o2F', 'o2N'])
+  f01    lo->o1N1   hi->o1F1  
+  o1N1   lo->_      hi->inf1  
+  inf1   lo->o2N1   hi->o2F1  
+  o2N1   lo->_      hi->T     
+  o2F1   lo->_      hi->T     
+  o1F1   lo->_      hi->rec1  
+  rec1   lo->o2F1   hi->o2N1  
+
+Z = 4.8850e-03 * eps^2   (4 worlds)
+P(s2 = infected) = 0.5733 ; P(s1 = infected) = 0.1026
+world weights (s1,s2):
+  s1=0 s2=1  w=0.4768  counts={'rho': (0, 0), 'iota': (1, 1)}
+  s1=0 s2=0  w=0.4206  counts={'rho': (0, 0), 'iota': (0, 2)}
+  s1=1 s2=1  w=0.0965  counts={'rho': (0, 1), 'iota': (1, 0)}
+  s1=1 s2=0  w=0.0061  counts={'rho': (1, 0), 'iota': (1, 0)}
+rho   prior mean 0.333 -> post mean 0.329 ; comps {'B(2,4)': 0.897, 'B(3,4)': 0.006, 'B(2,5)': 0.097}
+iota  prior mean 0.143 -> post mean 0.178 ; comps {'B(1,8)': 0.421, 'B(2,7)': 0.477, 'B(2,6)': 0.103}
+
+CIRCUIT: 9 internal, 9 leaves
+  x1   prod -> [z2N, iota[0,2]]
+  x2   prod -> [z2F, iota[1,1]]
+  +1   sum  -> [x1, x2]
+  x3   prod -> [z1N, +1]
+  x4   prod -> [rho[0,1], z2F]
+  x5   prod -> [rho[1,0], z2N]
+  +2   sum  -> [x4, x5]
+  x6   prod -> [iota[1,0], z1F, +2]
+  +3   sum  -> [x3, x6]
+  root = +3
+  shared(used>1): {'z2N': 2, 'z2F': 2}
+
+sum-node mixture weights:
+  +1   x1:w=0.469  x2:w=0.531
+  +2   x4:w=0.941  x5:w=0.059
+  +3   x3:w=0.897  x6:w=0.103
+
+Z (circuit) = 4.8850e-03 * eps^2
+delta pins: {'z1F': -2.429, 'z1N': 1.714, 'z2F': -1.571, 'z2N': 2.571}

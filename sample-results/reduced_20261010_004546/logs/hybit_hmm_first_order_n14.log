@@ -1,0 +1,8 @@
+===== TIMEOUT  wall=300.6546s  rc=124  =====
+
+signal (15): Terminated
+in expression starting at /artifact/benchmark_translations/hybit/hmm_first_order_n14.jl:26
+$x at /opt/julia-depot/artifacts/b88cb6961ecf3a13ca5ca5e73d4ef4ae2acae6eb/lib/libcudd.so (unknown line)
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1051
+unknown function (ip: (nil))
+Allocations: 42480916 (Pool: 42473746; Big: 7170); GC: 50

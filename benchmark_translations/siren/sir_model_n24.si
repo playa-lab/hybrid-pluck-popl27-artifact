@@ -1,0 +1,78 @@
+
+let symbolic rec <- beta(1., 1.) in
+let symbolic inf <- beta(1., 1.) in
+let symbolic bas <- beta(0.2, 1.) in
+let symbolic sym <- beta(1., 1.) in
+(* row 0 *)
+let infected = false in
+(* step 0 *) let () = observe(bernoulli(if infected then sym else bas), false) in let () = resample() in
+let sample f0 <- bernoulli(if infected then rec else inf) in
+let infected = if infected then (if f0 then false else true) else f0 in
+(* step 1 *) let () = observe(bernoulli(if infected then sym else bas), false) in let () = resample() in
+let sample f1 <- bernoulli(if infected then rec else inf) in
+let infected = if infected then (if f1 then false else true) else f1 in
+(* step 2 *) let () = observe(bernoulli(if infected then sym else bas), false) in let () = resample() in
+let sample f2 <- bernoulli(if infected then rec else inf) in
+let infected = if infected then (if f2 then false else true) else f2 in
+(* step 3 *) let () = observe(bernoulli(if infected then sym else bas), false) in let () = resample() in
+let sample f3 <- bernoulli(if infected then rec else inf) in
+let infected = if infected then (if f3 then false else true) else f3 in
+(* step 4 *) let () = observe(bernoulli(if infected then sym else bas), false) in let () = resample() in
+let sample f4 <- bernoulli(if infected then rec else inf) in
+let infected = if infected then (if f4 then false else true) else f4 in
+(* step 5 *) let () = observe(bernoulli(if infected then sym else bas), true) in let () = resample() in
+let sample f5 <- bernoulli(if infected then rec else inf) in
+let infected = if infected then (if f5 then false else true) else f5 in
+(* step 6 *) let () = observe(bernoulli(if infected then sym else bas), true) in let () = resample() in
+let sample f6 <- bernoulli(if infected then rec else inf) in
+let infected = if infected then (if f6 then false else true) else f6 in
+(* step 7 *) let () = observe(bernoulli(if infected then sym else bas), true) in let () = resample() in
+let sample f7 <- bernoulli(if infected then rec else inf) in
+let infected = if infected then (if f7 then false else true) else f7 in
+(* step 8 *) let () = observe(bernoulli(if infected then sym else bas), false) in let () = resample() in
+let sample f8 <- bernoulli(if infected then rec else inf) in
+let infected = if infected then (if f8 then false else true) else f8 in
+(* step 9 *) let () = observe(bernoulli(if infected then sym else bas), true) in let () = resample() in
+let sample f9 <- bernoulli(if infected then rec else inf) in
+let infected = if infected then (if f9 then false else true) else f9 in
+(* step 10 *) let () = observe(bernoulli(if infected then sym else bas), false) in let () = resample() in
+let sample f10 <- bernoulli(if infected then rec else inf) in
+let infected = if infected then (if f10 then false else true) else f10 in
+(* step 11 *) let () = observe(bernoulli(if infected then sym else bas), false) in let () = resample() in
+(* row 1 *)
+let infected = false in
+(* step 0 *) let () = observe(bernoulli(if infected then sym else bas), false) in let () = resample() in
+let sample f11 <- bernoulli(if infected then rec else inf) in
+let infected = if infected then (if f11 then false else true) else f11 in
+(* step 1 *) let () = observe(bernoulli(if infected then sym else bas), true) in let () = resample() in
+let sample f12 <- bernoulli(if infected then rec else inf) in
+let infected = if infected then (if f12 then false else true) else f12 in
+(* step 2 *) let () = observe(bernoulli(if infected then sym else bas), false) in let () = resample() in
+let sample f13 <- bernoulli(if infected then rec else inf) in
+let infected = if infected then (if f13 then false else true) else f13 in
+(* step 3 *) let () = observe(bernoulli(if infected then sym else bas), true) in let () = resample() in
+let sample f14 <- bernoulli(if infected then rec else inf) in
+let infected = if infected then (if f14 then false else true) else f14 in
+(* step 4 *) let () = observe(bernoulli(if infected then sym else bas), true) in let () = resample() in
+let sample f15 <- bernoulli(if infected then rec else inf) in
+let infected = if infected then (if f15 then false else true) else f15 in
+(* step 5 *) let () = observe(bernoulli(if infected then sym else bas), true) in let () = resample() in
+let sample f16 <- bernoulli(if infected then rec else inf) in
+let infected = if infected then (if f16 then false else true) else f16 in
+(* step 6 *) let () = observe(bernoulli(if infected then sym else bas), true) in let () = resample() in
+let sample f17 <- bernoulli(if infected then rec else inf) in
+let infected = if infected then (if f17 then false else true) else f17 in
+(* step 7 *) let () = observe(bernoulli(if infected then sym else bas), true) in let () = resample() in
+let sample f18 <- bernoulli(if infected then rec else inf) in
+let infected = if infected then (if f18 then false else true) else f18 in
+(* step 8 *) let () = observe(bernoulli(if infected then sym else bas), false) in let () = resample() in
+let sample f19 <- bernoulli(if infected then rec else inf) in
+let infected = if infected then (if f19 then false else true) else f19 in
+(* step 9 *) let () = observe(bernoulli(if infected then sym else bas), false) in let () = resample() in
+let sample f20 <- bernoulli(if infected then rec else inf) in
+let infected = if infected then (if f20 then false else true) else f20 in
+(* step 10 *) let () = observe(bernoulli(if infected then sym else bas), false) in let () = resample() in
+let sample f21 <- bernoulli(if infected then rec else inf) in
+let infected = if infected then (if f21 then false else true) else f21 in
+(* step 11 *) let () = observe(bernoulli(if infected then sym else bas), false) in let () = resample() in
+inf

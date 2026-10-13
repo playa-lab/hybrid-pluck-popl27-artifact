@@ -1,0 +1,36 @@
+# Programs behind the rows of Table 3 (novel benchmarks), in table order.
+# Table 3 compares all six systems; Figure 9 uses two of its rows
+# (hmm_second_order_n14, king_ei_d20). Used as @table3 in PROGRAMS/FILTER.
+spike_and_slab
+polyreg
+run_walk_hrm
+sir_model_n12
+sir_model_n72
+f81_rate
+f81_joint
+pcfg_ambiguous
+pcfg_n020
+changepoint_coal_k1
+changepoint_coal_n020
+changepoint_coal_n050
+dawid_skene_n08
+dawid_skene_n16
+hmm_first_order_n02
+hmm_first_order_n08
+hmm_first_order_n14
+hmm_second_order_n04
+hmm_second_order_n08
+hmm_second_order_n14
+hmm_factorial_n02
+hmm_factorial_n04
+hmm_factorial_n06
+king_ei_d60
+king_ei_d20
+outliers_n08
+outliers_n18
+soft_kmeans_n04
+soft_kmeans_n12
+secret_ballot_n04
+secret_ballot_n128
+soccer_n03
+soccer_n07

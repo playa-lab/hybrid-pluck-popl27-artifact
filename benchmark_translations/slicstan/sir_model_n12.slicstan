@@ -1,0 +1,35 @@
+
+
+
+data int[12] H;
+
+real recovery;    recovery    ~ beta(1.0, 1.0);   
+real infection;   infection   ~ beta(1.0, 1.0);   
+real baseline;    baseline    ~ beta(0.2, 1.0);   
+real symptomatic; symptomatic ~ beta(1.0, 1.0);   
+
+
+
+H[1] ~ bernoulli(baseline);
+int<2> s2 ~ categorical(to_vector([1 - infection, infection]));
+H[2] ~ bernoulli((2-s2)*baseline + (1-(2-s2))*symptomatic);
+int<2> s3 ~ categorical(to_vector([(2-s2)*(1-infection) + (1-(2-s2))*recovery, (2-s2)*infection + (1-(2-s2))*(1-recovery)]));
+H[3] ~ bernoulli((2-s3)*baseline + (1-(2-s3))*symptomatic);
+int<2> s4 ~ categorical(to_vector([(2-s3)*(1-infection) + (1-(2-s3))*recovery, (2-s3)*infection + (1-(2-s3))*(1-recovery)]));
+H[4] ~ bernoulli((2-s4)*baseline + (1-(2-s4))*symptomatic);
+int<2> s5 ~ categorical(to_vector([(2-s4)*(1-infection) + (1-(2-s4))*recovery, (2-s4)*infection + (1-(2-s4))*(1-recovery)]));
+H[5] ~ bernoulli((2-s5)*baseline + (1-(2-s5))*symptomatic);
+int<2> s6 ~ categorical(to_vector([(2-s5)*(1-infection) + (1-(2-s5))*recovery, (2-s5)*infection + (1-(2-s5))*(1-recovery)]));
+H[6] ~ bernoulli((2-s6)*baseline + (1-(2-s6))*symptomatic);
+int<2> s7 ~ categorical(to_vector([(2-s6)*(1-infection) + (1-(2-s6))*recovery, (2-s6)*infection + (1-(2-s6))*(1-recovery)]));
+H[7] ~ bernoulli((2-s7)*baseline + (1-(2-s7))*symptomatic);
+int<2> s8 ~ categorical(to_vector([(2-s7)*(1-infection) + (1-(2-s7))*recovery, (2-s7)*infection + (1-(2-s7))*(1-recovery)]));
+H[8] ~ bernoulli((2-s8)*baseline + (1-(2-s8))*symptomatic);
+int<2> s9 ~ categorical(to_vector([(2-s8)*(1-infection) + (1-(2-s8))*recovery, (2-s8)*infection + (1-(2-s8))*(1-recovery)]));
+H[9] ~ bernoulli((2-s9)*baseline + (1-(2-s9))*symptomatic);
+int<2> s10 ~ categorical(to_vector([(2-s9)*(1-infection) + (1-(2-s9))*recovery, (2-s9)*infection + (1-(2-s9))*(1-recovery)]));
+H[10] ~ bernoulli((2-s10)*baseline + (1-(2-s10))*symptomatic);
+int<2> s11 ~ categorical(to_vector([(2-s10)*(1-infection) + (1-(2-s10))*recovery, (2-s10)*infection + (1-(2-s10))*(1-recovery)]));
+H[11] ~ bernoulli((2-s11)*baseline + (1-(2-s11))*symptomatic);
+int<2> s12 ~ categorical(to_vector([(2-s11)*(1-infection) + (1-(2-s11))*recovery, (2-s11)*infection + (1-(2-s11))*(1-recovery)]));
+H[12] ~ bernoulli((2-s12)*baseline + (1-(2-s12))*symptomatic);

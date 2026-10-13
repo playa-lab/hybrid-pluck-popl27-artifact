@@ -1,0 +1,46 @@
+;; title: Figure 1 row -- Polynomial regression with outliers
+;; Bayesian polynomial fit: degree ~ truncated Geometric, coefficients ~ N(0,10),
+;; and each point is independently an outlier with unknown (Beta) probability.
+;; Exact joint posterior over the degree, the outlier set, and the coefficients.
+(define xs [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0])
+(define ys [1.7, 4.8, 7.5, 9.0, 9.7, 8.9, 7.4, 5.1, 14.1, 18.8])
+
+(define (random-polynomial p max-degree)
+  (match max-degree
+    O => []
+    S n => (if (flip p)
+             (Nil)
+             (Cons (normal 0.0 10.0)
+                   (random-polynomial p n)))))
+
+(define (evaluate-polynomial coeffs x)
+  (match coeffs
+    Nil => 0.0
+    Cons c cs => (+. c (*. x (evaluate-polynomial cs x)))))
+
+(define (describe-degree n)
+  (index n ["Zero", "Constant", "Linear", "Quadratic", "Cubic", "Quartic", "Quintic"]))
+
+(define (generate-outliers)
+  (let ((p (beta 1.0 6.0)))
+    (map (fn _ -> (flip p)) xs)))
+
+(define (zip xs ys)
+  (match xs
+    Nil => []
+    Cons x xs => (Cons (Pair x (car ys))
+                       (zip xs (cdr ys)))))
+
+(define-type result (Result degree outliers curve))
+
+(query polyreg
+  (let
+    ((curve (random-polynomial 0.3 5))
+     (outliers (generate-outliers))
+     (data (map (fn xo -> (if (snd xo)
+                            (normal 0.0 20.0)
+                            (normal (evaluate-polynomial curve (fst xo)) 1.0)))
+                (zip xs outliers))))
+    (Posterior
+     (Result (describe-degree (length curve)) outliers curve)
+     (list=? real=? data ys))))

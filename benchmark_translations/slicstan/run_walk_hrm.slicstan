@@ -1,0 +1,25 @@
+
+
+data real[8] hr;
+
+real startRate ~ beta(1, 1);
+real stopRate ~ beta(1, 1);
+real baseHr ~ normal(70, 20);
+real incr ~ normal(40, 20);
+
+hr[1] ~ normal(baseHr, 5);
+int<2> r2 ~ categorical(to_vector([startRate, 1 - startRate]));
+hr[2] ~ normal(baseHr + (2 - r2) * incr, 5);
+int<2> r3 ~ categorical(to_vector([(2 - r2) * (1 - stopRate) + (1 - (2 - r2)) * startRate, (2 - r2) * stopRate + (1 - (2 - r2)) * (1 - startRate)]));
+hr[3] ~ normal(baseHr + (2 - r3) * incr, 5);
+int<2> r4 ~ categorical(to_vector([(2 - r3) * (1 - stopRate) + (1 - (2 - r3)) * startRate, (2 - r3) * stopRate + (1 - (2 - r3)) * (1 - startRate)]));
+hr[4] ~ normal(baseHr + (2 - r4) * incr, 5);
+int<2> r5 ~ categorical(to_vector([(2 - r4) * (1 - stopRate) + (1 - (2 - r4)) * startRate, (2 - r4) * stopRate + (1 - (2 - r4)) * (1 - startRate)]));
+hr[5] ~ normal(baseHr + (2 - r5) * incr, 5);
+int<2> r6 ~ categorical(to_vector([(2 - r5) * (1 - stopRate) + (1 - (2 - r5)) * startRate, (2 - r5) * stopRate + (1 - (2 - r5)) * (1 - startRate)]));
+hr[6] ~ normal(baseHr + (2 - r6) * incr, 5);
+int<2> r7 ~ categorical(to_vector([(2 - r6) * (1 - stopRate) + (1 - (2 - r6)) * startRate, (2 - r6) * stopRate + (1 - (2 - r6)) * (1 - startRate)]));
+hr[7] ~ normal(baseHr + (2 - r7) * incr, 5);
+int<2> r8 ~ categorical(to_vector([(2 - r7) * (1 - stopRate) + (1 - (2 - r7)) * startRate, (2 - r7) * stopRate + (1 - (2 - r7)) * (1 - startRate)]));
+hr[8] ~ normal(baseHr + (2 - r8) * incr, 5);
+

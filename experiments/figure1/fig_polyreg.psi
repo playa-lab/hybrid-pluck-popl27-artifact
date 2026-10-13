@@ -1,0 +1,32 @@
+// PSI port of examples/fig_polyreg_listing.pluck (Figure 1): variable-degree polynomial
+// regression where each point is independently an outlier with unknown rate.
+//   degree k ~ truncated-geometric on {0..5}, p=0.3 (k = #coefficients used)
+//   coefficients ~ N(0,10) -> gauss(0,100)  (gauss takes VARIANCE)
+//   outlier rate p ~ Beta(1,6); o_j ~ flip(p) per point
+//   y_j ~ N(0,20) if o_j -> gauss(0,400), else N(poly(x_j),1) -> gauss(.,1)
+// Wall-clock is the comparable number (PSI reports no inference-only time).
+
+def main() {
+    xs := [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0];
+    ys := [1.7, 4.8, 7.5, 9.0, 9.7, 8.9, 7.4, 5.1, 14.1, 18.8];
+
+    k := categorical([0.3, 0.21, 0.147, 0.1029, 0.07203, 0.16807]);
+    c := [gauss(0, 100), gauss(0, 100), gauss(0, 100), gauss(0, 100), gauss(0, 100)];
+
+    p := beta(1, 6);
+    lastOutlier := 0;
+    for j in [0..10) {
+        x := xs[j];
+        mean := 0.0;
+        if k > 0 { mean = mean + c[0]; }
+        if k > 1 { mean = mean + c[1]*x; }
+        if k > 2 { mean = mean + c[2]*x*x; }
+        if k > 3 { mean = mean + c[3]*x*x*x; }
+        if k > 4 { mean = mean + c[4]*x*x*x*x; }
+        o := flip(p);
+        if o { cobserve(gauss(0, 400), ys[j]); }
+        else { cobserve(gauss(mean, 1), ys[j]); }
+        if j == 9 { lastOutlier = o; }
+    }
+    return lastOutlier;   // P(the point at x=10 is an outlier)
+}

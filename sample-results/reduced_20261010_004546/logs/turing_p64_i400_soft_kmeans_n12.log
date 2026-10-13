@@ -1,0 +1,12 @@
+===== ok  wall=104.8178s  rc=0  =====
+soft_kmeans (Turing PG)  N=12  particles=64  iters=400
+RESULT: -2.903934
+inference_seconds: 94.478
+===== ok  wall=96.9237s  rc=0  =====
+soft_kmeans (Turing PG)  N=12  particles=64  iters=400
+RESULT: -2.264651
+inference_seconds: 86.458
+===== ok  wall=91.7115s  rc=0  =====
+soft_kmeans (Turing PG)  N=12  particles=64  iters=400
+RESULT: -2.539107
+inference_seconds: 81.229

@@ -1,0 +1,150 @@
+===== ok  wall=7.8724s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 35
+BDD vars allocated (discrete bits)    : 48
+BDD recursive calls (compile work)    : 5689
+BDD guard nodes  : sum=48  max=48  mean=48
+SPN nodes (TREE) : sum=262143  max=262143  mean=262143
+SPN nodes (DAG)  : per-world-max=196624  all-worlds-unique=196624  intern-table=393495
+SPN leaf nodes   : sum=196606  (max sum-arity=1, max prod-arity=65536)
+posterior mixture components (total)  : 17
+time (s): parse=0.0001  symbolic-exec=0.0013  wmc=2.7603  posterior=4.1684  flatten=0.0000  display/naming=0.0002  total=6.9302
+===================
+inference_seconds: 6.93016792
+normal_mixture:
+  p  1
+    ├ 100.000000%
+    │       p ~ Beta(6.000000, 12.000000)
+    ├ 0.000000%
+    │       p ~ Beta(7.000000, 11.000000)
+    ├ 0.000000%
+    │       p ~ Beta(5.000000, 13.000000)
+    ├ 0.000000%
+    │       p ~ Beta(8.000000, 10.000000)
+    ├ 0.000000%
+    │       p ~ Beta(4.000000, 14.000000)
+    ├ 0.000000%
+    │       p ~ Beta(12.000000, 6.000000)
+    ├ 0.000000%
+    │       p ~ Beta(9.000000, 9.000000)
+    ├ 0.000000%
+    │       p ~ Beta(10.000000, 8.000000)
+    ├ 0.000000%
+    │       p ~ Beta(3.000000, 15.000000)
+    ├ 0.000000%
+    │       p ~ Beta(11.000000, 7.000000)
+    ├ 0.000000%
+    │       p ~ Beta(13.000000, 5.000000)
+    ├ 0.000000%
+    │       p ~ Beta(2.000000, 16.000000)
+    ├ 0.000000%
+    │       p ~ Beta(14.000000, 4.000000)
+    ├ 0.000000%
+    │       p ~ Beta(15.000000, 3.000000)
+    ├ 0.000000%
+    │       p ~ Beta(1.000000, 17.000000)
+    ├ 0.000000%
+    │       p ~ Beta(16.000000, 2.000000)
+    └ 0.000000%
+            p ~ Beta(17.000000, 1.000000)
+===== ok  wall=7.4449s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 35
+BDD vars allocated (discrete bits)    : 48
+BDD recursive calls (compile work)    : 5689
+BDD guard nodes  : sum=48  max=48  mean=48
+SPN nodes (TREE) : sum=262143  max=262143  mean=262143
+SPN nodes (DAG)  : per-world-max=196624  all-worlds-unique=196624  intern-table=393495
+SPN leaf nodes   : sum=196606  (max sum-arity=1, max prod-arity=65536)
+posterior mixture components (total)  : 17
+time (s): parse=0.0001  symbolic-exec=0.0028  wmc=2.6000  posterior=4.0362  flatten=0.0000  display/naming=0.0002  total=6.6393
+===================
+inference_seconds: 6.63925979
+normal_mixture:
+  p  1
+    ├ 100.000000%
+    │       p ~ Beta(6.000000, 12.000000)
+    ├ 0.000000%
+    │       p ~ Beta(7.000000, 11.000000)
+    ├ 0.000000%
+    │       p ~ Beta(5.000000, 13.000000)
+    ├ 0.000000%
+    │       p ~ Beta(8.000000, 10.000000)
+    ├ 0.000000%
+    │       p ~ Beta(4.000000, 14.000000)
+    ├ 0.000000%
+    │       p ~ Beta(12.000000, 6.000000)
+    ├ 0.000000%
+    │       p ~ Beta(9.000000, 9.000000)
+    ├ 0.000000%
+    │       p ~ Beta(10.000000, 8.000000)
+    ├ 0.000000%
+    │       p ~ Beta(3.000000, 15.000000)
+    ├ 0.000000%
+    │       p ~ Beta(11.000000, 7.000000)
+    ├ 0.000000%
+    │       p ~ Beta(13.000000, 5.000000)
+    ├ 0.000000%
+    │       p ~ Beta(2.000000, 16.000000)
+    ├ 0.000000%
+    │       p ~ Beta(14.000000, 4.000000)
+    ├ 0.000000%
+    │       p ~ Beta(15.000000, 3.000000)
+    ├ 0.000000%
+    │       p ~ Beta(1.000000, 17.000000)
+    ├ 0.000000%
+    │       p ~ Beta(16.000000, 2.000000)
+    └ 0.000000%
+            p ~ Beta(17.000000, 1.000000)
+===== ok  wall=7.9987s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 35
+BDD vars allocated (discrete bits)    : 48
+BDD recursive calls (compile work)    : 5689
+BDD guard nodes  : sum=48  max=48  mean=48
+SPN nodes (TREE) : sum=262143  max=262143  mean=262143
+SPN nodes (DAG)  : per-world-max=196624  all-worlds-unique=196624  intern-table=393495
+SPN leaf nodes   : sum=196606  (max sum-arity=1, max prod-arity=65536)
+posterior mixture components (total)  : 17
+time (s): parse=0.0001  symbolic-exec=0.0028  wmc=2.9338  posterior=4.0195  flatten=0.0000  display/naming=0.0002  total=6.9563
+===================
+inference_seconds: 6.95632192
+normal_mixture:
+  p  1
+    ├ 100.000000%
+    │       p ~ Beta(6.000000, 12.000000)
+    ├ 0.000000%
+    │       p ~ Beta(7.000000, 11.000000)
+    ├ 0.000000%
+    │       p ~ Beta(5.000000, 13.000000)
+    ├ 0.000000%
+    │       p ~ Beta(8.000000, 10.000000)
+    ├ 0.000000%
+    │       p ~ Beta(4.000000, 14.000000)
+    ├ 0.000000%
+    │       p ~ Beta(12.000000, 6.000000)
+    ├ 0.000000%
+    │       p ~ Beta(9.000000, 9.000000)
+    ├ 0.000000%
+    │       p ~ Beta(10.000000, 8.000000)
+    ├ 0.000000%
+    │       p ~ Beta(3.000000, 15.000000)
+    ├ 0.000000%
+    │       p ~ Beta(11.000000, 7.000000)
+    ├ 0.000000%
+    │       p ~ Beta(13.000000, 5.000000)
+    ├ 0.000000%
+    │       p ~ Beta(2.000000, 16.000000)
+    ├ 0.000000%
+    │       p ~ Beta(14.000000, 4.000000)
+    ├ 0.000000%
+    │       p ~ Beta(15.000000, 3.000000)
+    ├ 0.000000%
+    │       p ~ Beta(1.000000, 17.000000)
+    ├ 0.000000%
+    │       p ~ Beta(16.000000, 2.000000)
+    └ 0.000000%
+            p ~ Beta(17.000000, 1.000000)

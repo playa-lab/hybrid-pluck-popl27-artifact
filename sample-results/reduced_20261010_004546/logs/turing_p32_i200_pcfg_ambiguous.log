@@ -1,0 +1,89 @@
+===== TIMEOUT  wall=300.1979s  rc=124  =====
+
+signal (15): Terminated
+in expression starting at /artifact/benchmark_translations/turing/pcfg_ambiguous.jl:102
+jl_egal_ at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/julia.h:1387 [inlined]
+jl_table_peek_bp at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/iddict.c:129 [inlined]
+ijl_eqtable_get at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/iddict.c:158
+mtcache_hash_lookup at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/typemap.c:292 [inlined]
+mtcache_hash_lookup at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/typemap.c:288 [inlined]
+jl_typemap_level_assoc_exact at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/typemap.c:1012
+jl_typemap_assoc_exact at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/julia_internal.h:1329 [inlined]
+jl_lookup_generic_ at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2499 [inlined]
+ijl_apply_generic at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2555
+copy_bindings at /opt/julia-depot/packages/Libtask/bxGQF/src/tapedfunction.jl:505
+copy at /opt/julia-depot/packages/Libtask/bxGQF/src/tapedfunction.jl:512
+unknown function (ip: 0x40005bbe78eb)
+_jl_invoke at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2377 [inlined]
+ijl_apply_generic at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2559
+#copy#16 at /opt/julia-depot/packages/Libtask/bxGQF/src/tapedtask.jl:175
+copy at /opt/julia-depot/packages/Libtask/bxGQF/src/tapedtask.jl:172
+unknown function (ip: 0x40005bbe7793)
+_jl_invoke at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2377 [inlined]
+ijl_apply_generic at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2559
+copy at /opt/julia-depot/packages/Turing/UCuzt/src/essential/container.jl:28
+copy at /opt/julia-depot/packages/AdvancedPS/Vox9w/src/model.jl:43 [inlined]
+fork at /opt/julia-depot/packages/AdvancedPS/Vox9w/src/model.jl:65
+#resample_propagate!#1 at /opt/julia-depot/packages/AdvancedPS/Vox9w/src/container.jl:217
+resample_propagate!##kw at /opt/julia-depot/packages/AdvancedPS/Vox9w/src/container.jl:177 [inlined]
+#resample_propagate!#2 at /opt/julia-depot/packages/AdvancedPS/Vox9w/src/container.jl:249
+resample_propagate! at /opt/julia-depot/packages/AdvancedPS/Vox9w/src/container.jl:238 [inlined]
+sweep! at /opt/julia-depot/packages/AdvancedPS/Vox9w/src/container.jl:349
+unknown function (ip: 0x40005bc0b1ef)
+_jl_invoke at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2377 [inlined]
+ijl_apply_generic at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2559
+#step#76 at /opt/julia-depot/packages/Turing/UCuzt/src/mcmc/particle_mcmc.jl:311
+step at /opt/julia-depot/packages/Turing/UCuzt/src/mcmc/particle_mcmc.jl:281 [inlined]
+macro expansion at /opt/julia-depot/packages/AbstractMCMC/fWWW0/src/sample.jl:168 [inlined]
+macro expansion at /opt/julia-depot/packages/AbstractMCMC/fWWW0/src/logging.jl:16 [inlined]
+#mcmcsample#20 at /opt/julia-depot/packages/AbstractMCMC/fWWW0/src/sample.jl:116
+unknown function (ip: 0x40005bbabc53)
+mcmcsample##kw at /opt/julia-depot/packages/AbstractMCMC/fWWW0/src/sample.jl:95
+unknown function (ip: 0x40005bb8722f)
+_jl_invoke at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2377 [inlined]
+ijl_apply_generic at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2559
+#sample#3 at /opt/julia-depot/packages/Turing/UCuzt/src/mcmc/Inference.jl:204
+unknown function (ip: 0x40005bb86fa3)
+sample##kw at /opt/julia-depot/packages/Turing/UCuzt/src/mcmc/Inference.jl:193 [inlined]
+#sample#2 at /opt/julia-depot/packages/Turing/UCuzt/src/mcmc/Inference.jl:190 [inlined]
+sample##kw at /opt/julia-depot/packages/Turing/UCuzt/src/mcmc/Inference.jl:183 [inlined]
+#sample#1 at /opt/julia-depot/packages/Turing/UCuzt/src/mcmc/Inference.jl:180 [inlined]
+sample##kw at /opt/julia-depot/packages/Turing/UCuzt/src/mcmc/Inference.jl:174 [inlined]
+run_pg at /artifact/benchmark_translations/turing/pcfg_ambiguous.jl:79
+main at /artifact/benchmark_translations/turing/pcfg_ambiguous.jl:90
+unknown function (ip: 0x40005bb86bbb)
+_jl_invoke at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2377 [inlined]
+ijl_apply_generic at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2559
+jl_apply at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/julia.h:1843 [inlined]
+do_call at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/interpreter.c:126
+eval_value at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/interpreter.c:215
+eval_stmt_value at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/interpreter.c:166 [inlined]
+eval_body at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/interpreter.c:612
+jl_interpret_toplevel_thunk at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/interpreter.c:750
+jl_toplevel_eval_flex at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/toplevel.c:906
+jl_toplevel_eval_flex at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/toplevel.c:850
+ijl_toplevel_eval_in at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/toplevel.c:965
+eval at ./boot.jl:368 [inlined]
+include_string at ./loading.jl:1428
+_jl_invoke at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2377 [inlined]
+ijl_apply_generic at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2559
+_include at ./loading.jl:1488
+include at ./Base.jl:419
+jfptr_include_39932 at /opt/turing.so (unknown line)
+_jl_invoke at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2377 [inlined]
+ijl_apply_generic at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2559
+exec_options at ./client.jl:303
+_start at ./client.jl:522
+jfptr__start_67012 at /opt/turing.so (unknown line)
+_jl_invoke at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2377 [inlined]
+ijl_apply_generic at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2559
+jl_apply at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/julia.h:1843 [inlined]
+true_main at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/jlapi.c:575
+jl_repl_entrypoint at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/jlapi.c:719
+main at julia (unknown line)
+unknown function (ip: 0x40003f8c73ff)
+__libc_start_main at /lib/aarch64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x4009ab)
+unknown function (ip: 0x4009ab)
+unknown function (ip: (nil))
+Allocations: 1166875756 (Pool: 1164101034; Big: 2774722); GC: 2248

@@ -1,0 +1,96 @@
+===== ok  wall=0.1170s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 9
+BDD vars allocated (discrete bits)    : 46
+BDD recursive calls (compile work)    : 20085
+BDD guard nodes  : sum=104  max=104  mean=104
+SPN nodes (TREE) : sum=757  max=757  mean=757
+SPN nodes (DAG)  : per-world-max=253  all-worlds-unique=253  intern-table=398
+SPN leaf nodes   : sum=546  (max sum-arity=1, max prod-arity=210)
+posterior mixture components (total)  : 132
+time (s): parse=0.0001  symbolic-exec=0.0041  wmc=0.0010  posterior=0.0006  flatten=0.0000  display/naming=0.0003  total=0.0061
+===================
+inference_seconds: 0.00605654
+hmm-factorial:
+  x  0.9999999999999997
+    ├ 71.672253%
+    │       x ~ N(-3.000000, 1.000000)
+    ├ 21.893588%
+    │       x ~ N(-2.550000, 0.707107)
+    ├ 3.654810%
+    │       x ~ N(-2.190000, 0.707107)
+    ├ 2.262835%
+    │       x ~ N(-2.160000, 0.577350)
+    ├ 0.158490%
+    │       x ~ N(-1.140000, 0.577350)
+    ├ 0.141616%
+    │       x ~ N(-1.200000, 0.500000)
+    ├ 0.129123%
+    │       x ~ N(-0.660000, 0.707107)
+    └ 0.087285%
+            x ~ N(-0.900000, 0.577350)
+===== ok  wall=0.1085s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 9
+BDD vars allocated (discrete bits)    : 46
+BDD recursive calls (compile work)    : 20085
+BDD guard nodes  : sum=104  max=104  mean=104
+SPN nodes (TREE) : sum=757  max=757  mean=757
+SPN nodes (DAG)  : per-world-max=253  all-worlds-unique=253  intern-table=398
+SPN leaf nodes   : sum=546  (max sum-arity=1, max prod-arity=210)
+posterior mixture components (total)  : 132
+time (s): parse=0.0001  symbolic-exec=0.0037  wmc=0.0011  posterior=0.0007  flatten=0.0000  display/naming=0.0003  total=0.0060
+===================
+inference_seconds: 0.00596416
+hmm-factorial:
+  x  1.0000000000000004
+    ├ 71.672253%
+    │       x ~ N(-3.000000, 1.000000)
+    ├ 21.893588%
+    │       x ~ N(-2.550000, 0.707107)
+    ├ 3.654810%
+    │       x ~ N(-2.190000, 0.707107)
+    ├ 2.262835%
+    │       x ~ N(-2.160000, 0.577350)
+    ├ 0.158490%
+    │       x ~ N(-1.140000, 0.577350)
+    ├ 0.141616%
+    │       x ~ N(-1.200000, 0.500000)
+    ├ 0.129123%
+    │       x ~ N(-0.660000, 0.707107)
+    └ 0.087285%
+            x ~ N(-0.900000, 0.577350)
+===== ok  wall=0.1112s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 9
+BDD vars allocated (discrete bits)    : 46
+BDD recursive calls (compile work)    : 20085
+BDD guard nodes  : sum=104  max=104  mean=104
+SPN nodes (TREE) : sum=757  max=757  mean=757
+SPN nodes (DAG)  : per-world-max=253  all-worlds-unique=253  intern-table=398
+SPN leaf nodes   : sum=546  (max sum-arity=1, max prod-arity=210)
+posterior mixture components (total)  : 132
+time (s): parse=0.0001  symbolic-exec=0.0054  wmc=0.0010  posterior=0.0006  flatten=0.0000  display/naming=0.0004  total=0.0076
+===================
+inference_seconds: 0.00758279
+hmm-factorial:
+  x  0.9999999999999988
+    ├ 71.672253%
+    │       x ~ N(-3.000000, 1.000000)
+    ├ 21.893588%
+    │       x ~ N(-2.550000, 0.707107)
+    ├ 3.654810%
+    │       x ~ N(-2.190000, 0.707107)
+    ├ 2.262835%
+    │       x ~ N(-2.160000, 0.577350)
+    ├ 0.158490%
+    │       x ~ N(-1.140000, 0.577350)
+    ├ 0.141616%
+    │       x ~ N(-1.200000, 0.500000)
+    ├ 0.129123%
+    │       x ~ N(-0.660000, 0.707107)
+    └ 0.087285%
+            x ~ N(-0.900000, 0.577350)

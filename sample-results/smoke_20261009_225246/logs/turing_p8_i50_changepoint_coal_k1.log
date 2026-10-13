@@ -1,0 +1,5 @@
+===== ok  wall=16.2734s  rc=0  =====
+changepoint_coal_k1 (Turing PG)  N=20  particles=8  iters=50
+posterior mean early rate E[e] = 2.6125
+RESULT: 2.612518
+inference_seconds: 0.696

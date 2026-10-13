@@ -1,0 +1,9 @@
+; Loss-free used_information P1: `s` sums a matrix whose entry thunk is
+; branch-pruned to a single world under pc = b. `force_entry_to_affine`
+; must thread that world's used_information (= b) into `s`'s cache entry;
+; discarding it caches `used = true`, so the ~b branch hits the stale
+; b-branch value: "11" instead of the correct "12".
+(query
+ (let ((b (flip 0.5))
+       (s (sum {(if b 1.0 2.0)})))
+   (Posterior (if b s (+. s 10.0)) True)))

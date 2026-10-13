@@ -1,0 +1,27 @@
+===== ok  wall=23.0180s  rc=0  =====
+changepoint_coal (Turing PG)  N=20  particles=8  iters=50
+posterior over k (number of changepoints):
+  k=0  P=0.780
+  k=1  P=0.220
+  k=2  P=0.000
+  k=3  P=0.000
+RESULT: 0.220000
+inference_seconds: 1.186
+===== ok  wall=22.4401s  rc=0  =====
+changepoint_coal (Turing PG)  N=20  particles=8  iters=50
+posterior over k (number of changepoints):
+  k=0  P=0.920
+  k=1  P=0.000
+  k=2  P=0.080
+  k=3  P=0.000
+RESULT: 0.160000
+inference_seconds: 0.970
+===== ok  wall=21.7892s  rc=0  =====
+changepoint_coal (Turing PG)  N=20  particles=8  iters=50
+posterior over k (number of changepoints):
+  k=0  P=0.640
+  k=1  P=0.120
+  k=2  P=0.100
+  k=3  P=0.140
+RESULT: 0.740000
+inference_seconds: 1.256

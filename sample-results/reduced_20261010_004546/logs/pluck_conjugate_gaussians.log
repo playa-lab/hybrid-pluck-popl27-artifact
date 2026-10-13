@@ -1,0 +1,51 @@
+===== ok  wall=0.1075s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 3
+BDD vars allocated (discrete bits)    : 2
+BDD recursive calls (compile work)    : 161
+BDD guard nodes  : sum=2  max=2  mean=2
+SPN nodes (TREE) : sum=1  max=1  mean=1
+SPN nodes (DAG)  : per-world-max=1  all-worlds-unique=1  intern-table=6
+SPN leaf nodes   : sum=1  (max sum-arity=0, max prod-arity=0)
+posterior mixture components (total)  : 1
+time (s): parse=0.0000  symbolic-exec=0.0001  wmc=0.0000  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0002
+===================
+inference_seconds: 0.00017308
+conjugate_gaussians:
+  x  1
+        x ~ N(1.000000, 0.577350)
+===== ok  wall=0.1191s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 3
+BDD vars allocated (discrete bits)    : 2
+BDD recursive calls (compile work)    : 161
+BDD guard nodes  : sum=2  max=2  mean=2
+SPN nodes (TREE) : sum=1  max=1  mean=1
+SPN nodes (DAG)  : per-world-max=1  all-worlds-unique=1  intern-table=6
+SPN leaf nodes   : sum=1  (max sum-arity=0, max prod-arity=0)
+posterior mixture components (total)  : 1
+time (s): parse=0.0002  symbolic-exec=0.0001  wmc=0.0000  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0003
+===================
+inference_seconds: 0.00034233
+conjugate_gaussians:
+  x  1
+        x ~ N(1.000000, 0.577350)
+===== ok  wall=0.1076s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 3
+BDD vars allocated (discrete bits)    : 2
+BDD recursive calls (compile work)    : 161
+BDD guard nodes  : sum=2  max=2  mean=2
+SPN nodes (TREE) : sum=1  max=1  mean=1
+SPN nodes (DAG)  : per-world-max=1  all-worlds-unique=1  intern-table=6
+SPN leaf nodes   : sum=1  (max sum-arity=0, max prod-arity=0)
+posterior mixture components (total)  : 1
+time (s): parse=0.0000  symbolic-exec=0.0001  wmc=0.0000  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0002
+===================
+inference_seconds: 0.00019733
+conjugate_gaussians:
+  x  1
+        x ~ N(1.000000, 0.577350)

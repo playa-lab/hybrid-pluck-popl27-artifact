@@ -1,0 +1,13 @@
+def main() {
+    obs := [0.89, -2.38, -0.42, -3.41, -3.24, -0.9, -2.8, 3.76, 2.36, 2.0];
+    m1 := gauss(-2,1); m2 := gauss(0,1); m3 := gauss(2,1);
+
+    z := categorical([0.5, 0.3, 0.2]);
+    for n in [0..10) {
+        mu := if z == 0 { m1 } else { if z == 1 { m2 } else { m3 } };
+        cobserve(gauss(mu, 1), obs[n]);
+        z = if z == 0 { categorical([0.6, 0.3, 0.1]) }
+            else { if z == 1 { categorical([0.2, 0.6, 0.2]) } else { categorical([0.1, 0.3, 0.6]) } };
+    }
+    return Expectation(m1);
+}

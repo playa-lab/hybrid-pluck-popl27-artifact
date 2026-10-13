@@ -1,0 +1,10 @@
+[project]
+name = "hybrid-pluck-experiments"
+version = "0.1.0"
+description = "Benchmark analysis (tables, plots, paper comparison) for the Hybrid Pluck artifact"
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib==3.11.0",
+    "numpy==2.5.0",
+    "scipy==1.18.1",
+]

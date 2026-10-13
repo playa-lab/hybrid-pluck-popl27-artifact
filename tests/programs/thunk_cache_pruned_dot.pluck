@@ -1,0 +1,7 @@
+; Loss-free used_information P3: the branch-pruned entry thunk reaches
+; `force_entry_to_affine` through cell_op_affine's Mul-1 short-circuit
+; (x *. 1.0 forces x directly) inside stdlib `dot = (sum (*. a b))`.
+(query
+ (let ((b (flip 0.5))
+       (s (dot {(if b 1.0 2.0), 1.0} {1.0, 0.0})))
+   (Posterior (if b s (+. s 10.0)) True)))

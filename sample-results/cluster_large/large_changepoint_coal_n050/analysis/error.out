@@ -1,0 +1,7 @@
+criterion: p75-error  (REL_ERR below; error.csv has all spread stats)
+
+PROGRAM                  BACKEND   SETTING          EXACT     APPROX    ABS_ERR   REL_ERR   N
+--------------------------------------------------------------------------------------------
+changepoint_coal_n050    pluck     -                1.487      1.487          0         0   1
+
+wrote /results/cluster_large/large_changepoint_coal_n050/analysis/error.csv  (1 rows)

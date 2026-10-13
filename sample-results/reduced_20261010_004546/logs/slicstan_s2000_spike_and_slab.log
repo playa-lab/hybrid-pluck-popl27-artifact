@@ -1,0 +1,11 @@
+Semantic error in '/results/reduced_20261010_004546/scratch/slicstan/slicstan_s2000/spike_and_slab/model.stan', line 22, column 51 to column 53:
+   -------------------------------------------------
+    20:              acc0[g1_val] += bernoulli_lpmf(g3 | 0.5);
+    21:              acc0[g1_val] += bernoulli_lpmf(g4 | 0.5);
+    22:              acc0[g1_val] += normal_lpdf(y[1] | ((((b0 + g1_val * bs1 * X[1,1]) + g2 * bs2 * X[1,2]) + g3 * bs3 * X[1,3]) + g4 * bs4 * X[1,4]),2.5);
+                                                            ^
+    23:              acc0[g1_val] += normal_lpdf(y[2] | ((((b0 + g1_val * bs1 * X[2,1]) + g2 * bs2 * X[2,2]) + g3 * bs3 * X[2,3]) + g4 * bs4 * X[2,4]),2.5);
+    24:              acc0[g1_val] += normal_lpdf(y[3] | ((((b0 + g1_val * bs1 * X[3,1]) + g2 * bs2 * X[3,2]) + g3 * bs3 * X[3,3]) + g4 * bs4 * X[3,4]),2.5);
+   -------------------------------------------------
+
+Identifier 'b0' not in scope. Did you mean 'X'?

@@ -1,0 +1,35 @@
+(define (evolve parent p) (if (flip p) parent (categorical 0.3 0.2 0.2 0.3)))
+
+(define (tips p)
+  (let ((root (categorical 0.3 0.2 0.2 0.3)))
+    (let ((L (evolve root p)) (M (evolve root p)))
+      [(evolve L p), (evolve L p), (evolve M p), (evolve M p)])))
+
+(define (leq xs ys)
+  (match xs Nil => (True)
+    Cons x xr => (match ys Cons y yr => (and (native_eq x y) (leq xr yr)))))
+
+(define (sites-match p cols)
+  (match cols Nil => (True)
+    Cons c rest => (and (leq (tips p) c) (sites-match p rest))))
+
+(define alignment
+  [ [@0, @0, @0, @0],
+    [@1, @1, @3, @3],
+    [@2, @2, @2, @2],
+    [@1, @3, @1, @1],
+    [@0, @1, @3, @3],
+    [@2, @2, @2, @3],
+    [@3, @2, @3, @3],
+    [@3, @3, @3, @1],
+    [@0, @0, @0, @0],
+    [@1, @3, @1, @1],
+    [@0, @0, @1, @3],
+    [@1, @1, @1, @1],
+    [@3, @3, @3, @2],
+    [@2, @2, @2, @2],
+    [@0, @0, @0, @0] ])
+
+(query retention-prob
+  (let ((p (beta 1.0 1.0)))          ;; uniform prior on retention prob
+    (Posterior p (sites-match p alignment))))

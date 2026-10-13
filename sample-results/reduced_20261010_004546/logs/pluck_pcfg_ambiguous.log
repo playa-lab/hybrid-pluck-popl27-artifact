@@ -1,0 +1,240 @@
+===== ok  wall=0.6327s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 3
+BDD vars allocated (discrete bits)    : 479
+BDD recursive calls (compile work)    : 1514724
+BDD guard nodes  : sum=352  max=352  mean=352
+SPN nodes (TREE) : sum=65  max=65  mean=65
+SPN nodes (DAG)  : per-world-max=50  all-worlds-unique=50  intern-table=2939
+SPN leaf nodes   : sum=48  (max sum-arity=1, max prod-arity=16)
+posterior mixture components (total)  : 16
+time (s): parse=0.0022  symbolic-exec=0.5026  wmc=0.0055  posterior=0.0002  flatten=0.0000  display/naming=0.0005  total=0.5110
+===================
+inference_seconds: 0.51100833
+learned-probabilities:
+  [p₀, p₁, p₂]  0.9999999999999826
+    ├ 29.232337%
+    │       p₀ ~ Dirichlet(55.000000, 18.000000)
+    │       p₁ ~ Dirichlet(7.000000, 15.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 24.888212%
+    │       p₀ ~ Dirichlet(56.000000, 17.000000)
+    │       p₁ ~ Dirichlet(6.000000, 16.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 21.229771%
+    │       p₀ ~ Dirichlet(54.000000, 19.000000)
+    │       p₁ ~ Dirichlet(8.000000, 14.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 12.409430%
+    │       p₀ ~ Dirichlet(53.000000, 20.000000)
+    │       p₁ ~ Dirichlet(9.000000, 13.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 6.446085%
+    │       p₀ ~ Dirichlet(52.000000, 21.000000)
+    │       p₁ ~ Dirichlet(10.000000, 12.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 3.126581%
+    │       p₀ ~ Dirichlet(51.000000, 22.000000)
+    │       p₁ ~ Dirichlet(11.000000, 11.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 1.456944%
+    │       p₀ ~ Dirichlet(50.000000, 23.000000)
+    │       p₁ ~ Dirichlet(12.000000, 10.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.664035%
+    │       p₀ ~ Dirichlet(49.000000, 24.000000)
+    │       p₁ ~ Dirichlet(13.000000, 9.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.299582%
+    │       p₀ ~ Dirichlet(48.000000, 25.000000)
+    │       p₁ ~ Dirichlet(14.000000, 8.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.134918%
+    │       p₀ ~ Dirichlet(47.000000, 26.000000)
+    │       p₁ ~ Dirichlet(15.000000, 7.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.061027%
+    │       p₀ ~ Dirichlet(46.000000, 27.000000)
+    │       p₁ ~ Dirichlet(16.000000, 6.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.027855%
+    │       p₀ ~ Dirichlet(45.000000, 28.000000)
+    │       p₁ ~ Dirichlet(17.000000, 5.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.012876%
+    │       p₀ ~ Dirichlet(44.000000, 29.000000)
+    │       p₁ ~ Dirichlet(18.000000, 4.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.006046%
+    │       p₀ ~ Dirichlet(43.000000, 30.000000)
+    │       p₁ ~ Dirichlet(19.000000, 3.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.002890%
+    │       p₀ ~ Dirichlet(42.000000, 31.000000)
+    │       p₁ ~ Dirichlet(20.000000, 2.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    └ 0.001410%
+            p₀ ~ Dirichlet(41.000000, 32.000000)
+            p₁ ~ Dirichlet(21.000000, 1.000000)
+            p₂ ~ Dirichlet(36.000000, 37.000000)
+===== ok  wall=0.5366s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 3
+BDD vars allocated (discrete bits)    : 479
+BDD recursive calls (compile work)    : 1514724
+BDD guard nodes  : sum=352  max=352  mean=352
+SPN nodes (TREE) : sum=65  max=65  mean=65
+SPN nodes (DAG)  : per-world-max=50  all-worlds-unique=50  intern-table=2939
+SPN leaf nodes   : sum=48  (max sum-arity=1, max prod-arity=16)
+posterior mixture components (total)  : 16
+time (s): parse=0.0005  symbolic-exec=0.4066  wmc=0.0046  posterior=0.0001  flatten=0.0000  display/naming=0.0001  total=0.4118
+===================
+inference_seconds: 0.41181675
+learned-probabilities:
+  [p₀, p₁, p₂]  0.9999999999999968
+    ├ 29.232337%
+    │       p₀ ~ Dirichlet(55.000000, 18.000000)
+    │       p₁ ~ Dirichlet(7.000000, 15.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 24.888212%
+    │       p₀ ~ Dirichlet(56.000000, 17.000000)
+    │       p₁ ~ Dirichlet(6.000000, 16.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 21.229771%
+    │       p₀ ~ Dirichlet(54.000000, 19.000000)
+    │       p₁ ~ Dirichlet(8.000000, 14.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 12.409430%
+    │       p₀ ~ Dirichlet(53.000000, 20.000000)
+    │       p₁ ~ Dirichlet(9.000000, 13.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 6.446085%
+    │       p₀ ~ Dirichlet(52.000000, 21.000000)
+    │       p₁ ~ Dirichlet(10.000000, 12.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 3.126581%
+    │       p₀ ~ Dirichlet(51.000000, 22.000000)
+    │       p₁ ~ Dirichlet(11.000000, 11.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 1.456944%
+    │       p₀ ~ Dirichlet(50.000000, 23.000000)
+    │       p₁ ~ Dirichlet(12.000000, 10.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.664035%
+    │       p₀ ~ Dirichlet(49.000000, 24.000000)
+    │       p₁ ~ Dirichlet(13.000000, 9.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.299582%
+    │       p₀ ~ Dirichlet(48.000000, 25.000000)
+    │       p₁ ~ Dirichlet(14.000000, 8.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.134918%
+    │       p₀ ~ Dirichlet(47.000000, 26.000000)
+    │       p₁ ~ Dirichlet(15.000000, 7.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.061027%
+    │       p₀ ~ Dirichlet(46.000000, 27.000000)
+    │       p₁ ~ Dirichlet(16.000000, 6.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.027855%
+    │       p₀ ~ Dirichlet(45.000000, 28.000000)
+    │       p₁ ~ Dirichlet(17.000000, 5.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.012876%
+    │       p₀ ~ Dirichlet(44.000000, 29.000000)
+    │       p₁ ~ Dirichlet(18.000000, 4.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.006046%
+    │       p₀ ~ Dirichlet(43.000000, 30.000000)
+    │       p₁ ~ Dirichlet(19.000000, 3.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.002890%
+    │       p₀ ~ Dirichlet(42.000000, 31.000000)
+    │       p₁ ~ Dirichlet(20.000000, 2.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    └ 0.001410%
+            p₀ ~ Dirichlet(41.000000, 32.000000)
+            p₁ ~ Dirichlet(21.000000, 1.000000)
+            p₂ ~ Dirichlet(36.000000, 37.000000)
+===== ok  wall=0.5547s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 3
+BDD vars allocated (discrete bits)    : 479
+BDD recursive calls (compile work)    : 1514724
+BDD guard nodes  : sum=352  max=352  mean=352
+SPN nodes (TREE) : sum=65  max=65  mean=65
+SPN nodes (DAG)  : per-world-max=50  all-worlds-unique=50  intern-table=2939
+SPN leaf nodes   : sum=48  (max sum-arity=1, max prod-arity=16)
+posterior mixture components (total)  : 16
+time (s): parse=0.0029  symbolic-exec=0.4189  wmc=0.0047  posterior=0.0001  flatten=0.0000  display/naming=0.0001  total=0.4268
+===================
+inference_seconds: 0.42678333
+learned-probabilities:
+  [p₀, p₁, p₂]  0.9999999999999826
+    ├ 29.232337%
+    │       p₀ ~ Dirichlet(55.000000, 18.000000)
+    │       p₁ ~ Dirichlet(7.000000, 15.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 24.888212%
+    │       p₀ ~ Dirichlet(56.000000, 17.000000)
+    │       p₁ ~ Dirichlet(6.000000, 16.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 21.229771%
+    │       p₀ ~ Dirichlet(54.000000, 19.000000)
+    │       p₁ ~ Dirichlet(8.000000, 14.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 12.409430%
+    │       p₀ ~ Dirichlet(53.000000, 20.000000)
+    │       p₁ ~ Dirichlet(9.000000, 13.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 6.446085%
+    │       p₀ ~ Dirichlet(52.000000, 21.000000)
+    │       p₁ ~ Dirichlet(10.000000, 12.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 3.126581%
+    │       p₀ ~ Dirichlet(51.000000, 22.000000)
+    │       p₁ ~ Dirichlet(11.000000, 11.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 1.456944%
+    │       p₀ ~ Dirichlet(50.000000, 23.000000)
+    │       p₁ ~ Dirichlet(12.000000, 10.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.664035%
+    │       p₀ ~ Dirichlet(49.000000, 24.000000)
+    │       p₁ ~ Dirichlet(13.000000, 9.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.299582%
+    │       p₀ ~ Dirichlet(48.000000, 25.000000)
+    │       p₁ ~ Dirichlet(14.000000, 8.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.134918%
+    │       p₀ ~ Dirichlet(47.000000, 26.000000)
+    │       p₁ ~ Dirichlet(15.000000, 7.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.061027%
+    │       p₀ ~ Dirichlet(46.000000, 27.000000)
+    │       p₁ ~ Dirichlet(16.000000, 6.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.027855%
+    │       p₀ ~ Dirichlet(45.000000, 28.000000)
+    │       p₁ ~ Dirichlet(17.000000, 5.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.012876%
+    │       p₀ ~ Dirichlet(44.000000, 29.000000)
+    │       p₁ ~ Dirichlet(18.000000, 4.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.006046%
+    │       p₀ ~ Dirichlet(43.000000, 30.000000)
+    │       p₁ ~ Dirichlet(19.000000, 3.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    ├ 0.002890%
+    │       p₀ ~ Dirichlet(42.000000, 31.000000)
+    │       p₁ ~ Dirichlet(20.000000, 2.000000)
+    │       p₂ ~ Dirichlet(36.000000, 37.000000)
+    └ 0.001410%
+            p₀ ~ Dirichlet(41.000000, 32.000000)
+            p₁ ~ Dirichlet(21.000000, 1.000000)
+            p₂ ~ Dirichlet(36.000000, 37.000000)

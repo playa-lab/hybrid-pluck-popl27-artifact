@@ -1,0 +1,11 @@
+; Loss-free used_information P5: the matrix is LET-BOUND and shared, so the
+; entry thunk forced under pc = b caches worlds [1.0@b]; under ~b the entry
+; widens to a genuine two-world cache [1.0@b, 2.0@~b]. Locks the pc-filter
+; at the force sites: a hit returns the whole multi-world entry, and the
+; single-world assert must first drop worlds whose guard is pc-disjoint
+; (without the filter this panics post-fix; with it, "12" comes out).
+(query
+ (let ((b (flip 0.5))
+       (m {(if b 1.0 2.0)})
+       (s (sum m)))
+   (Posterior (if b s (+. s 10.0)) True)))

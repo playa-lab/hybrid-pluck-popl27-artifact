@@ -1,0 +1,140 @@
+===== TIMEOUT  wall=302.9622s  rc=124  =====
+
+signal (15): Terminated
+in expression starting at /artifact/benchmark_translations/hybit/hmm_second_order_n08.jl:28
+cuddUniqueInter at /workspace/srcdir/cudd-3.0.0/cudd/cuddTable.c:1166
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1062
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1047
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1047
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1047
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1051
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1051
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1051
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1047
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1047
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1047
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1051
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1051
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1047
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1051
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1047
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1051
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1047
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1047
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1047
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1047
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1051
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1047
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1047
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1051
+cuddBddAndRecur at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:1051
+Cudd_bddAnd at /workspace/srcdir/cudd-3.0.0/cudd/cuddBddIte.c:323
+Cudd_bddAnd at /opt/CUDD.jl/src/gen/libcudd_api.jl:938 [inlined]
+conjoin at /opt/Alea.jl/src/inference/cudd/core.jl:30 [inlined]
+fi at /opt/Alea.jl/src/inference/cudd/compile.jl:108
+jfptr_fi_194696 at /opt/dice.so (unknown line)
+tojlinvoke198544 at /opt/dice.so (unknown line)
+j_fi_46149 at /opt/dice.so (unknown line)
+#7 at /opt/julia-depot/packages/DirectedAcyclicGraphs/2h9W3/src/dags.jl:136 [inlined]
+get! at ./dict.jl:481
+foldup at /opt/julia-depot/packages/DirectedAcyclicGraphs/2h9W3/src/dags.jl:133 [inlined]
+callback at /opt/julia-depot/packages/DirectedAcyclicGraphs/2h9W3/src/dags.jl:135
+jfptr_callback_190765 at /opt/dice.so (unknown line)
+_jl_invoke at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2377 [inlined]
+ijl_apply_generic at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2559
+fi at /opt/Alea.jl/src/inference/cudd/compile.jl:107
+jfptr_fi_194696 at /opt/dice.so (unknown line)
+tojlinvoke198544 at /opt/dice.so (unknown line)
+j_fi_46149 at /opt/dice.so (unknown line)
+#7 at /opt/julia-depot/packages/DirectedAcyclicGraphs/2h9W3/src/dags.jl:136 [inlined]
+get! at ./dict.jl:481
+foldup at /opt/julia-depot/packages/DirectedAcyclicGraphs/2h9W3/src/dags.jl:133 [inlined]
+callback at /opt/julia-depot/packages/DirectedAcyclicGraphs/2h9W3/src/dags.jl:135
+jfptr_callback_190765 at /opt/dice.so (unknown line)
+_jl_invoke at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2377 [inlined]
+ijl_apply_generic at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2559
+fi at /opt/Alea.jl/src/inference/cudd/compile.jl:116
+jfptr_fi_194688 at /opt/dice.so (unknown line)
+tojlinvoke198545 at /opt/dice.so (unknown line)
+j_fi_46135 at /opt/dice.so (unknown line)
+#7 at /opt/julia-depot/packages/DirectedAcyclicGraphs/2h9W3/src/dags.jl:136 [inlined]
+get! at ./dict.jl:481
+foldup at /opt/julia-depot/packages/DirectedAcyclicGraphs/2h9W3/src/dags.jl:133
+unknown function (ip: 0x400069e0f657)
+_jl_invoke at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2377 [inlined]
+ijl_apply_generic at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2559
+foldup at /opt/julia-depot/packages/DirectedAcyclicGraphs/2h9W3/src/dags.jl:129
+foldup at /opt/julia-depot/packages/DirectedAcyclicGraphs/2h9W3/src/dags.jl:129
+jfptr_foldup_190791 at /opt/dice.so (unknown line)
+_jl_invoke at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2377 [inlined]
+ijl_apply_generic at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2559
+compile_existing at /opt/Alea.jl/src/inference/cudd/compile.jl:134
+#206 at ./none:0 [inlined]
+iterate at ./generator.jl:47 [inlined]
+collect at ./array.jl:787
+compile at /opt/Alea.jl/src/inference/cudd/compile.jl:78
+compile at /opt/Alea.jl/src/inference/cudd/compile.jl:72
+logprob at /opt/Alea.jl/src/inference/cudd/wmc.jl:22
+unknown function (ip: 0x400069e0f53f)
+_jl_invoke at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2377 [inlined]
+ijl_apply_generic at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2559
+pr_impl at /opt/Alea.jl/src/inference/pr.jl:70
+#pr#173 at /opt/Alea.jl/src/inference/inference.jl:31 [inlined]
+pr##kw at /opt/Alea.jl/src/inference/inference.jl:26
+jfptr_prYY.YY.kw_194179 at /opt/dice.so (unknown line)
+_jl_invoke at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2377 [inlined]
+ijl_apply_generic at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2559
+#pr#175 at /opt/Alea.jl/src/inference/inference.jl:43
+_jl_invoke at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2377 [inlined]
+ijl_apply_generic at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2559
+jl_apply at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/julia.h:1843 [inlined]
+do_apply at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/builtins.c:730
+pr##kw at /opt/Alea.jl/src/inference/inference.jl:39
+_jl_invoke at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2377 [inlined]
+ijl_apply_generic at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2559
+jl_apply at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/julia.h:1843 [inlined]
+do_apply at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/builtins.c:730
+#expectation#69 at /opt/Alea.jl/src/dist/number/int.jl:77
+expectation##kw at /opt/Alea.jl/src/dist/number/int.jl:76 [inlined]
+#expectation#73 at /opt/Alea.jl/src/dist/number/fix.jl:70
+expectation##kw at /opt/Alea.jl/src/dist/number/fix.jl:69
+unknown function (ip: 0x400069e0b5d7)
+_jl_invoke at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2377 [inlined]
+ijl_apply_generic at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2559
+#expectation#191 at /opt/Alea.jl/src/inference/inference.jl:116
+expectation at /opt/Alea.jl/src/inference/inference.jl:112
+jfptr_expectation_194360 at /opt/dice.so (unknown line)
+_jl_invoke at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2377 [inlined]
+ijl_apply_generic at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2559
+jl_apply at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/julia.h:1843 [inlined]
+do_call at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/interpreter.c:126
+eval_value at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/interpreter.c:215
+eval_body at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/interpreter.c:467
+jl_interpret_toplevel_thunk at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/interpreter.c:750
+jl_toplevel_eval_flex at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/toplevel.c:906
+jl_toplevel_eval_flex at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/toplevel.c:850
+ijl_toplevel_eval_in at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/toplevel.c:965
+eval at ./boot.jl:368 [inlined]
+include_string at ./loading.jl:1428
+_jl_invoke at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2377 [inlined]
+ijl_apply_generic at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2559
+_include at ./loading.jl:1488
+include at ./Base.jl:419
+jfptr_include_64257 at /opt/dice.so (unknown line)
+_jl_invoke at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2377 [inlined]
+ijl_apply_generic at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2559
+exec_options at ./client.jl:303
+_start at ./client.jl:522
+jfptr__start_62788 at /opt/dice.so (unknown line)
+_jl_invoke at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2377 [inlined]
+ijl_apply_generic at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/gf.c:2559
+jl_apply at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/julia.h:1843 [inlined]
+true_main at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/jlapi.c:575
+jl_repl_entrypoint at /cache/build/default-armageddon-4/julialang/julia-release-1-dot-8/src/jlapi.c:719
+main at julia (unknown line)
+unknown function (ip: 0x40002d0073ff)
+__libc_start_main at /lib/aarch64-linux-gnu/libc.so.6 (unknown line)
+unknown function (ip: 0x4009ab)
+unknown function (ip: 0x4009ab)
+unknown function (ip: (nil))
+Allocations: 41604210 (Pool: 41597043; Big: 7167); GC: 46

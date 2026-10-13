@@ -1,0 +1,4 @@
+run dir : /results/reduced_20261010_004546
+families: ['sir_model', 'hmm_first_order', 'secret_ballot']
+wrote   : /results/reduced_20261010_004546/analysis/pluck_stats.tex
+wrote   : /results/reduced_20261010_004546/analysis/pluck_stats_full.tex (91 program rows)

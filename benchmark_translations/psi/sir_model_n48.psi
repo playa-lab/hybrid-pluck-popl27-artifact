@@ -1,0 +1,20 @@
+def main() {
+    H := [0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1];
+
+    rec := beta(1, 1);
+    inf := beta(1, 1);
+    bas := beta(0.2, 1);
+    sym := beta(1, 1);
+
+    for r in [0..4) {
+        state := 0;
+        for n in [0..12) {
+            pobs := if state == 1 { sym } else { bas };
+            observe(flip(pobs) == (H[12*r + n] == 1));
+            state = if state == 1 { (if flip(rec) { 0 } else { 1 }) }
+                    else          { (if flip(inf) { 1 } else { 0 }) };
+        }
+    }
+
+    return Expectation(inf);
+}

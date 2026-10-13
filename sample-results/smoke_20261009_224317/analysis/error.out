@@ -1,0 +1,18 @@
+criterion: p75-error  (REL_ERR below; error.csv has all spread stats)
+
+PROGRAM                  BACKEND   SETTING          EXACT     APPROX    ABS_ERR   REL_ERR   N
+--------------------------------------------------------------------------------------------
+changepoint_coal_k1      hybit     -                3.026      3.021   0.004305   0.00142   1
+changepoint_coal_k1      pluck     -                3.026      3.026          0         0   1
+changepoint_coal_k1      psi       -                3.026        nan        nan       nan   1
+changepoint_coal_k1      siren     p100             3.026      3.012    0.01337   0.00442   1
+changepoint_coal_k1      siren     p400             3.026      3.021   0.004916   0.00162   1
+changepoint_coal_k1      slicstan  s250             3.026      3.082    0.05634    0.0186   1
+changepoint_coal_k1      slicstan  s500             3.026      3.183     0.1573     0.052   1
+changepoint_coal_k1      turing    p8_i50           3.026      3.239     0.2132    0.0705   1
+changepoint_coal_k1      turing    p16_i100         3.026      2.987    0.03823    0.0126   1
+coinBias                 hybit     -               0.4167     0.4158  0.0008239   0.00198   1
+coinBias                 pluck     -               0.4167     0.4167          0         0   1
+coinBias                 psi       -               0.4167     0.4167          0         0   1
+
+wrote /results/smoke_20261009_224317/analysis/error.csv  (12 rows)

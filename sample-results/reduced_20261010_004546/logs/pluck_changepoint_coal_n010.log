@@ -1,0 +1,57 @@
+===== ok  wall=0.1094s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 4
+continuous latents (Beta/Gaussian/…) : 515
+BDD vars allocated (discrete bits)    : 514
+BDD recursive calls (compile work)    : 174550
+BDD guard nodes  : sum=1435  max=926  mean=358
+SPN nodes (TREE) : sum=595  max=421  mean=148
+SPN nodes (DAG)  : per-world-max=288  all-worlds-unique=391  intern-table=2885
+SPN leaf nodes   : sum=463  (max sum-arity=1, max prod-arity=84)
+posterior mixture components (total)  : 130
+time (s): parse=0.0001  symbolic-exec=0.0301  wmc=0.0041  posterior=0.0008  flatten=0.0000  display/naming=0.0001  total=0.0353
+===================
+inference_seconds: 0.03531779
+num-changepoints:
+  0  0.4891778814870776
+  1  0.25090805006380673
+  2  0.16664270528807018
+  3  0.09327136316104585
+===== ok  wall=0.1062s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 4
+continuous latents (Beta/Gaussian/…) : 515
+BDD vars allocated (discrete bits)    : 514
+BDD recursive calls (compile work)    : 174550
+BDD guard nodes  : sum=1435  max=926  mean=358
+SPN nodes (TREE) : sum=595  max=421  mean=148
+SPN nodes (DAG)  : per-world-max=288  all-worlds-unique=391  intern-table=2885
+SPN leaf nodes   : sum=463  (max sum-arity=1, max prod-arity=84)
+posterior mixture components (total)  : 130
+time (s): parse=0.0001  symbolic-exec=0.0258  wmc=0.0021  posterior=0.0007  flatten=0.0000  display/naming=0.0001  total=0.0287
+===================
+inference_seconds: 0.02871183
+num-changepoints:
+  0  0.4891778814870776
+  1  0.25090805006380673
+  2  0.16664270528807018
+  3  0.09327136316104585
+===== ok  wall=0.1091s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 4
+continuous latents (Beta/Gaussian/…) : 515
+BDD vars allocated (discrete bits)    : 514
+BDD recursive calls (compile work)    : 174550
+BDD guard nodes  : sum=1435  max=926  mean=358
+SPN nodes (TREE) : sum=595  max=421  mean=148
+SPN nodes (DAG)  : per-world-max=288  all-worlds-unique=391  intern-table=2885
+SPN leaf nodes   : sum=463  (max sum-arity=1, max prod-arity=84)
+posterior mixture components (total)  : 130
+time (s): parse=0.0001  symbolic-exec=0.0317  wmc=0.0028  posterior=0.0008  flatten=0.0000  display/naming=0.0001  total=0.0354
+===================
+inference_seconds: 0.03544421
+num-changepoints:
+  0  0.4891778814870776
+  1  0.25090805006380673
+  2  0.16664270528807018
+  3  0.09327136316104585

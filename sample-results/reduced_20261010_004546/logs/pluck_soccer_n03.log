@@ -1,0 +1,51 @@
+===== ok  wall=0.1254s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 64
+BDD vars allocated (discrete bits)    : 66
+BDD recursive calls (compile work)    : 21866
+BDD guard nodes  : sum=302  max=192  mean=151
+SPN nodes (TREE) : sum=137  max=91  mean=68
+SPN nodes (DAG)  : per-world-max=70  all-worlds-unique=96  intern-table=823
+SPN leaf nodes   : sum=108  (max sum-arity=1, max prod-arity=18)
+posterior mixture components (total)  : 27
+time (s): parse=0.0007  symbolic-exec=0.0107  wmc=0.0009  posterior=0.0002  flatten=0.0000  display/naming=0.0000  total=0.0124
+===================
+inference_seconds: 0.01240504
+soccer-T0-identity:
+  True  0.7251309889085983
+  False  0.2748690110914033
+===== ok  wall=0.1181s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 64
+BDD vars allocated (discrete bits)    : 66
+BDD recursive calls (compile work)    : 21866
+BDD guard nodes  : sum=302  max=192  mean=151
+SPN nodes (TREE) : sum=137  max=91  mean=68
+SPN nodes (DAG)  : per-world-max=70  all-worlds-unique=96  intern-table=823
+SPN leaf nodes   : sum=108  (max sum-arity=1, max prod-arity=18)
+posterior mixture components (total)  : 27
+time (s): parse=0.0003  symbolic-exec=0.0127  wmc=0.0012  posterior=0.0003  flatten=0.0000  display/naming=0.0000  total=0.0146
+===================
+inference_seconds: 0.01455850
+soccer-T0-identity:
+  True  0.7251309889085983
+  False  0.2748690110914033
+===== ok  wall=0.1853s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 64
+BDD vars allocated (discrete bits)    : 66
+BDD recursive calls (compile work)    : 21866
+BDD guard nodes  : sum=302  max=192  mean=151
+SPN nodes (TREE) : sum=137  max=91  mean=68
+SPN nodes (DAG)  : per-world-max=70  all-worlds-unique=96  intern-table=823
+SPN leaf nodes   : sum=108  (max sum-arity=1, max prod-arity=18)
+posterior mixture components (total)  : 27
+time (s): parse=0.0001  symbolic-exec=0.0047  wmc=0.0012  posterior=0.0003  flatten=0.0000  display/naming=0.0000  total=0.0063
+===================
+inference_seconds: 0.00632492
+soccer-T0-identity:
+  True  0.7251309889085983
+  False  0.2748690110914033

@@ -1,0 +1,51 @@
+===== ok  wall=0.1217s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 0
+BDD vars allocated (discrete bits)    : 200
+BDD recursive calls (compile work)    : 69390
+BDD guard nodes  : sum=400  max=200  mean=200
+SPN nodes (TREE) : sum=2  max=1  mean=1
+SPN nodes (DAG)  : per-world-max=1  all-worlds-unique=1  intern-table=1
+SPN leaf nodes   : sum=0  (max sum-arity=0, max prod-arity=0)
+posterior mixture components (total)  : 2
+time (s): parse=0.0000  symbolic-exec=0.0195  wmc=0.0001  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0196
+===================
+inference_seconds: 0.01960346
+network-100:
+  True  0.9950123548119842
+  False  0.004987645188015835
+===== ok  wall=0.1136s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 0
+BDD vars allocated (discrete bits)    : 200
+BDD recursive calls (compile work)    : 69390
+BDD guard nodes  : sum=400  max=200  mean=200
+SPN nodes (TREE) : sum=2  max=1  mean=1
+SPN nodes (DAG)  : per-world-max=1  all-worlds-unique=1  intern-table=1
+SPN leaf nodes   : sum=0  (max sum-arity=0, max prod-arity=0)
+posterior mixture components (total)  : 2
+time (s): parse=0.0000  symbolic-exec=0.0338  wmc=0.0001  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0340
+===================
+inference_seconds: 0.03399684
+network-100:
+  True  0.9950123548119842
+  False  0.004987645188015835
+===== ok  wall=0.1269s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 0
+BDD vars allocated (discrete bits)    : 200
+BDD recursive calls (compile work)    : 69390
+BDD guard nodes  : sum=400  max=200  mean=200
+SPN nodes (TREE) : sum=2  max=1  mean=1
+SPN nodes (DAG)  : per-world-max=1  all-worlds-unique=1  intern-table=1
+SPN leaf nodes   : sum=0  (max sum-arity=0, max prod-arity=0)
+posterior mixture components (total)  : 2
+time (s): parse=0.0000  symbolic-exec=0.0230  wmc=0.0001  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0231
+===================
+inference_seconds: 0.02314841
+network-100:
+  True  0.9950123548119842
+  False  0.004987645188015835

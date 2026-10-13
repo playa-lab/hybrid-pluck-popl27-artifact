@@ -1,0 +1,31 @@
+;; Two grading systems. School 1 (chosen w.p. 0.25): GPA is a continuous
+;; 4*Beta(8,2) w.p. 0.95, else a perfect 4.0 w.p. 0.15, else 0.0. School 2
+;; (w.p. 0.75): GPA is 8*Beta(5,5) w.p. 0.99, else 8.0 w.p. 0.1, else 0.0.
+;; We observe the student's GPA == 0.0 and ask which school they're from (n).
+
+;; scale * Beta(a,b) == v   <=>   Beta(a,b) == v/scale
+(define (scaled-beta-eq a b scale v)
+  (prob_close (beta a b) (/. v scale)))
+
+;; Evidence that school 1's GPA equals v.
+(define (gpa1-eq v)
+  (if (flip 0.95)
+      (scaled-beta-eq 8.0 2.0 4.0 v)   ; continuous 4*Beta(8,2)
+      (if (flip 0.15)
+          (close 4.0 v)               ; point mass at 4.0
+          (close 0.0 v))))            ; point mass at 0.0
+
+;; Evidence that school 2's GPA equals v.
+(define (gpa2-eq v)
+  (if (flip 0.99)
+      (scaled-beta-eq 5.0 5.0 8.0 v)   ; continuous 8*Beta(5,5)
+      (if (flip 0.1)
+          (close 8.0 v)               ; point mass at 8.0
+          (close 0.0 v))))            ; point mass at 0.0
+
+(define observed-gpa 0.0)
+
+(query GPA
+  (let ((n (flip 0.25)))
+    (Posterior n
+      (if n (gpa1-eq observed-gpa) (gpa2-eq observed-gpa)))))

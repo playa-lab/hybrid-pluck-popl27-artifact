@@ -1,0 +1,265 @@
+
+
+
+val draw_k = fun () ->
+  let sample a <- bernoulli(0.36363636363636365) in
+  if a then 0.0
+  else (let sample b <- bernoulli(0.5714285714285714) in
+    if b then 1.0
+    else (let sample c <- bernoulli(0.6666666666666666) in
+      if c then 2.0 else 3.0))
+in
+let symbolic h0 <- gamma(2.0, 1.0) in
+let symbolic h1 <- gamma(2.0, 1.0) in
+let symbolic h2 <- gamma(2.0, 1.0) in
+let symbolic h3 <- gamma(2.0, 1.0) in
+let kf = draw_k() in
+let () = observe(poisson(h0), 4) in
+let kl0 = kf in
+let s0 = 0 in
+let sample cp1 <- bernoulli(kl0 / 49.0) in
+let kl1 = kl0 - (if cp1 then 1.0 else 0.0) in
+let s1 = s0 + (if cp1 then 1 else 0) in
+let s = s1 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 5) in
+let sample cp2 <- bernoulli(kl1 / 48.0) in
+let kl2 = kl1 - (if cp2 then 1.0 else 0.0) in
+let s2 = s1 + (if cp2 then 1 else 0) in
+let s = s2 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 4) in
+let sample cp3 <- bernoulli(kl2 / 47.0) in
+let kl3 = kl2 - (if cp3 then 1.0 else 0.0) in
+let s3 = s2 + (if cp3 then 1 else 0) in
+let s = s3 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 0) in
+let sample cp4 <- bernoulli(kl3 / 46.0) in
+let kl4 = kl3 - (if cp4 then 1.0 else 0.0) in
+let s4 = s3 + (if cp4 then 1 else 0) in
+let s = s4 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 1) in
+let sample cp5 <- bernoulli(kl4 / 45.0) in
+let kl5 = kl4 - (if cp5 then 1.0 else 0.0) in
+let s5 = s4 + (if cp5 then 1 else 0) in
+let s = s5 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 4) in
+let sample cp6 <- bernoulli(kl5 / 44.0) in
+let kl6 = kl5 - (if cp6 then 1.0 else 0.0) in
+let s6 = s5 + (if cp6 then 1 else 0) in
+let s = s6 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 3) in
+let sample cp7 <- bernoulli(kl6 / 43.0) in
+let kl7 = kl6 - (if cp7 then 1.0 else 0.0) in
+let s7 = s6 + (if cp7 then 1 else 0) in
+let s = s7 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 4) in
+let sample cp8 <- bernoulli(kl7 / 42.0) in
+let kl8 = kl7 - (if cp8 then 1.0 else 0.0) in
+let s8 = s7 + (if cp8 then 1 else 0) in
+let s = s8 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 0) in
+let sample cp9 <- bernoulli(kl8 / 41.0) in
+let kl9 = kl8 - (if cp9 then 1.0 else 0.0) in
+let s9 = s8 + (if cp9 then 1 else 0) in
+let s = s9 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 6) in
+let sample cp10 <- bernoulli(kl9 / 40.0) in
+let kl10 = kl9 - (if cp10 then 1.0 else 0.0) in
+let s10 = s9 + (if cp10 then 1 else 0) in
+let s = s10 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 3) in
+let sample cp11 <- bernoulli(kl10 / 39.0) in
+let kl11 = kl10 - (if cp11 then 1.0 else 0.0) in
+let s11 = s10 + (if cp11 then 1 else 0) in
+let s = s11 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 3) in
+let sample cp12 <- bernoulli(kl11 / 38.0) in
+let kl12 = kl11 - (if cp12 then 1.0 else 0.0) in
+let s12 = s11 + (if cp12 then 1 else 0) in
+let s = s12 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 4) in
+let sample cp13 <- bernoulli(kl12 / 37.0) in
+let kl13 = kl12 - (if cp13 then 1.0 else 0.0) in
+let s13 = s12 + (if cp13 then 1 else 0) in
+let s = s13 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 0) in
+let sample cp14 <- bernoulli(kl13 / 36.0) in
+let kl14 = kl13 - (if cp14 then 1.0 else 0.0) in
+let s14 = s13 + (if cp14 then 1 else 0) in
+let s = s14 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 2) in
+let sample cp15 <- bernoulli(kl14 / 35.0) in
+let kl15 = kl14 - (if cp15 then 1.0 else 0.0) in
+let s15 = s14 + (if cp15 then 1 else 0) in
+let s = s15 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 6) in
+let sample cp16 <- bernoulli(kl15 / 34.0) in
+let kl16 = kl15 - (if cp16 then 1.0 else 0.0) in
+let s16 = s15 + (if cp16 then 1 else 0) in
+let s = s16 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 3) in
+let sample cp17 <- bernoulli(kl16 / 33.0) in
+let kl17 = kl16 - (if cp17 then 1.0 else 0.0) in
+let s17 = s16 + (if cp17 then 1 else 0) in
+let s = s17 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 3) in
+let sample cp18 <- bernoulli(kl17 / 32.0) in
+let kl18 = kl17 - (if cp18 then 1.0 else 0.0) in
+let s18 = s17 + (if cp18 then 1 else 0) in
+let s = s18 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 5) in
+let sample cp19 <- bernoulli(kl18 / 31.0) in
+let kl19 = kl18 - (if cp19 then 1.0 else 0.0) in
+let s19 = s18 + (if cp19 then 1 else 0) in
+let s = s19 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 4) in
+let sample cp20 <- bernoulli(kl19 / 30.0) in
+let kl20 = kl19 - (if cp20 then 1.0 else 0.0) in
+let s20 = s19 + (if cp20 then 1 else 0) in
+let s = s20 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 5) in
+let sample cp21 <- bernoulli(kl20 / 29.0) in
+let kl21 = kl20 - (if cp21 then 1.0 else 0.0) in
+let s21 = s20 + (if cp21 then 1 else 0) in
+let s = s21 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 3) in
+let sample cp22 <- bernoulli(kl21 / 28.0) in
+let kl22 = kl21 - (if cp22 then 1.0 else 0.0) in
+let s22 = s21 + (if cp22 then 1 else 0) in
+let s = s22 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 1) in
+let sample cp23 <- bernoulli(kl22 / 27.0) in
+let kl23 = kl22 - (if cp23 then 1.0 else 0.0) in
+let s23 = s22 + (if cp23 then 1 else 0) in
+let s = s23 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 4) in
+let sample cp24 <- bernoulli(kl23 / 26.0) in
+let kl24 = kl23 - (if cp24 then 1.0 else 0.0) in
+let s24 = s23 + (if cp24 then 1 else 0) in
+let s = s24 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 4) in
+let sample cp25 <- bernoulli(kl24 / 25.0) in
+let kl25 = kl24 - (if cp25 then 1.0 else 0.0) in
+let s25 = s24 + (if cp25 then 1 else 0) in
+let s = s25 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 1) in
+let sample cp26 <- bernoulli(kl25 / 24.0) in
+let kl26 = kl25 - (if cp26 then 1.0 else 0.0) in
+let s26 = s25 + (if cp26 then 1 else 0) in
+let s = s26 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 5) in
+let sample cp27 <- bernoulli(kl26 / 23.0) in
+let kl27 = kl26 - (if cp27 then 1.0 else 0.0) in
+let s27 = s26 + (if cp27 then 1 else 0) in
+let s = s27 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 5) in
+let sample cp28 <- bernoulli(kl27 / 22.0) in
+let kl28 = kl27 - (if cp28 then 1.0 else 0.0) in
+let s28 = s27 + (if cp28 then 1 else 0) in
+let s = s28 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 3) in
+let sample cp29 <- bernoulli(kl28 / 21.0) in
+let kl29 = kl28 - (if cp29 then 1.0 else 0.0) in
+let s29 = s28 + (if cp29 then 1 else 0) in
+let s = s29 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 4) in
+let sample cp30 <- bernoulli(kl29 / 20.0) in
+let kl30 = kl29 - (if cp30 then 1.0 else 0.0) in
+let s30 = s29 + (if cp30 then 1 else 0) in
+let s = s30 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 2) in
+let sample cp31 <- bernoulli(kl30 / 19.0) in
+let kl31 = kl30 - (if cp31 then 1.0 else 0.0) in
+let s31 = s30 + (if cp31 then 1 else 0) in
+let s = s31 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 5) in
+let sample cp32 <- bernoulli(kl31 / 18.0) in
+let kl32 = kl31 - (if cp32 then 1.0 else 0.0) in
+let s32 = s31 + (if cp32 then 1 else 0) in
+let s = s32 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 2) in
+let sample cp33 <- bernoulli(kl32 / 17.0) in
+let kl33 = kl32 - (if cp33 then 1.0 else 0.0) in
+let s33 = s32 + (if cp33 then 1 else 0) in
+let s = s33 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 2) in
+let sample cp34 <- bernoulli(kl33 / 16.0) in
+let kl34 = kl33 - (if cp34 then 1.0 else 0.0) in
+let s34 = s33 + (if cp34 then 1 else 0) in
+let s = s34 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 3) in
+let sample cp35 <- bernoulli(kl34 / 15.0) in
+let kl35 = kl34 - (if cp35 then 1.0 else 0.0) in
+let s35 = s34 + (if cp35 then 1 else 0) in
+let s = s35 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 4) in
+let sample cp36 <- bernoulli(kl35 / 14.0) in
+let kl36 = kl35 - (if cp36 then 1.0 else 0.0) in
+let s36 = s35 + (if cp36 then 1 else 0) in
+let s = s36 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 2) in
+let sample cp37 <- bernoulli(kl36 / 13.0) in
+let kl37 = kl36 - (if cp37 then 1.0 else 0.0) in
+let s37 = s36 + (if cp37 then 1 else 0) in
+let s = s37 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 1) in
+let sample cp38 <- bernoulli(kl37 / 12.0) in
+let kl38 = kl37 - (if cp38 then 1.0 else 0.0) in
+let s38 = s37 + (if cp38 then 1 else 0) in
+let s = s38 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 3) in
+let sample cp39 <- bernoulli(kl38 / 11.0) in
+let kl39 = kl38 - (if cp39 then 1.0 else 0.0) in
+let s39 = s38 + (if cp39 then 1 else 0) in
+let s = s39 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 2) in
+let sample cp40 <- bernoulli(kl39 / 10.0) in
+let kl40 = kl39 - (if cp40 then 1.0 else 0.0) in
+let s40 = s39 + (if cp40 then 1 else 0) in
+let s = s40 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 2) in
+let sample cp41 <- bernoulli(kl40 / 9.0) in
+let kl41 = kl40 - (if cp41 then 1.0 else 0.0) in
+let s41 = s40 + (if cp41 then 1 else 0) in
+let s = s41 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 1) in
+let sample cp42 <- bernoulli(kl41 / 8.0) in
+let kl42 = kl41 - (if cp42 then 1.0 else 0.0) in
+let s42 = s41 + (if cp42 then 1 else 0) in
+let s = s42 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 1) in
+let sample cp43 <- bernoulli(kl42 / 7.0) in
+let kl43 = kl42 - (if cp43 then 1.0 else 0.0) in
+let s43 = s42 + (if cp43 then 1 else 0) in
+let s = s43 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 1) in
+let sample cp44 <- bernoulli(kl43 / 6.0) in
+let kl44 = kl43 - (if cp44 then 1.0 else 0.0) in
+let s44 = s43 + (if cp44 then 1 else 0) in
+let s = s44 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 1) in
+let sample cp45 <- bernoulli(kl44 / 5.0) in
+let kl45 = kl44 - (if cp45 then 1.0 else 0.0) in
+let s45 = s44 + (if cp45 then 1 else 0) in
+let s = s45 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 3) in
+let sample cp46 <- bernoulli(kl45 / 4.0) in
+let kl46 = kl45 - (if cp46 then 1.0 else 0.0) in
+let s46 = s45 + (if cp46 then 1 else 0) in
+let s = s46 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 0) in
+let sample cp47 <- bernoulli(kl46 / 3.0) in
+let kl47 = kl46 - (if cp47 then 1.0 else 0.0) in
+let s47 = s46 + (if cp47 then 1 else 0) in
+let s = s47 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 0) in
+let sample cp48 <- bernoulli(kl47 / 2.0) in
+let kl48 = kl47 - (if cp48 then 1.0 else 0.0) in
+let s48 = s47 + (if cp48 then 1 else 0) in
+let s = s48 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 1) in
+let sample cp49 <- bernoulli(kl48 / 1.0) in
+let kl49 = kl48 - (if cp49 then 1.0 else 0.0) in
+let s49 = s48 + (if cp49 then 1 else 0) in
+let s = s49 in
+let () = observe(poisson(if s = 0 then h0 else (if s = 1 then h1 else (if s = 2 then h2 else h3))), 0) in
+s49

@@ -1,0 +1,14 @@
+===== ok  wall=281.5087s  rc=0  =====
+RESULT: 0.6115107913666613
+(bits, pieces, p[1.0], t.time) = (8, 64, 0.6115107913666613, 0.675183574000016)
+===== TIMEOUT  wall=300.3922s  rc=124  =====
+
+signal (15): Terminated
+in expression starting at /artifact/benchmark_translations/hybit/GPA.jl:17
+_ZN4llvm10BasicBlock15eraseFromParentEv at /opt/julia/bin/../lib/julia/libLLVM-13jl.so (unknown line)
+_ZN4llvm10BasicBlock15eraseFromParentEv at /opt/julia/bin/../lib/julia/libLLVM-13jl.so (unknown line)
+unknown function (ip: (nil))
+Allocations: 516071436 (Pool: 516065510; Big: 5926); GC: 422
+===== ok  wall=270.5568s  rc=0  =====
+RESULT: 0.6115107913666613
+(bits, pieces, p[1.0], t.time) = (8, 64, 0.6115107913666613, 0.5611826640000004)

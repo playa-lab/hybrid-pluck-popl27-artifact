@@ -1,0 +1,28 @@
+def main() {
+    xs := [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0];
+    ys := [1.3998703068665284, 6.235613006596935, 14.930938208255952, 27.76621455275837, 44.63428250334452, 65.39877806912918, 90.16345175668341, 118.94703945597995, 151.7909055407857, 188.5411680368732];
+
+    // variable-degree polynomial: k = number of active coefficients in {0..5}
+    k := categorical([0.3, 0.21, 0.147, 0.1029, 0.07203, 0.16807]);
+    c := [gauss(0, 10000), gauss(0, 10000), gauss(0, 10000), gauss(0, 10000), gauss(0, 10000)];
+
+    // exactly one outlier, uniform over the 10 points
+    oi := categorical([0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]);
+
+    for j in [0..10) {
+        x := xs[j];
+        // Horner-equivalent sum_{m<k} c_m x^m
+        mean := 0.0;
+        if k > 0 { mean = mean + c[0]; }
+        if k > 1 { mean = mean + c[1]*x; }
+        if k > 2 { mean = mean + c[2]*x*x; }
+        if k > 3 { mean = mean + c[3]*x*x*x; }
+        if k > 4 { mean = mean + c[4]*x*x*x*x; }
+        if oi == j {
+            cobserve(gauss(0, 40000), ys[j]);       // outlier: N(0,200)
+        } else {
+            cobserve(gauss(mean, 1), ys[j]);         // inlier: N(poly(x),1)
+        }
+    }
+    return (oi == 0);                                // is data point 0 the outlier?
+}

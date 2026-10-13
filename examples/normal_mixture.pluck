@@ -1,0 +1,23 @@
+;;   theta ~ Uniform(0,1)        ; mixing weight  (= Beta(1,1), the conjugate form)
+;;   mu1   ~ N(-10, 1)           ; shared component means
+;;   mu2   ~ N( 10, 1)
+;;   for each y:  z ~ Bernoulli(theta);  y ~ N(mu_z, 1)
+;;   query: posterior of theta
+;;
+
+(define ys [10.0787617156523, -9.51866467444093, 9.73922587306449, 11.5662681883816,
+            9.62798489000074, -9.60265090119919, 8.90114345923455, 10.866328444034,
+            10.5347883361026, 8.60577222463504, -10.625227428575, -9.08615131315038,
+            -8.99280046532217, 9.43533905966944, 8.92696803962787, 9.642301288006])
+
+(define (points-obs theta mu1 mu2 os)
+  (match os
+    Nil => (True)
+    Cons y os => (and (real=? (if (flip theta) (normal mu1 1.0) (normal mu2 1.0)) y)
+                      (points-obs theta mu1 mu2 os))))
+
+(query normal_mixture
+  (let ((theta (beta 1.0 1.0))
+        (mu1   (normal -10.0 1.0))
+        (mu2   (normal 10.0 1.0)))
+    (Posterior theta (points-obs theta mu1 mu2 ys))))

@@ -1,0 +1,16 @@
+; Loss-free used_information P6: pc-dependent world SELECTION at a force
+; site must be recorded in used_information. The first if widens the shared
+; entry's cache to [1.0@b, 2.0@~b] (used = true) through s1. s2's first
+; force then HITS that multi-world entry under pc = b; the pc-filter picks
+; 1.0, so s2's own entry must carry used = b (the selected world's guard),
+; not the entry's blanket true — else s2 goes stale on the ~b branch.
+; Correct: b: 1+1 = 2; ~b: 12+12 = 24. Stale s1+s2 (HEAD): 2 / 22.
+; Stale s2 only (threading without the guard fold): 2 / 23.
+(query
+ (let ((b (flip 0.5))
+       (m {(if b 1.0 2.0)})
+       (s1 (sum m))
+       (s2 (sum m)))
+   (Posterior (+. (if b s1 (+. s1 10.0))
+                  (if b s2 (+. s2 10.0)))
+              True)))

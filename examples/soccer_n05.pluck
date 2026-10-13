@@ -1,0 +1,17 @@
+(include "examples/shared/soccer.pluck")
+
+(define team-names ["T0" "T1" "T2" "T3" "T4"])
+
+(define scores
+  [(Game 0 1 @2 @0) (Game 0 2 @0 @1) (Game 0 3 @5 @1) (Game 0 4 @1 @1) (Game 1 0 @2 @1)
+   (Game 1 2 @0 @1) (Game 1 3 @0 @2) (Game 1 4 @0 @0) (Game 2 0 @2 @1) (Game 2 1 @0 @1)
+   (Game 2 3 @3 @0) (Game 2 4 @4 @0) (Game 3 0 @3 @3) (Game 3 1 @0 @1) (Game 3 2 @2 @2)
+   (Game 3 4 @1 @1) (Game 4 0 @1 @1) (Game 4 1 @0 @0) (Game 4 2 @0 @0) (Game 4 3 @3 @1)])
+
+;; Posterior over team T0's identity label ("defend"/"balanced"/"attack"), given
+;; every match score -- a 3-way categorical
+(query soccer-T0-identity
+  (let ((theta (dirichlet 1.0 1.0 1.0))
+        (teams (make-teams theta (length team-names))))
+    (Posterior (== (team-id (index 0 teams)) 2)
+               (observe-scores teams scores))))

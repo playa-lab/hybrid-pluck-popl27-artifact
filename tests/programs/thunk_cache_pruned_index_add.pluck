@@ -1,0 +1,8 @@
+; Loss-free used_information P2: same shape as thunk_cache_pruned_sum but
+; the branch-pruned entry thunk reaches `force_entry_to_affine` through
+; cell_op_affine's Add-0 short-circuit (x + 0.0 forces x directly), via a
+; `vector_index` that returns the entry thunk as a scalar value.
+(query
+ (let ((b (flip 0.5))
+       (s (+. (vector_index {(if b 1.0 2.0)} @0) 0.0)))
+   (Posterior (if b s (+. s 10.0)) True)))

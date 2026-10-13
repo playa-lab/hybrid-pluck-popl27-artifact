@@ -1,0 +1,24 @@
+===== ok  wall=104.2071s  rc=0  =====
+pcfg_ambiguous (Turing PG)  n_sentences=20  particles=16  iters=100
+recovered production probabilities (posterior mean):
+  NP  [Det N=0.408, Det N PP=0.592]
+  VP  [V NP=0.657, V NP PP=0.343]
+  N   [dog=0.169, cat=0.831]
+RESULT: 0.656869
+inference_seconds: 87.360
+===== ok  wall=59.8744s  rc=0  =====
+pcfg_ambiguous (Turing PG)  n_sentences=20  particles=16  iters=100
+recovered production probabilities (posterior mean):
+  NP  [Det N=0.745, Det N PP=0.255]
+  VP  [V NP=0.478, V NP PP=0.522]
+  N   [dog=0.868, cat=0.132]
+RESULT: 0.478118
+inference_seconds: 43.479
+===== ok  wall=63.5796s  rc=0  =====
+pcfg_ambiguous (Turing PG)  n_sentences=20  particles=16  iters=100
+recovered production probabilities (posterior mean):
+  NP  [Det N=0.975, Det N PP=0.025]
+  VP  [V NP=0.605, V NP PP=0.395]
+  N   [dog=0.749, cat=0.251]
+RESULT: 0.604624
+inference_seconds: 46.420

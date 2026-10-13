@@ -1,0 +1,42 @@
+===== ok  wall=18.6534s  rc=0  =====
+outliers (Turing PG)  N=8  particles=8  iters=50
+recovered line: alpha= 1.90  beta=-0.07   (true alpha=2, beta=1)
+RESULT: 1.897219
+P(outlier) per point (* = planted):
+  x= 1.0   P(outlier)=1.00
+  x= 2.0   P(outlier)=0.56
+  x= 3.0   P(outlier)=0.54
+  x= 4.0*  P(outlier)=0.92
+  x= 5.0   P(outlier)=1.00
+  x= 6.0   P(outlier)=1.00
+  x= 7.0   P(outlier)=1.00
+  x= 8.0   P(outlier)=1.00
+inference_seconds: 0.772
+===== ok  wall=22.2420s  rc=0  =====
+outliers (Turing PG)  N=8  particles=8  iters=50
+recovered line: alpha= 1.92  beta= 2.03   (true alpha=2, beta=1)
+RESULT: 1.924513
+P(outlier) per point (* = planted):
+  x= 1.0   P(outlier)=0.20
+  x= 2.0   P(outlier)=0.22
+  x= 3.0   P(outlier)=0.20
+  x= 4.0*  P(outlier)=1.00
+  x= 5.0   P(outlier)=0.20
+  x= 6.0   P(outlier)=0.26
+  x= 7.0   P(outlier)=0.24
+  x= 8.0   P(outlier)=0.20
+inference_seconds: 0.959
+===== ok  wall=22.3935s  rc=0  =====
+outliers (Turing PG)  N=8  particles=8  iters=50
+recovered line: alpha= 2.37  beta=-3.75   (true alpha=2, beta=1)
+RESULT: 2.369302
+P(outlier) per point (* = planted):
+  x= 1.0   P(outlier)=0.38
+  x= 2.0   P(outlier)=0.40
+  x= 3.0   P(outlier)=0.42
+  x= 4.0*  P(outlier)=1.00
+  x= 5.0   P(outlier)=0.58
+  x= 6.0   P(outlier)=0.60
+  x= 7.0   P(outlier)=0.76
+  x= 8.0   P(outlier)=0.76
+inference_seconds: 0.914

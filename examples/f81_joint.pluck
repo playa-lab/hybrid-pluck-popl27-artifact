@@ -1,0 +1,26 @@
+(define alignment
+  [ [@2, @0, @1, @1],
+    [@3, @3, @3, @3],
+    [@0, @0, @2, @2],
+    [@0, @2, @0, @1] ])
+
+(include "examples/shared/f81_joint.pluck")
+
+;; return both latents -> pluck reports the posterior of each (Beta + Dirichlet)
+;; --- Read results from the per-parameter MARGINALS (clean, fully displayed): ---
+
+(query rate-only          ;; posterior of the rate (retention prob p); collapses small
+  (let ((p (beta 1.0 1.0)) (pi (dirichlet 1.0 1.0 1.0 1.0)))
+    (Posterior p (sites-match p pi alignment))))
+
+(query freqs-only         ;; posterior of the base frequencies pi
+  (let ((p (beta 1.0 1.0)) (pi (dirichlet 1.0 1.0 1.0 1.0)))
+    (Posterior pi (sites-match p pi alignment))))
+
+;; --- The JOINT posterior: BOTH at once. This is the slow, explosive one -- the
+;;     Beta x Dirichlet mixture has thousands of components (4 sites -> ~12k;
+;;     grows ~3x per added site), and pluck truncates the printout, so use the
+;;     marginals above to read means. Still exact. ---
+(query rate-and-frequencies
+  (let ((p (beta 1.0 1.0)) (pi (dirichlet 1.0 1.0 1.0 1.0)))
+    (Posterior (Pair p pi) (sites-match p pi alignment))))

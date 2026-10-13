@@ -1,0 +1,30 @@
+
+
+
+
+data matrix[13, 4] X;
+data vector[13] y;
+
+int<2> g1 ~ bernoulli(0.5);
+int<2> g2 ~ bernoulli(0.5);
+int<2> g3 ~ bernoulli(0.5);
+int<2> g4 ~ bernoulli(0.5);
+real bs1 ~ normal(0, 10);
+real bs2 ~ normal(0, 10);
+real bs3 ~ normal(0, 10);
+real bs4 ~ normal(0, 10);
+real b0 ~ normal(0, 100);
+
+y[1] ~ normal(b0 + g1 * bs1 * X[1][1] + g2 * bs2 * X[1][2] + g3 * bs3 * X[1][3] + g4 * bs4 * X[1][4], 2.5);
+y[2] ~ normal(b0 + g1 * bs1 * X[2][1] + g2 * bs2 * X[2][2] + g3 * bs3 * X[2][3] + g4 * bs4 * X[2][4], 2.5);
+y[3] ~ normal(b0 + g1 * bs1 * X[3][1] + g2 * bs2 * X[3][2] + g3 * bs3 * X[3][3] + g4 * bs4 * X[3][4], 2.5);
+y[4] ~ normal(b0 + g1 * bs1 * X[4][1] + g2 * bs2 * X[4][2] + g3 * bs3 * X[4][3] + g4 * bs4 * X[4][4], 2.5);
+y[5] ~ normal(b0 + g1 * bs1 * X[5][1] + g2 * bs2 * X[5][2] + g3 * bs3 * X[5][3] + g4 * bs4 * X[5][4], 2.5);
+y[6] ~ normal(b0 + g1 * bs1 * X[6][1] + g2 * bs2 * X[6][2] + g3 * bs3 * X[6][3] + g4 * bs4 * X[6][4], 2.5);
+y[7] ~ normal(b0 + g1 * bs1 * X[7][1] + g2 * bs2 * X[7][2] + g3 * bs3 * X[7][3] + g4 * bs4 * X[7][4], 2.5);
+y[8] ~ normal(b0 + g1 * bs1 * X[8][1] + g2 * bs2 * X[8][2] + g3 * bs3 * X[8][3] + g4 * bs4 * X[8][4], 2.5);
+y[9] ~ normal(b0 + g1 * bs1 * X[9][1] + g2 * bs2 * X[9][2] + g3 * bs3 * X[9][3] + g4 * bs4 * X[9][4], 2.5);
+y[10] ~ normal(b0 + g1 * bs1 * X[10][1] + g2 * bs2 * X[10][2] + g3 * bs3 * X[10][3] + g4 * bs4 * X[10][4], 2.5);
+y[11] ~ normal(b0 + g1 * bs1 * X[11][1] + g2 * bs2 * X[11][2] + g3 * bs3 * X[11][3] + g4 * bs4 * X[11][4], 2.5);
+y[12] ~ normal(b0 + g1 * bs1 * X[12][1] + g2 * bs2 * X[12][2] + g3 * bs3 * X[12][3] + g4 * bs4 * X[12][4], 2.5);
+y[13] ~ normal(b0 + g1 * bs1 * X[13][1] + g2 * bs2 * X[13][2] + g3 * bs3 * X[13][3] + g4 * bs4 * X[13][4], 2.5);

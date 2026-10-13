@@ -1,0 +1,36 @@
+===== ok  wall=21.7356s  rc=0  =====
+RESULT: 0.020000
+soccer (Turing PG)  T=7  particles=8  iters=50
+per-team identity posterior [defend, balanced, attack]  (MAP vs true):
+  T0  [0.00, 0.98, 0.02]  MAP=balanced true=attack
+  T1  [0.20, 0.78, 0.02]  MAP=balanced true=defend
+  T2  [0.48, 0.50, 0.02]  MAP=balanced true=balanced
+  T3  [0.00, 0.46, 0.54]  MAP=attack   true=attack
+  T4  [0.20, 0.32, 0.48]  MAP=attack   true=defend
+  T5  [0.04, 0.28, 0.68]  MAP=attack   true=balanced
+  T6  [0.00, 0.30, 0.70]  MAP=attack   true=attack
+inference_seconds: 2.216
+===== ok  wall=22.2536s  rc=0  =====
+RESULT: 0.000000
+soccer (Turing PG)  T=7  particles=8  iters=50
+per-team identity posterior [defend, balanced, attack]  (MAP vs true):
+  T0  [0.20, 0.80, 0.00]  MAP=balanced true=attack
+  T1  [0.48, 0.52, 0.00]  MAP=balanced true=defend
+  T2  [0.18, 0.52, 0.30]  MAP=balanced true=balanced
+  T3  [0.00, 0.50, 0.50]  MAP=balanced true=attack
+  T4  [0.18, 0.80, 0.02]  MAP=balanced true=defend
+  T5  [0.48, 0.52, 0.00]  MAP=balanced true=balanced
+  T6  [0.00, 0.52, 0.48]  MAP=balanced true=attack
+inference_seconds: 3.014
+===== ok  wall=24.1088s  rc=0  =====
+RESULT: 0.980000
+soccer (Turing PG)  T=7  particles=8  iters=50
+per-team identity posterior [defend, balanced, attack]  (MAP vs true):
+  T0  [0.00, 0.02, 0.98]  MAP=attack   true=attack
+  T1  [0.40, 0.02, 0.58]  MAP=attack   true=defend
+  T2  [0.00, 0.02, 0.98]  MAP=attack   true=balanced
+  T3  [0.00, 0.02, 0.98]  MAP=attack   true=attack
+  T4  [0.00, 0.42, 0.58]  MAP=attack   true=defend
+  T5  [0.00, 0.02, 0.98]  MAP=attack   true=balanced
+  T6  [0.00, 0.02, 0.98]  MAP=attack   true=attack
+inference_seconds: 3.197

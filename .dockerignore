@@ -1,0 +1,14 @@
+.git
+**/.git
+.claude
+.vscode
+target
+results
+**/*.bak
+**/__pycache__
+experiments/.venv
+artifact_guidelines.md
+*.tar
+*.tar.gz
+experiments/exact-answer-logs
+sample-results

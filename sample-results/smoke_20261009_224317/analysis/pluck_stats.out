@@ -1,0 +1,4 @@
+run dir : /results/smoke_20261009_224317
+families: ['sir_model', 'hmm_first_order', 'secret_ballot']
+wrote   : /results/smoke_20261009_224317/analysis/pluck_stats.tex
+wrote   : /results/smoke_20261009_224317/analysis/pluck_stats_full.tex (2 program rows)

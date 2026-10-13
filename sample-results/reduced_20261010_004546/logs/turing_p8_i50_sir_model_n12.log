@@ -1,0 +1,15 @@
+===== ok  wall=16.6364s  rc=0  =====
+sir_model (Turing PG)  rows=1  steps=12  particles=8  iters=50
+posterior means: rec=0.422 inf=0.444 bas=0.109 sym=0.540
+RESULT: 0.444091
+inference_seconds: 0.657
+===== ok  wall=15.8733s  rc=0  =====
+sir_model (Turing PG)  rows=1  steps=12  particles=8  iters=50
+posterior means: rec=0.392 inf=0.341 bas=0.061 sym=0.577
+RESULT: 0.341195
+inference_seconds: 0.866
+===== ok  wall=16.0502s  rc=0  =====
+sir_model (Turing PG)  rows=1  steps=12  particles=8  iters=50
+posterior means: rec=0.435 inf=0.480 bas=0.139 sym=0.397
+RESULT: 0.479846
+inference_seconds: 0.799

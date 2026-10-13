@@ -1,0 +1,33 @@
+diff --git a/src/ADD_apply.jl b/src/ADD_apply.jl
+index 12bde6a..4ad2cba 100644
+--- a/src/ADD_apply.jl
++++ b/src/ADD_apply.jl
+@@ -32,7 +32,7 @@ add_apply_func_names = [(:add_plus, :Cudd_addPlus),
+                         (:add_xnor, :Cudd_addXnor),
+                         (:add_log, :Cudd_addLog)]
+ 
+-add_apply_func_ptr_refs = Dict{Function, Ref{Base.CFunction}}()
++add_apply_func_ptr_refs = Dict{Function, Ref{Ptr{Cvoid}}}()
+ 
+ for (name, Cudd_name) in add_apply_func_names
+ 
+@@ -45,11 +45,14 @@ for (name, Cudd_name) in add_apply_func_names
+ 
+     # These Refs must get filled in __init__(). They have names like `add_plus_c`, etc.
+     # They are in a Dict only for easier access in __init__, their binding is also global.
+-    add_apply_func_ptr_refs[func] = @eval const $(Symbol(name, "_c")) = Ref{Base.CFunction}()
++    add_apply_func_ptr_refs[func] = @eval const $(Symbol(name, "_c")) = Ref{Ptr{Cvoid}}(C_NULL)
+ end
+ 
+-function __init__()
+-    for (func, ref) in add_apply_func_ptr_refs
+-        ref[] = @cfunction($func, Ptr{Node}, (Ptr{Manager}, Ptr{Ptr{Node}}, Ptr{Ptr{Node}}))
+-    end
++# Fill the Refs with static (non-closure) C function pointers. Closure
++# cfunctions (`@cfunction($func, ...)`) are not supported on every platform,
++# e.g. aarch64 with Julia 1.8.
++@eval function __init__()
++    $([:($(Symbol(name, "_c"))[] = @cfunction($name, Ptr{Node},
++                                               (Ptr{Manager}, Ptr{Ptr{Node}}, Ptr{Ptr{Node}})))
++       for (name, _) in add_apply_func_names]...)
+ end

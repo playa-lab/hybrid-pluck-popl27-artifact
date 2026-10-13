@@ -1,0 +1,33 @@
+===== ok  wall=12.6153s  rc=0  =====
+polyreg (Turing PG)  particles=16  iters=100
+posterior over polynomial degree:
+  degree 0 (const)    P=0.460
+  degree 1 (linear)   P=0.000
+  degree 2 (quad)     P=0.000
+  degree 3 (cubic)    P=0.000
+  degree 4 (quartic)  P=0.140
+  degree 5 (quintic)  P=0.400
+RESULT: 0.000000
+inference_seconds: 1.716
+===== ok  wall=13.5858s  rc=0  =====
+polyreg (Turing PG)  particles=16  iters=100
+posterior over polynomial degree:
+  degree 0 (const)    P=0.520
+  degree 1 (linear)   P=0.000
+  degree 2 (quad)     P=0.000
+  degree 3 (cubic)    P=0.000
+  degree 4 (quartic)  P=0.480
+  degree 5 (quintic)  P=0.000
+RESULT: 0.000000
+inference_seconds: 2.000
+===== ok  wall=13.3156s  rc=0  =====
+polyreg (Turing PG)  particles=16  iters=100
+posterior over polynomial degree:
+  degree 0 (const)    P=0.120
+  degree 1 (linear)   P=0.000
+  degree 2 (quad)     P=0.880
+  degree 3 (cubic)    P=0.000
+  degree 4 (quartic)  P=0.000
+  degree 5 (quintic)  P=0.000
+RESULT: 0.000000
+inference_seconds: 2.028

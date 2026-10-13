@@ -1,0 +1,39 @@
+
+
+
+val draw_len = fun () ->
+  let sample a <- bernoulli(0.3) in
+  if a then 0
+  else (
+    let sample b <- bernoulli(0.3) in
+    if b then 1
+    else (
+      let sample c <- bernoulli(0.3) in
+      if c then 2
+      else (
+        let sample d <- bernoulli(0.3) in
+        if d then 3
+        else (
+          let sample e <- bernoulli(0.3) in
+          if e then 4
+          else 5))))
+in
+val draw_oidx = fun () -> let sample i <- uniform_int(0, 9) in i in
+let symbolic c0 <- gaussian(0., 10000.0) in
+let symbolic c1 <- gaussian(0., 10000.0) in
+let symbolic c2 <- gaussian(0., 10000.0) in
+let symbolic c3 <- gaussian(0., 10000.0) in
+let symbolic c4 <- gaussian(0., 10000.0) in
+let len = draw_len() in
+let oidx = draw_oidx() in
+let () = observe(gaussian(if (oidx = 0) then 0.0 else ((if 0 < len then c0 * 1.0 else 0.0) + (if 1 < len then c1 * 0.1 else 0.0) + (if 2 < len then c2 * 0.010000000000000002 else 0.0) + (if 3 < len then c3 * 0.0010000000000000002 else 0.0) + (if 4 < len then c4 * 0.00010000000000000002 else 0.0)), if (oidx = 0) then 40000.0 else 1.0), 1.3998703068665284) in
+let () = observe(gaussian(if (oidx = 1) then 0.0 else ((if 0 < len then c0 * 1.0 else 0.0) + (if 1 < len then c1 * 0.2 else 0.0) + (if 2 < len then c2 * 0.04000000000000001 else 0.0) + (if 3 < len then c3 * 0.008000000000000002 else 0.0) + (if 4 < len then c4 * 0.0016000000000000003 else 0.0)), if (oidx = 1) then 40000.0 else 1.0), 6.235613006596935) in
+let () = observe(gaussian(if (oidx = 2) then 0.0 else ((if 0 < len then c0 * 1.0 else 0.0) + (if 1 < len then c1 * 0.3 else 0.0) + (if 2 < len then c2 * 0.09 else 0.0) + (if 3 < len then c3 * 0.026999999999999996 else 0.0) + (if 4 < len then c4 * 0.0081 else 0.0)), if (oidx = 2) then 40000.0 else 1.0), 14.930938208255952) in
+let () = observe(gaussian(if (oidx = 3) then 0.0 else ((if 0 < len then c0 * 1.0 else 0.0) + (if 1 < len then c1 * 0.4 else 0.0) + (if 2 < len then c2 * 0.16000000000000003 else 0.0) + (if 3 < len then c3 * 0.06400000000000002 else 0.0) + (if 4 < len then c4 * 0.025600000000000005 else 0.0)), if (oidx = 3) then 40000.0 else 1.0), 27.76621455275837) in
+let () = observe(gaussian(if (oidx = 4) then 0.0 else ((if 0 < len then c0 * 1.0 else 0.0) + (if 1 < len then c1 * 0.5 else 0.0) + (if 2 < len then c2 * 0.25 else 0.0) + (if 3 < len then c3 * 0.125 else 0.0) + (if 4 < len then c4 * 0.0625 else 0.0)), if (oidx = 4) then 40000.0 else 1.0), 44.63428250334452) in
+let () = observe(gaussian(if (oidx = 5) then 0.0 else ((if 0 < len then c0 * 1.0 else 0.0) + (if 1 < len then c1 * 0.6 else 0.0) + (if 2 < len then c2 * 0.36 else 0.0) + (if 3 < len then c3 * 0.21599999999999997 else 0.0) + (if 4 < len then c4 * 0.1296 else 0.0)), if (oidx = 5) then 40000.0 else 1.0), 65.39877806912918) in
+let () = observe(gaussian(if (oidx = 6) then 0.0 else ((if 0 < len then c0 * 1.0 else 0.0) + (if 1 < len then c1 * 0.7 else 0.0) + (if 2 < len then c2 * 0.48999999999999994 else 0.0) + (if 3 < len then c3 * 0.3429999999999999 else 0.0) + (if 4 < len then c4 * 0.24009999999999995 else 0.0)), if (oidx = 6) then 40000.0 else 1.0), 90.16345175668341) in
+let () = observe(gaussian(if (oidx = 7) then 0.0 else ((if 0 < len then c0 * 1.0 else 0.0) + (if 1 < len then c1 * 0.8 else 0.0) + (if 2 < len then c2 * 0.6400000000000001 else 0.0) + (if 3 < len then c3 * 0.5120000000000001 else 0.0) + (if 4 < len then c4 * 0.4096000000000001 else 0.0)), if (oidx = 7) then 40000.0 else 1.0), 118.94703945597995) in
+let () = observe(gaussian(if (oidx = 8) then 0.0 else ((if 0 < len then c0 * 1.0 else 0.0) + (if 1 < len then c1 * 0.9 else 0.0) + (if 2 < len then c2 * 0.81 else 0.0) + (if 3 < len then c3 * 0.7290000000000001 else 0.0) + (if 4 < len then c4 * 0.6561 else 0.0)), if (oidx = 8) then 40000.0 else 1.0), 151.7909055407857) in
+let () = observe(gaussian(if (oidx = 9) then 0.0 else ((if 0 < len then c0 * 1.0 else 0.0) + (if 1 < len then c1 * 1.0 else 0.0) + (if 2 < len then c2 * 1.0 else 0.0) + (if 3 < len then c3 * 1.0 else 0.0) + (if 4 < len then c4 * 1.0 else 0.0)), if (oidx = 9) then 40000.0 else 1.0), 188.5411680368732) in
+if (oidx = 0) then 1 else 0

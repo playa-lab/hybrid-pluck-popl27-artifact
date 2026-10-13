@@ -1,0 +1,133 @@
+Benchmark run — N=3 runs/program, per-run timeout = 300s
+run id:  reduced_20261010_004546
+tag:     slicstan_s2000  (results_slicstan_s2000.csv)
+run dir: /results/reduced_20261010_004546
+logs:    /results/reduced_20261010_004546/logs
+scratch: /results/reduced_20261010_004546/scratch
+programs: @table3
+
+==> Running slicstan programs (N=3, warmup=500, samples=2000, wall budget 300s/program)
+    pipeline per program: slic (SlicStan->Stan) | stanc | build (C++) | sample (HMC).
+    note: the 300s budget bounds TOTAL wall (compile + sampling); each
+          stage gets the time left after the earlier ones (SlicStan compile included).
+  slicstan changepoint_coal_k1 ... ok
+         -> mean(e)=3.029e+00 Rhat=1.00
+  slicstan dawid_skene_n08    ... ok
+         -> mean(tp1)=6.795e-01 Rhat=1.00
+  slicstan dawid_skene_n16    ... TIMEOUT
+  slicstan f81_rate           ... ERROR(stanc)
+  slicstan hmm_factorial_n02  ... /artifact/experiments/run_bench.sh: line 73: 18217 Aborted                 ( ulimit -c 0 2> /dev/null; exec timeout -k 5 "$SLICSTAN_TIMEOUT" "$SLICSTAN_BIN" --from-file "$W/in.slicstan" > "$raw" 2> "$clog" ) 2> /dev/null
+ERROR(slic)
+  slicstan hmm_factorial_n04  ... /artifact/experiments/run_bench.sh: line 73: 18235 Aborted                 ( ulimit -c 0 2> /dev/null; exec timeout -k 5 "$SLICSTAN_TIMEOUT" "$SLICSTAN_BIN" --from-file "$W/in.slicstan" > "$raw" 2> "$clog" ) 2> /dev/null
+ERROR(slic)
+  slicstan hmm_factorial_n06  ... /artifact/experiments/run_bench.sh: line 73: 18253 Aborted                 ( ulimit -c 0 2> /dev/null; exec timeout -k 5 "$SLICSTAN_TIMEOUT" "$SLICSTAN_BIN" --from-file "$W/in.slicstan" > "$raw" 2> "$clog" ) 2> /dev/null
+ERROR(slic)
+  slicstan hmm_first_order_n02 ... ok
+         -> mean(mu[1])=-2.011e+00 Rhat=1.00
+  slicstan hmm_first_order_n08 ... ok
+         -> mean(mu[1])=-1.623e+00 Rhat=1.00
+  slicstan hmm_first_order_n14 ... ok
+         -> mean(mu[1])=-2.329e+00 Rhat=1.00
+  slicstan hmm_second_order_n04 ... ok
+         -> mean(mu[1])=-2.777e+00 Rhat=1.00
+  slicstan hmm_second_order_n08 ... ERROR(stanc)
+  slicstan hmm_second_order_n14 ... ERROR(stanc)
+  slicstan outliers_n08       ... ok
+         -> mean(alpha)=2.000e+00 Rhat=1.00
+  slicstan outliers_n18       ... ok
+         -> mean(alpha)=2.004e+00 Rhat=1.00
+  slicstan polyreg            ... ok
+         -> mean(isout)=1.470e-01 Rhat=1.00
+  slicstan run_walk_hrm       ... ok
+         -> mean(baseHr)=8.213e+01 Rhat=1.00
+  slicstan sir_model_n12      ... ok
+         -> mean(infection)=4.803e-01 Rhat=1.00
+  slicstan sir_model_n72      ... TIMEOUT
+  slicstan soft_kmeans_n04    ... ok
+         -> mean(muc[1,1])=1.431e+00 Rhat=1.40
+  slicstan soft_kmeans_n12    ... ok
+         -> mean(muc[1,1])=-3.000e+00 Rhat=1.00
+  slicstan spike_and_slab     ... ERROR(stanc)
+
+----- SlicStan component timing (seconds; median±sd over successful runs) -----
+PROGRAM            STATUS            SLIC    STANC     BUILD    SAMPLE     TOTAL  RESULT
+changepoint_coal_k1 ok              2.8885   0.0872    9.4688 0.2716±0.02   12.7161  mean(e)=3.029e+00 Rhat=1.00
+dawid_skene_n08    ok             27.5174   0.0976   11.0310 0.2022±0.0071   38.8482  mean(tp1)=6.795e-01 Rhat=1.00
+dawid_skene_n16    TIMEOUT       300.0380        -         -         -  300.0380  SlicStan compile exceeded 300s
+f81_rate           ERROR(stanc)    0.9893   0.1155         -         -         -  generated Stan invalid
+hmm_factorial_n02  ERROR(slic)     0.1087        -         -         -         -  SlicStan rejected
+hmm_factorial_n04  ERROR(slic)     0.1462        -         -         -         -  SlicStan rejected
+hmm_factorial_n06  ERROR(slic)     0.1013        -         -         -         -  SlicStan rejected
+hmm_first_order_n02 ok              0.3266   0.0597    7.1498 0.1262±0.0025    7.6623  mean(mu[1])=-2.011e+00 Rhat=1.00
+hmm_first_order_n08 ok              3.2769   0.0850   10.7156 0.3445±0.043   14.4220  mean(mu[1])=-1.623e+00 Rhat=1.00
+hmm_first_order_n14 ok             19.1924   0.1075   15.7426 0.4318±0.13   35.4743  mean(mu[1])=-2.329e+00 Rhat=1.00
+hmm_second_order_n04 ok              1.0260   0.0962    8.6372 0.2669±0.0058   10.0263  mean(mu[1])=-2.777e+00 Rhat=1.00
+hmm_second_order_n08 ERROR(stanc)   10.0704   0.1102         -         -         -  generated Stan invalid
+hmm_second_order_n14 ERROR(stanc)  126.9132   0.1158         -         -         -  generated Stan invalid
+outliers_n08       ok              3.4047   0.1334    9.8770 0.2442±0.052   13.6593  mean(alpha)=2.000e+00 Rhat=1.00
+outliers_n18       ok             40.5849   0.1552   15.5455 0.3732±0.0072   56.6588  mean(alpha)=2.004e+00 Rhat=1.00
+polyreg            ok            154.3699   0.3257   33.6191 8.901±8.7  197.2157  mean(isout)=1.470e-01 Rhat=1.00
+run_walk_hrm       ok              2.7992   0.0932   11.1701 0.2566±0.037   14.3191  mean(baseHr)=8.213e+01 Rhat=1.00
+sir_model_n12      ok             10.6105   0.1173   16.9689 0.5804±0.1   28.2771  mean(infection)=4.803e-01 Rhat=1.00
+sir_model_n72      TIMEOUT       300.0551        -         -         -  300.0551  SlicStan compile exceeded 300s
+soft_kmeans_n04    ok              1.6826   0.0834    8.7932 0.1672±0.014   10.7264  mean(muc[1,1])=1.431e+00 Rhat=1.40
+soft_kmeans_n12    ok             27.4090   0.1298   15.9373 0.256±0.063   43.7321  mean(muc[1,1])=-3.000e+00 Rhat=1.00
+spike_and_slab     ERROR(stanc)    0.7680   0.1022         -         -         -  generated Stan invalid
+    SLIC=SlicStan->Stan compile. STANC=Stan->C++ validate. BUILD=C++ compile.
+    SAMPLE=HMC inference (NUTS, 500+2000 iters). TOTAL=sum.
+    results_slicstan.csv: WALL=TOTAL; INFER=SLIC+SAMPLE (SlicStan compile + HMC,
+    excludes STANC+BUILD CmdStan overhead).
+
+======================================== RESULTS ========================================
+SYSTEM  PROGRAM                STATUS         RUNS WALL(s)          INFER(s)           RESULT        
+------  -------                ------         ---- -------          --------           ------        
+slicstan changepoint_coal_k1    ok                3 12.7161          3.16±0.02         3.03333       
+slicstan dawid_skene_n08        ok                3 38.8482          27.72±0.0071      0.6745        
+slicstan dawid_skene_n16        TIMEOUT           0 300.0380         -                  -             
+slicstan f81_rate               ERROR(stanc)      0 -                -                  -             
+slicstan hmm_factorial_n02      ERROR(slic)       0 -                -                  -             
+slicstan hmm_factorial_n04      ERROR(slic)       0 -                -                  -             
+slicstan hmm_factorial_n06      ERROR(slic)       0 -                -                  -             
+slicstan hmm_first_order_n02    ok                3 7.6623           0.4528±0.0025     -2.02167      
+slicstan hmm_first_order_n08    ok                3 14.4220          3.621±0.043       -1.61833      
+slicstan hmm_first_order_n14    ok                3 35.4743          19.62±0.13        -2.33233      
+slicstan hmm_second_order_n04   ok                3 10.0263          1.293±0.0058      -2.76533      
+slicstan hmm_second_order_n08   ERROR(stanc)      0 -                -                  -             
+slicstan hmm_second_order_n14   ERROR(stanc)      0 -                -                  -             
+slicstan outliers_n08           ok                3 13.6593          3.649±0.052       1.99933       
+slicstan outliers_n18           ok                3 56.6588          40.96±0.0072      2.00167       
+slicstan polyreg                ok                3 197.2157         163.3±8.7         0.152333      
+slicstan run_walk_hrm           ok                3 14.3191          3.056±0.037       91.3333       
+slicstan sir_model_n12          ok                3 28.2771          11.19±0.1         0.474733      
+slicstan sir_model_n72          TIMEOUT           0 300.0551         -                  -             
+slicstan soft_kmeans_n04        ok                3 10.7264          1.85±0.014        2.086         
+slicstan soft_kmeans_n12        ok                3 43.7321          27.66±0.063       0.888333      
+slicstan spike_and_slab         ERROR(stanc)      0 -                -                  -             
+=========================================================================================
+RUNS     = successful runs measured (1 if the first run timed out / errored / was BAD).
+WALL(s)  = median ± sample-stddev of total process wall-clock over RUNS runs.
+INFER(s) = median ± sample-stddev of inference-only time.
+           pluck: inference_seconds (via PLUCK_STATS); hybit: reported t.time.
+           psi:   '-' (no inference line) — use WALL(s) as the comparable number.
+           slicstan: WALL(s)=total pipeline (slic+stanc+build+sample); INFER(s)=slic
+           +sample (SlicStan->Stan compile + HMC; EXCLUDES the stanc + C++ build that
+           are CmdStan overhead). mean(param)+Rhat and the per-component breakdown are
+           in the SlicStan timing table above (also logs/slicstan_<name>.log).
+STATUS   = ok | TIMEOUT | OOM | ERROR(rc=N) | BAD | ERROR(run)
+           | ERROR(slic) | ERROR(stanc) | ERROR(build) | NODATA.
+           OOM = SIGKILLed before the timeout = out of memory (the container hit its
+           memory limit); WALL is the actual time it ran before dying, not a real
+           inference time. Give Docker more memory to measure these.
+           slicstan: ERROR(slic) = .slicstan uses a feature SlicStan's DSL lacks;
+           ERROR(stanc)/ERROR(build) = its generated Stan is invalid / fails to
+           compile (SlicStan codegen); ERROR(run) = HMC could not initialize;
+           NODATA = compiles but no slicstan-data/<name>.json.
+           BAD = process exited 0 but did not actually infer. For PSI this is
+           'Pr[error] = 1' (posterior collapsed, e.g. observing a continuous
+           variable at an exact value — measure-zero in PSI's exact semantics).
+           A BAD/ERROR/TIMEOUT row's WALL is the single failing run, NOT a real
+           inference time — do not compare it against ok rows.
+
+logs:    /results/reduced_20261010_004546/logs/<system>_<program>.log   (every run preserved)
+table:   /results/reduced_20261010_004546/results_slicstan_s2000.txt
+csv:     /results/reduced_20261010_004546/results_slicstan_s2000.csv

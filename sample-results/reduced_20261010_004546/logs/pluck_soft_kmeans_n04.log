@@ -1,0 +1,138 @@
+===== ok  wall=0.1181s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 21
+BDD vars allocated (discrete bits)    : 44
+BDD recursive calls (compile work)    : 7844
+BDD guard nodes  : sum=44  max=44  mean=44
+SPN nodes (TREE) : sum=667  max=667  mean=667
+SPN nodes (DAG)  : per-world-max=217  all-worlds-unique=217  intern-table=567
+SPN leaf nodes   : sum=585  (max sum-arity=1, max prod-arity=81)
+posterior mixture components (total)  : 31
+time (s): parse=0.0001  symbolic-exec=0.0030  wmc=0.0015  posterior=0.0011  flatten=0.0000  display/naming=0.0002  total=0.0059
+===================
+inference_seconds: 0.00593696
+soft-kmeans:
+  x  1.0000000000000029
+    ├ 97.680673%
+    │       x ~ N(-2.952632, 0.688247)
+    ├ 2.289878%
+    │       x ~ N(2.490000, 0.948683)
+    ├ 0.007590%
+    │       x ~ N(-3.000000, 0.948683)
+    ├ 0.007256%
+    │       x ~ N(-1.007143, 0.566947)
+    ├ 0.005483%
+    │       x ~ N(-2.910000, 0.948683)
+    ├ 0.003548%
+    │       x ~ N(-3.000000, 3.000000)
+    ├ 0.003398%
+    │       x ~ N(2.400000, 0.948683)
+    ├ 0.001214%
+    │       x ~ N(-0.063158, 0.688247)
+    ├ 0.000961%
+    │       x ~ N(-0.110526, 0.688247)
+    ├ 0.000000%
+    │       x ~ N(2.731579, 0.688247)
+    ├ 0.000000%
+    │       x ~ N(-0.157895, 0.688247)
+    ├ 0.000000%
+    │       x ~ N(-1.039286, 0.566947)
+    ├ 0.000000%
+    │       x ~ N(0.921429, 0.566947)
+    ├ 0.000000%
+    │       x ~ N(0.889286, 0.566947)
+    └ 0.000000%
+            x ~ N(-0.032432, 0.493197)
+===== ok  wall=0.1062s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 21
+BDD vars allocated (discrete bits)    : 44
+BDD recursive calls (compile work)    : 7844
+BDD guard nodes  : sum=44  max=44  mean=44
+SPN nodes (TREE) : sum=667  max=667  mean=667
+SPN nodes (DAG)  : per-world-max=217  all-worlds-unique=217  intern-table=567
+SPN leaf nodes   : sum=585  (max sum-arity=1, max prod-arity=81)
+posterior mixture components (total)  : 31
+time (s): parse=0.0001  symbolic-exec=0.0013  wmc=0.0010  posterior=0.0011  flatten=0.0000  display/naming=0.0001  total=0.0036
+===================
+inference_seconds: 0.00355675
+soft-kmeans:
+  x  0.9999999999999992
+    ├ 97.680673%
+    │       x ~ N(-2.952632, 0.688247)
+    ├ 2.289878%
+    │       x ~ N(2.490000, 0.948683)
+    ├ 0.007590%
+    │       x ~ N(-3.000000, 0.948683)
+    ├ 0.007256%
+    │       x ~ N(-1.007143, 0.566947)
+    ├ 0.005483%
+    │       x ~ N(-2.910000, 0.948683)
+    ├ 0.003548%
+    │       x ~ N(-3.000000, 3.000000)
+    ├ 0.003398%
+    │       x ~ N(2.400000, 0.948683)
+    ├ 0.001214%
+    │       x ~ N(-0.063158, 0.688247)
+    ├ 0.000961%
+    │       x ~ N(-0.110526, 0.688247)
+    ├ 0.000000%
+    │       x ~ N(2.731579, 0.688247)
+    ├ 0.000000%
+    │       x ~ N(-0.157895, 0.688247)
+    ├ 0.000000%
+    │       x ~ N(-1.039286, 0.566947)
+    ├ 0.000000%
+    │       x ~ N(0.921429, 0.566947)
+    ├ 0.000000%
+    │       x ~ N(0.889286, 0.566947)
+    └ 0.000000%
+            x ~ N(-0.032432, 0.493197)
+===== ok  wall=0.1085s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 21
+BDD vars allocated (discrete bits)    : 44
+BDD recursive calls (compile work)    : 7844
+BDD guard nodes  : sum=44  max=44  mean=44
+SPN nodes (TREE) : sum=667  max=667  mean=667
+SPN nodes (DAG)  : per-world-max=217  all-worlds-unique=217  intern-table=567
+SPN leaf nodes   : sum=585  (max sum-arity=1, max prod-arity=81)
+posterior mixture components (total)  : 31
+time (s): parse=0.0001  symbolic-exec=0.0030  wmc=0.0014  posterior=0.0010  flatten=0.0000  display/naming=0.0001  total=0.0056
+===================
+inference_seconds: 0.00555604
+soft-kmeans:
+  x  1.0000000000000029
+    ├ 97.680673%
+    │       x ~ N(-2.952632, 0.688247)
+    ├ 2.289878%
+    │       x ~ N(2.490000, 0.948683)
+    ├ 0.007590%
+    │       x ~ N(-3.000000, 0.948683)
+    ├ 0.007256%
+    │       x ~ N(-1.007143, 0.566947)
+    ├ 0.005483%
+    │       x ~ N(-2.910000, 0.948683)
+    ├ 0.003548%
+    │       x ~ N(-3.000000, 3.000000)
+    ├ 0.003398%
+    │       x ~ N(2.400000, 0.948683)
+    ├ 0.001214%
+    │       x ~ N(-0.063158, 0.688247)
+    ├ 0.000961%
+    │       x ~ N(-0.110526, 0.688247)
+    ├ 0.000000%
+    │       x ~ N(2.731579, 0.688247)
+    ├ 0.000000%
+    │       x ~ N(-0.157895, 0.688247)
+    ├ 0.000000%
+    │       x ~ N(-1.039286, 0.566947)
+    ├ 0.000000%
+    │       x ~ N(0.921429, 0.566947)
+    ├ 0.000000%
+    │       x ~ N(0.889286, 0.566947)
+    └ 0.000000%
+            x ~ N(-0.032432, 0.493197)

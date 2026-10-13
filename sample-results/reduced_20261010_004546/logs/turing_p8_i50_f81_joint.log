@@ -1,0 +1,18 @@
+===== ok  wall=33.5870s  rc=0  =====
+f81_joint / F81 (Turing PG)  n_sites=15  particles=8  iters=50
+retention prob p = 0.505   (true 0.8)
+base freqs pi   = [0.23, 0.22, 0.32, 0.23]   (true [0.3, 0.2, 0.2, 0.3])
+RESULT: 0.504813
+inference_seconds: 2.122
+===== ok  wall=29.4617s  rc=0  =====
+f81_joint / F81 (Turing PG)  n_sites=15  particles=8  iters=50
+retention prob p = 0.537   (true 0.8)
+base freqs pi   = [0.20, 0.29, 0.25, 0.26]   (true [0.3, 0.2, 0.2, 0.3])
+RESULT: 0.536732
+inference_seconds: 1.300
+===== ok  wall=23.2274s  rc=0  =====
+f81_joint / F81 (Turing PG)  n_sites=15  particles=8  iters=50
+retention prob p = 0.505   (true 0.8)
+base freqs pi   = [0.27, 0.24, 0.26, 0.22]   (true [0.3, 0.2, 0.2, 0.3])
+RESULT: 0.504525
+inference_seconds: 1.853

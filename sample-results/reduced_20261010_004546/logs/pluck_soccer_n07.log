@@ -1,0 +1,51 @@
+===== ok  wall=70.3678s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 428
+BDD vars allocated (discrete bits)    : 434
+BDD recursive calls (compile work)    : 28307010
+BDD guard nodes  : sum=167630  max=111024  mean=83815
+SPN nodes (TREE) : sum=19685  max=13123  mean=9842
+SPN nodes (DAG)  : per-world-max=11252  all-worlds-unique=16638  intern-table=275976
+SPN leaf nodes   : sum=17496  (max sum-arity=1, max prod-arity=1458)
+posterior mixture components (total)  : 2187
+time (s): parse=0.0002  symbolic-exec=67.1657  wmc=2.1074  posterior=0.1327  flatten=0.0002  display/naming=0.0013  total=69.4075
+===================
+inference_seconds: 69.40746695
+soccer-T0-identity:
+  True  0.7842188085800978
+  False  0.21578119141990815
+===== ok  wall=112.9920s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 428
+BDD vars allocated (discrete bits)    : 434
+BDD recursive calls (compile work)    : 28307010
+BDD guard nodes  : sum=167630  max=111024  mean=83815
+SPN nodes (TREE) : sum=19685  max=13123  mean=9842
+SPN nodes (DAG)  : per-world-max=11252  all-worlds-unique=16638  intern-table=275976
+SPN leaf nodes   : sum=17496  (max sum-arity=1, max prod-arity=1458)
+posterior mixture components (total)  : 2187
+time (s): parse=0.0003  symbolic-exec=109.5002  wmc=2.1501  posterior=0.1272  flatten=0.0001  display/naming=0.0016  total=111.7795
+===================
+inference_seconds: 111.77947963
+soccer-T0-identity:
+  True  0.7842188085800978
+  False  0.21578119141990815
+===== ok  wall=91.3430s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 428
+BDD vars allocated (discrete bits)    : 434
+BDD recursive calls (compile work)    : 28307010
+BDD guard nodes  : sum=167630  max=111024  mean=83815
+SPN nodes (TREE) : sum=19685  max=13123  mean=9842
+SPN nodes (DAG)  : per-world-max=11252  all-worlds-unique=16638  intern-table=275976
+SPN leaf nodes   : sum=17496  (max sum-arity=1, max prod-arity=1458)
+posterior mixture components (total)  : 2187
+time (s): parse=0.0003  symbolic-exec=88.1216  wmc=2.3253  posterior=0.1161  flatten=0.0001  display/naming=0.0010  total=90.5645
+===================
+inference_seconds: 90.56447463
+soccer-T0-identity:
+  True  0.7842188085800978
+  False  0.21578119141990815

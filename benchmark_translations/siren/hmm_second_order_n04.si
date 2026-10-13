@@ -1,0 +1,30 @@
+
+
+
+val draw_init = fun () ->
+  let sample a <- bernoulli(0.5) in
+  if a then 0 else (let sample b <- bernoulli(0.6) in if b then 1 else 2) in
+val draw_tr = fun (prev) ->
+  if (prev = 0)
+    then (let sample a <- bernoulli(0.6) in if a then 0 else (let sample b <- bernoulli(0.75) in if b then 1 else 2))
+    else (if (prev = 1)
+      then (let sample a <- bernoulli(0.2) in if a then 0 else (let sample b <- bernoulli(0.75) in if b then 1 else 2))
+      else (let sample a <- bernoulli(0.1) in if a then 0 else (let sample b <- bernoulli(0.3333333333333333) in if b then 1 else 2)))
+in
+
+let symbolic m1 <- gaussian(-2., 1.) in
+let symbolic m2 <- gaussian(0., 1.) in
+let symbolic m3 <- gaussian(2., 1.) in
+let z1 = draw_init() in
+let mean1 = if (z1 = 0) then m1 else (if (z1 = 1) then m2 else m3) in
+let () = observe(gaussian(mean1, 1.), -4.11) in let () = resample() in
+let z2 = draw_tr(z1) in
+let mean2 = if (z2 = 0) then m1 else (if (z2 = 1) then m2 else m3) in
+let () = observe(gaussian(mean2, 1.), -2.83) in let () = resample() in
+let z3 = draw_tr((if (z1 < z2) then z2 else z1)) in
+let mean3 = if (z3 = 0) then m1 else (if (z3 = 1) then m2 else m3) in
+let () = observe(gaussian(mean3, 1.), -2.55) in let () = resample() in
+let z4 = draw_tr((if (z2 < z3) then z3 else z2)) in
+let mean4 = if (z4 = 0) then m1 else (if (z4 = 1) then m2 else m3) in
+let () = observe(gaussian(mean4, 1.), -2.33) in let () = resample() in
+m1

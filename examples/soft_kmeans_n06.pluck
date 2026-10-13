@@ -1,0 +1,7 @@
+(define N 6)
+
+(include "examples/shared/soft_kmeans.pluck")
+
+(query soft-kmeans
+  (let ((clusters [[(normal -3.0 3.0), (normal -3.0 3.0), (normal -3.0 3.0)], [(normal 3.0 3.0), (normal 3.0 3.0), (normal 3.0 3.0)], [(normal 3.0 3.0), (normal -3.0 3.0), (normal -3.0 3.0)]]))
+    (Posterior (index 0 (index 0 clusters)) (points-obs clusters (take N obs)))))

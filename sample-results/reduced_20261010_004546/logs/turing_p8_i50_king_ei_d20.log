@@ -1,0 +1,15 @@
+===== ok  wall=17.7248s  rc=0  =====
+king_ei (Turing PG)  data-divisor=20  particles=8  iters=50
+posterior means: E[bw]=0.515 (White Malloy rate, ~0.3)   E[bb]=0.467 (non-White, ~0.96)
+RESULT: 0.514813
+inference_seconds: 0.492
+===== ok  wall=19.5416s  rc=0  =====
+king_ei (Turing PG)  data-divisor=20  particles=8  iters=50
+posterior means: E[bw]=0.500 (White Malloy rate, ~0.3)   E[bb]=0.550 (non-White, ~0.96)
+RESULT: 0.500368
+inference_seconds: 0.494
+===== ok  wall=22.2083s  rc=0  =====
+king_ei (Turing PG)  data-divisor=20  particles=8  iters=50
+posterior means: E[bw]=0.486 (White Malloy rate, ~0.3)   E[bb]=0.615 (non-White, ~0.96)
+RESULT: 0.485950
+inference_seconds: 0.742

@@ -1,0 +1,22 @@
+;; F81 substitution model on a fixed 4-tip tree. Two latents (shared across all
+;; sites and branches) drive evolution:
+;;   - rate, as retention probability p   (enters via (flip p))
+;;   - base frequencies pi                (enters via (categorical pi))
+;; A branch keeps the parent base with prob p, else redraws from pi.
+
+(define (evolve parent p pi) (if (flip p) parent (categorical pi)))
+
+;; one site's tip pattern under the fixed ((L L)(M M)) tree topology.
+(define (tips p pi)
+  (let ((root (categorical pi)))
+    (let ((L (evolve root p pi)) (M (evolve root p pi)))
+      [(evolve L p pi), (evolve L p pi), (evolve M p pi), (evolve M p pi)])))
+
+(define (leq xs ys)
+  (match xs Nil => (True)
+    Cons x xr => (match ys Cons y yr => (and (native_eq x y) (leq xr yr)))))
+
+;; evidence: every observed column matches a draw from the tree.
+(define (sites-match p pi cols)
+  (match cols Nil => (True)
+    Cons c rest => (and (leq (tips p pi) c) (sites-match p pi rest))))

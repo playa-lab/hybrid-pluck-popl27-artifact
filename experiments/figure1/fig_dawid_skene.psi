@@ -1,0 +1,50 @@
+// PSI port of examples/fig_dawid_skene_listing.pluck (Figure 1): Dawid-Skene crowd
+// annotation, 8 items x 5 annotators (23 annotations, sparse).
+//   prevalence ~ Beta(1,1); tp_j ~ Beta(2,1), fp_j ~ Beta(1,2)
+//   z_i ~ Bernoulli(prevalence); r_ij ~ Bernoulli(z_i ? tp_j : fp_j), observed.
+// Wall-clock is the comparable number (PSI reports no inference-only time).
+
+def main() {
+    prevalence := beta(1, 1);
+
+    tp0 := beta(2, 1); fp0 := beta(1, 2);
+    tp1 := beta(2, 1); fp1 := beta(1, 2);
+    tp2 := beta(2, 1); fp2 := beta(1, 2);
+    tp3 := beta(2, 1); fp3 := beta(1, 2);
+    tp4 := beta(2, 1); fp4 := beta(1, 2);
+
+    z0 := flip(prevalence);
+    z1 := flip(prevalence);
+    z2 := flip(prevalence);
+    z3 := flip(prevalence);
+    z4 := flip(prevalence);
+    z5 := flip(prevalence);
+    z6 := flip(prevalence);
+    z7 := flip(prevalence);
+
+    observe(flip((if z0 { tp0 } else { fp0 })) == true);
+    observe(flip((if z0 { tp1 } else { fp1 })) == true);
+    observe(flip((if z0 { tp4 } else { fp4 })) == false);
+    observe(flip((if z1 { tp0 } else { fp0 })) == true);
+    observe(flip((if z1 { tp2 } else { fp2 })) == true);
+    observe(flip((if z1 { tp4 } else { fp4 })) == false);
+    observe(flip((if z2 { tp1 } else { fp1 })) == true);
+    observe(flip((if z2 { tp3 } else { fp3 })) == true);
+    observe(flip((if z2 { tp4 } else { fp4 })) == false);
+    observe(flip((if z3 { tp0 } else { fp0 })) == true);
+    observe(flip((if z3 { tp1 } else { fp1 })) == true);
+    observe(flip((if z3 { tp2 } else { fp2 })) == true);
+    observe(flip((if z4 { tp0 } else { fp0 })) == false);
+    observe(flip((if z4 { tp2 } else { fp2 })) == false);
+    observe(flip((if z4 { tp4 } else { fp4 })) == true);
+    observe(flip((if z5 { tp1 } else { fp1 })) == false);
+    observe(flip((if z5 { tp3 } else { fp3 })) == false);
+    observe(flip((if z5 { tp4 } else { fp4 })) == true);
+    observe(flip((if z6 { tp0 } else { fp0 })) == false);
+    observe(flip((if z6 { tp1 } else { fp1 })) == false);
+    observe(flip((if z6 { tp4 } else { fp4 })) == true);
+    observe(flip((if z7 { tp3 } else { fp3 })) == true);
+    observe(flip((if z7 { tp4 } else { fp4 })) == false);
+
+    return tp4;   // annotator E's sensitivity
+}

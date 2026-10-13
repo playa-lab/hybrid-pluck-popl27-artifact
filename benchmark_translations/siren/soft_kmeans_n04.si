@@ -1,0 +1,38 @@
+
+
+
+val draw_z = fun () ->
+  let sample a <- bernoulli(0.34) in
+  if a then 0 else (let sample b <- bernoulli(0.5) in if b then 1 else 2)
+in
+
+let symbolic mu_0_0 <- gaussian(-3.0, 9.0) in
+let symbolic mu_0_1 <- gaussian(3.0, 9.0) in
+let symbolic mu_0_2 <- gaussian(-3.0, 9.0) in
+let symbolic mu_1_0 <- gaussian(3.0, 9.0) in
+let symbolic mu_1_1 <- gaussian(3.0, 9.0) in
+let symbolic mu_1_2 <- gaussian(3.0, 9.0) in
+let symbolic mu_2_0 <- gaussian(3.0, 9.0) in
+let symbolic mu_2_1 <- gaussian(3.0, 9.0) in
+let symbolic mu_2_2 <- gaussian(-3.0, 9.0) in
+let z0 = draw_z() in
+let () = observe(gaussian(if (z0 = 0) then mu_0_0 else (if (z0 = 1) then mu_1_0 else mu_2_0), 1.), -3.0) in
+let () = observe(gaussian(if (z0 = 0) then mu_0_1 else (if (z0 = 1) then mu_1_1 else mu_2_1), 1.), -2.9) in
+let () = observe(gaussian(if (z0 = 0) then mu_0_2 else (if (z0 = 1) then mu_1_2 else mu_2_2), 1.), -3.1) in
+let () = resample() in
+let z1 = draw_z() in
+let () = observe(gaussian(if (z1 = 0) then mu_0_0 else (if (z1 = 1) then mu_1_0 else mu_2_0), 1.), 3.0) in
+let () = observe(gaussian(if (z1 = 0) then mu_0_1 else (if (z1 = 1) then mu_1_1 else mu_2_1), 1.), 3.1) in
+let () = observe(gaussian(if (z1 = 0) then mu_0_2 else (if (z1 = 1) then mu_1_2 else mu_2_2), 1.), 2.9) in
+let () = resample() in
+let z2 = draw_z() in
+let () = observe(gaussian(if (z2 = 0) then mu_0_0 else (if (z2 = 1) then mu_1_0 else mu_2_0), 1.), 3.1) in
+let () = observe(gaussian(if (z2 = 0) then mu_0_1 else (if (z2 = 1) then mu_1_1 else mu_2_1), 1.), -3.0) in
+let () = observe(gaussian(if (z2 = 0) then mu_0_2 else (if (z2 = 1) then mu_1_2 else mu_2_2), 1.), -2.9) in
+let () = resample() in
+let z3 = draw_z() in
+let () = observe(gaussian(if (z3 = 0) then mu_0_0 else (if (z3 = 1) then mu_1_0 else mu_2_0), 1.), -2.9) in
+let () = observe(gaussian(if (z3 = 0) then mu_0_1 else (if (z3 = 1) then mu_1_1 else mu_2_1), 1.), -3.1) in
+let () = observe(gaussian(if (z3 = 0) then mu_0_2 else (if (z3 = 1) then mu_1_2 else mu_2_2), 1.), -3.0) in
+let () = resample() in
+mu_0_0

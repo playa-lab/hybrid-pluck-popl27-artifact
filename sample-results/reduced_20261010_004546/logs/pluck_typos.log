@@ -1,0 +1,102 @@
+===== ok  wall=0.1167s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 0
+BDD vars allocated (discrete bits)    : 386
+BDD recursive calls (compile work)    : 244133
+BDD guard nodes  : sum=5316  max=2658  mean=2658
+SPN nodes (TREE) : sum=2  max=1  mean=1
+SPN nodes (DAG)  : per-world-max=1  all-worlds-unique=1  intern-table=1
+SPN leaf nodes   : sum=0  (max sum-arity=0, max prod-arity=0)
+posterior mixture components (total)  : 2
+time (s): parse=0.0000  symbolic-exec=0.0458  wmc=0.0009  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0468
+===================
+inference_seconds: 0.04684033
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 0
+BDD vars allocated (discrete bits)    : 297
+BDD recursive calls (compile work)    : 157090
+BDD guard nodes  : sum=962  max=601  mean=481
+SPN nodes (TREE) : sum=2  max=1  mean=1
+SPN nodes (DAG)  : per-world-max=1  all-worlds-unique=1  intern-table=1
+SPN leaf nodes   : sum=0  (max sum-arity=0, max prod-arity=0)
+posterior mixture components (total)  : 2
+time (s): parse=0.0000  symbolic-exec=0.0352  wmc=0.0002  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0354
+===================
+inference_seconds: 0.03544254
+lazy-to-lucky:
+  False  0.9999999999968021
+  True  0.000000000003197802419113314
+
+goat-or-bat:
+  "goat"  0.9893763599268304
+  "bat"  0.010623640073169138
+===== ok  wall=0.1083s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 0
+BDD vars allocated (discrete bits)    : 386
+BDD recursive calls (compile work)    : 244133
+BDD guard nodes  : sum=5316  max=2658  mean=2658
+SPN nodes (TREE) : sum=2  max=1  mean=1
+SPN nodes (DAG)  : per-world-max=1  all-worlds-unique=1  intern-table=1
+SPN leaf nodes   : sum=0  (max sum-arity=0, max prod-arity=0)
+posterior mixture components (total)  : 2
+time (s): parse=0.0000  symbolic-exec=0.0393  wmc=0.0011  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0405
+===================
+inference_seconds: 0.04052346
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 0
+BDD vars allocated (discrete bits)    : 297
+BDD recursive calls (compile work)    : 157090
+BDD guard nodes  : sum=962  max=601  mean=481
+SPN nodes (TREE) : sum=2  max=1  mean=1
+SPN nodes (DAG)  : per-world-max=1  all-worlds-unique=1  intern-table=1
+SPN leaf nodes   : sum=0  (max sum-arity=0, max prod-arity=0)
+posterior mixture components (total)  : 2
+time (s): parse=0.0000  symbolic-exec=0.0295  wmc=0.0002  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0298
+===================
+inference_seconds: 0.02976891
+lazy-to-lucky:
+  False  0.9999999999968021
+  True  0.000000000003197802419113314
+
+goat-or-bat:
+  "goat"  0.9893763599268304
+  "bat"  0.010623640073169138
+===== ok  wall=0.1066s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 0
+BDD vars allocated (discrete bits)    : 386
+BDD recursive calls (compile work)    : 244133
+BDD guard nodes  : sum=5316  max=2658  mean=2658
+SPN nodes (TREE) : sum=2  max=1  mean=1
+SPN nodes (DAG)  : per-world-max=1  all-worlds-unique=1  intern-table=1
+SPN leaf nodes   : sum=0  (max sum-arity=0, max prod-arity=0)
+posterior mixture components (total)  : 2
+time (s): parse=0.0000  symbolic-exec=0.0269  wmc=0.0009  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0278
+===================
+inference_seconds: 0.02778858
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 0
+BDD vars allocated (discrete bits)    : 297
+BDD recursive calls (compile work)    : 157090
+BDD guard nodes  : sum=962  max=601  mean=481
+SPN nodes (TREE) : sum=2  max=1  mean=1
+SPN nodes (DAG)  : per-world-max=1  all-worlds-unique=1  intern-table=1
+SPN leaf nodes   : sum=0  (max sum-arity=0, max prod-arity=0)
+posterior mixture components (total)  : 2
+time (s): parse=0.0000  symbolic-exec=0.0173  wmc=0.0002  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0176
+===================
+inference_seconds: 0.01755238
+lazy-to-lucky:
+  False  0.9999999999968021
+  True  0.000000000003197802419113314
+
+goat-or-bat:
+  "goat"  0.9893763599268304
+  "bat"  0.010623640073169138

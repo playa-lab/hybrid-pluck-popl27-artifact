@@ -1,0 +1,7 @@
+(define obs [-2.52, -3.32, -1.52, -3.75, -1.99, -1.92, -0.39, -1.25, 1.35, 0.91, 1.80, -0.18, 1.84, 1.64])
+
+(include "examples/shared/hmm_first_order.pluck")
+
+(query hmm-first-order
+  (let ((m1 (normal -2.0 1.0)) (m2 (normal 0.0 1.0)) (m3 (normal 2.0 1.0)))
+    (Posterior m1 (chain-obs (initial-state) m1 m2 m3 obs))))

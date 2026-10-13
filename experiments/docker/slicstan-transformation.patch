@@ -1,0 +1,49 @@
+diff --git a/SlicStan/Transformation.fs b/SlicStan/Transformation.fs
+index 938db45..d8e68c7 100644
+--- a/SlicStan/Transformation.fs
++++ b/SlicStan/Transformation.fs
+@@ -172,25 +172,32 @@ let rec to_Stan_statements (S: S) : Statements =
+     | SlicStanSyntax.Decl _ -> failwith "unexpected in translation"
+     | SlicStanSyntax.Phi((T, x), args, s) ->        
+ 
+-        if List.length args > 1 then              
++        if List.length args > 1 then
+             let support_arr_size = get_arr_size (fst T)
+-            let support = Arr (List.map (fun arr_size -> match arr_size with N(n) -> Const(float n) | SizeVar(x) -> Var(x)) support_arr_size) 
+-            let def = Let(I(x), Prim("rep_vector", [Const(0.0); support]))
++            let dim_exprs = List.map (fun arr_size -> match arr_size with N(n) -> Const(float n) | SizeVar(x) -> Var(x)) support_arr_size
++            // zero-init a multi-dimensional message table: rep_vector builds only a
++            // 1-D vector, so use rep_array(0, d1, d2, ...) (int 0 promotes to real).
++            let def = Let(I(x), Prim("rep_array", Const(0.0) :: dim_exprs))
+ 
+-            let s' = to_Stan_statements s |> target_in (A(I(x), support))
++            // accumulate into m[a1, a2, ...] indexed by the message's loop variables
++            // (args), NOT the support dims (the old A(I x, [d1,d2]) printed m[[d1,d2]]).
++            let write_lval = List.fold (fun lv a -> A(lv, Var a)) (I(x)) args
++            let s' = to_Stan_statements s |> target_in write_lval
+ 
+-            let loop = 
++            let loop =
+                 List.zip args support_arr_size
+-                |> List.fold (fun st (a, arr_size) -> For(a, N(1), arr_size, st)) s' 
+-            
++                |> List.fold (fun st (a, arr_size) -> For(a, N(1), arr_size, st)) s'
++
+             SSeq(def, loop)
+             
+-        elif List.length args = 1 then 
+-            let a = List.head args            
+-            let support_arr_size = N(2)
+-            let support = Const(2.0) // FIXME: not the right size
++        elif List.length args = 1 then
++            let a = List.head args
++            // message size = the (single) support dimension of T, not a hardcoded 2
++            // (the old `N(2)` / `Const 2.0` only worked for binary states, breaking K>2).
++            let support_arr_size = get_arr_size (fst T) |> List.head
++            let support = match support_arr_size with N(n) -> Const(float n) | SizeVar(s) -> Var(s)
+             let def = Let(I(x), Prim("rep_vector", [Const(0.0); support]))
+-            let loop = For(a, N(1), support_arr_size, to_Stan_statements s |> target_in (A(I(x), Var(a))))        
++            let loop = For(a, N(1), support_arr_size, to_Stan_statements s |> target_in (A(I(x), Var(a))))
+             SSeq(def, loop)
+ 
+         else 

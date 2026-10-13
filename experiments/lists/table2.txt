@@ -1,0 +1,19 @@
+# Programs behind the cells of Table 2 (standard benchmarks), in table order.
+# Table 2 compares Pluck, PSI and HyBit. Used as @table2 in PROGRAMS/FILTER.
+burglary_alarm
+diamond_network
+typos
+addFun_sum
+conjugate_gaussians
+linear_regression
+clickGraph
+clinicalTrial1
+clinicalTrial2
+coinBias
+GPA
+normal_mixture
+addFun_max
+spacex
+trueskill
+tug_of_war
+weekend

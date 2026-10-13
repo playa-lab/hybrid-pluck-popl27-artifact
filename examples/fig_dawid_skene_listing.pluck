@@ -1,0 +1,57 @@
+;; title: Figure 1 row -- Dawid-Skene crowd annotation
+;; Five annotators each label some of 8 items (true/false); no ground truth is
+;; ever observed. Exact joint posterior over every item's latent true label and
+;; each annotator's confusion rates (sensitivity tp_j, false-positive rate fp_j).
+(define n-items 8)
+(define n-annotators 5)
+
+(define a-tp 2.0) (define b-tp 1.0)   ;; tp_j ~ Beta(2,1)
+(define a-fp 1.0) (define b-fp 2.0)   ;; fp_j ~ Beta(1,2)
+
+(define-type annotation (Annot item annotator label))
+(define annotations
+  [(Annot 0 0 true),  (Annot 0 1 true),  (Annot 0 4 false),
+   (Annot 1 0 true),  (Annot 1 2 true),  (Annot 1 4 false),
+   (Annot 2 1 true),  (Annot 2 3 true),  (Annot 2 4 false),
+   (Annot 3 0 true),  (Annot 3 1 true),  (Annot 3 2 true),
+   (Annot 4 0 false), (Annot 4 2 false), (Annot 4 4 true),
+   (Annot 5 1 false), (Annot 5 3 false), (Annot 5 4 true),
+   (Annot 6 0 false), (Annot 6 1 false), (Annot 6 4 true),
+   (Annot 7 3 true),  (Annot 7 4 false)])
+
+(define (draw-rates) (Pair (beta a-tp b-tp) (beta a-fp b-fp)))
+
+(define (annot-item a)
+  (match a
+    Annot i j label => i))
+
+;; annotator j says 1 w.p. tp_j if the true label z holds, else fp_j; require
+;; that draw to match the reported label.
+(define (obs-annot z rates a)
+  (match a
+    Annot i j label =>
+      (let ((r (index j rates)))
+        (iff (flip (if z (fst r) (snd r))) label))))
+
+(define (obs-item z rates as)
+  (match as
+    Nil => (True)
+    Cons a rest => (and (obs-annot z rates a) (obs-item z rates rest))))
+
+;; walk the items, drawing each true label and conditioning its annotations in
+;; the same recursion step (keeps the BDD variable order linear); return the
+;; drawn labels alongside the accumulated evidence.
+(define (items i prevalence rates as)
+  (if (== i n-items) (Pair (Nil) (True))
+    (let ((z (flip prevalence))
+          (ok (obs-item z rates (filter (fn a -> (== (annot-item a) i)) as)))
+          (rest (items (+ i 1) prevalence rates as)))
+      (Pair (Cons z (fst rest)) (and ok (snd rest))))))
+
+(define-type result (Result true-labels rates))
+
+(query dawid-skene
+  (let ((prevalence (beta 1.0 1.0))
+        (rates (map (fn j -> (draw-rates)) (range n-annotators)))
+        (out (items 0 prevalence rates annotations)))
+    (Posterior (Result (fst out) rates) (snd out))))

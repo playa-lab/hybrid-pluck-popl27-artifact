@@ -1,0 +1,7 @@
+criterion: p75-error  (REL_ERR below; error.csv has all spread stats)
+
+PROGRAM                  BACKEND   SETTING          EXACT     APPROX    ABS_ERR   REL_ERR   N
+--------------------------------------------------------------------------------------------
+sir_model_n72            pluck     -               0.5038     0.5038          0         0   1
+
+wrote /results/cluster_large/large_sir_model_n72/analysis/error.csv  (1 rows)

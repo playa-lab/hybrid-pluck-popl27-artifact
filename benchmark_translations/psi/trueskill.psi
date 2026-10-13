@@ -1,0 +1,12 @@
+def main() {
+    alice := gauss(0, 1);
+    bob   := gauss(0, 1);
+
+    m1 := (gauss(0, 4) + alice) < (gauss(0, 4) + bob);
+    m2 := (gauss(0, 4) + alice) < (gauss(0, 4) + bob);
+    m3 := (gauss(0, 4) + alice) < (gauss(0, 4) + bob);
+
+    observe(m1);
+    observe(!m2);
+    return m3;
+}

@@ -1,0 +1,10 @@
+# Pluck programs that need more than 10 GB of memory. On a 16 GB M1 (11.4 GB for
+# Docker), run one at a time: the last four did not finish. Skip them with
+# FILTER_PLUCK='!@large'; see README.md for the memory and time of each.
+# Peak memory and time on one Emerald Rapids core with 64 GB:
+king_ei_d20             # 10.4 GB, 24 s
+secret_ballot_n128      # 12.3 GB, 77 s
+king_ei_d15             # 40.8 GB, 67 s
+soccer_n08              # 21.3 GB, 42 s
+changepoint_coal_n050   # 15.4 GB, 136 s
+sir_model_n72           # 14.7 GB, 111 s

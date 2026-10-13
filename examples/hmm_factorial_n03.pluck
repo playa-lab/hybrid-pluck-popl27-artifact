@@ -1,0 +1,9 @@
+(define obs [-2.10, 1.68, -1.38])
+
+(include "examples/shared/hmm_factorial.pluck")
+
+(query hmm-factorial
+  (let ((mus [(normal -3.0 1.0), (normal -1.5 1.0), (normal -0.5 1.0),
+              (normal 1.0 1.0), (normal 0.0 1.0), (normal 2.0 1.0),
+              (normal 0.0 1.0), (normal 0.0 1.0), (normal 3.5 1.0)]))
+    (Posterior (index 0 mus) (chain-obs (initial-state) (initial-state) mus obs))))

@@ -1,0 +1,8 @@
+(define obs [-2.60, -1.39, -1.93, 0.56, 0.84, 0.90])
+
+(include "examples/shared/hmm_second_order.pluck")
+
+(query hmm-second-order
+  (let ((m1 (normal -2.0 1.0)) (m2 (normal 0.0 1.0)) (m3 (normal 2.0 1.0))
+        (z1 (initial-state)) (z2 (transition z1)))
+    (Posterior m1 (chain-obs-start z1 z2 m1 m2 m3 obs))))

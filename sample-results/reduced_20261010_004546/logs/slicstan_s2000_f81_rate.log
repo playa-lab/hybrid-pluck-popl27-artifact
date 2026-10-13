@@ -1,0 +1,11 @@
+Semantic error in '/results/reduced_20261010_004546/scratch/slicstan/slicstan_s2000/f81_rate/model.stan', line 79, column 7 to column 9:
+   -------------------------------------------------
+    77:    vector[4] e3_9;
+    78:    e0_1 = (1 - p) * pi;
+    79:    e0_1[L1] = (e0_1[L1] + p);
+                ^
+    80:    e1_1 = (1 - p) * pi;
+    81:    e1_1[L1] = (e1_1[L1] + p);
+   -------------------------------------------------
+
+Identifier 'L1' not in scope. Did you mean 'e'?

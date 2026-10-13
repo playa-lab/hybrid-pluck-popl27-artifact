@@ -1,0 +1,17 @@
+def main() {
+    obs := [82, 81, 80, 83, 120, 124, 120, 85];
+
+    startRate := beta(1, 1);
+    stopRate  := beta(1, 1);
+    baseHr    := gauss(70, 400);
+    incr      := gauss(40, 400);
+    runningHr := baseHr + incr;
+
+    running := 0;    // false: start stopped
+    for t in [0..8) {
+        mu := if running == 1 { runningHr } else { baseHr };
+        cobserve(gauss(mu, 25), obs[t]);
+        running = if running == 1 { 1 - flip(stopRate) } else { flip(startRate) };
+    }
+    return (Expectation(baseHr), Expectation(runningHr));
+}

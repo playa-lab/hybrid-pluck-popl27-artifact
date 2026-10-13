@@ -1,0 +1,49 @@
+
+
+
+
+
+data real[18] x;
+data real[18] y;
+
+real alpha ~ normal(0.0, 10.0);
+real beta ~ normal(0.0, 10.0);
+real pi ~ beta(1, 1);
+
+int<2> o1 ~ categorical(to_vector([1 - pi, pi]));
+int<2> o2 ~ categorical(to_vector([1 - pi, pi]));
+int<2> o3 ~ categorical(to_vector([1 - pi, pi]));
+int<2> o4 ~ categorical(to_vector([1 - pi, pi]));
+int<2> o5 ~ categorical(to_vector([1 - pi, pi]));
+int<2> o6 ~ categorical(to_vector([1 - pi, pi]));
+int<2> o7 ~ categorical(to_vector([1 - pi, pi]));
+int<2> o8 ~ categorical(to_vector([1 - pi, pi]));
+int<2> o9 ~ categorical(to_vector([1 - pi, pi]));
+int<2> o10 ~ categorical(to_vector([1 - pi, pi]));
+int<2> o11 ~ categorical(to_vector([1 - pi, pi]));
+int<2> o12 ~ categorical(to_vector([1 - pi, pi]));
+int<2> o13 ~ categorical(to_vector([1 - pi, pi]));
+int<2> o14 ~ categorical(to_vector([1 - pi, pi]));
+int<2> o15 ~ categorical(to_vector([1 - pi, pi]));
+int<2> o16 ~ categorical(to_vector([1 - pi, pi]));
+int<2> o17 ~ categorical(to_vector([1 - pi, pi]));
+int<2> o18 ~ categorical(to_vector([1 - pi, pi]));
+
+y[1] ~ normal(alpha * x[1] + beta, 0.5 + (o1 - 1) * 9.5);
+y[2] ~ normal(alpha * x[2] + beta, 0.5 + (o2 - 1) * 9.5);
+y[3] ~ normal(alpha * x[3] + beta, 0.5 + (o3 - 1) * 9.5);
+y[4] ~ normal(alpha * x[4] + beta, 0.5 + (o4 - 1) * 9.5);
+y[5] ~ normal(alpha * x[5] + beta, 0.5 + (o5 - 1) * 9.5);
+y[6] ~ normal(alpha * x[6] + beta, 0.5 + (o6 - 1) * 9.5);
+y[7] ~ normal(alpha * x[7] + beta, 0.5 + (o7 - 1) * 9.5);
+y[8] ~ normal(alpha * x[8] + beta, 0.5 + (o8 - 1) * 9.5);
+y[9] ~ normal(alpha * x[9] + beta, 0.5 + (o9 - 1) * 9.5);
+y[10] ~ normal(alpha * x[10] + beta, 0.5 + (o10 - 1) * 9.5);
+y[11] ~ normal(alpha * x[11] + beta, 0.5 + (o11 - 1) * 9.5);
+y[12] ~ normal(alpha * x[12] + beta, 0.5 + (o12 - 1) * 9.5);
+y[13] ~ normal(alpha * x[13] + beta, 0.5 + (o13 - 1) * 9.5);
+y[14] ~ normal(alpha * x[14] + beta, 0.5 + (o14 - 1) * 9.5);
+y[15] ~ normal(alpha * x[15] + beta, 0.5 + (o15 - 1) * 9.5);
+y[16] ~ normal(alpha * x[16] + beta, 0.5 + (o16 - 1) * 9.5);
+y[17] ~ normal(alpha * x[17] + beta, 0.5 + (o17 - 1) * 9.5);
+y[18] ~ normal(alpha * x[18] + beta, 0.5 + (o18 - 1) * 9.5);

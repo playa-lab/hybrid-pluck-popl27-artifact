@@ -1,0 +1,27 @@
+
+
+let symbolic e <- gamma(2., 1.) in
+let symbolic l <- gamma(2., 1.) in
+let sample cp <- uniform_int(0, 18) in
+
+let () = observe(poisson(if (cp < 0)  then l else e), 4) in
+let () = observe(poisson(if (cp < 1)  then l else e), 5) in
+let () = observe(poisson(if (cp < 2)  then l else e), 4) in
+let () = observe(poisson(if (cp < 3)  then l else e), 0) in
+let () = observe(poisson(if (cp < 4)  then l else e), 1) in
+let () = observe(poisson(if (cp < 5)  then l else e), 4) in
+let () = observe(poisson(if (cp < 6)  then l else e), 3) in
+let () = observe(poisson(if (cp < 7)  then l else e), 4) in
+let () = observe(poisson(if (cp < 8)  then l else e), 0) in
+let () = observe(poisson(if (cp < 9)  then l else e), 6) in
+let () = observe(poisson(if (cp < 10) then l else e), 3) in
+let () = observe(poisson(if (cp < 11) then l else e), 3) in
+let () = observe(poisson(if (cp < 12) then l else e), 4) in
+let () = observe(poisson(if (cp < 13) then l else e), 0) in
+let () = observe(poisson(if (cp < 14) then l else e), 2) in
+let () = observe(poisson(if (cp < 15) then l else e), 6) in
+let () = observe(poisson(if (cp < 16) then l else e), 3) in
+let () = observe(poisson(if (cp < 17) then l else e), 3) in
+let () = observe(poisson(if (cp < 18) then l else e), 5) in
+let () = observe(poisson(if (cp < 19) then l else e), 4) in
+e

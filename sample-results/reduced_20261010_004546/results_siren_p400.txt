@@ -1,0 +1,59 @@
+
+======================================== RESULTS ========================================
+SYSTEM  PROGRAM                STATUS         RUNS WALL(s)          INFER(s)           RESULT        
+------  -------                ------         ---- -------          --------           ------        
+siren   changepoint_coal_k1    ok                3 1.767±0.081     1.243±0.075       3.02696       
+siren   changepoint_coal_n020  ok                3 4.815±0.15      2.663±0.062       0.505007      
+siren   changepoint_coal_n050  ok                3 20.51±0.53      8.644±0.35        1.47438       
+siren   dawid_skene_n08        ok                3 1.498±0.015     0.83±0.046        0.675028      
+siren   dawid_skene_n16        ok                3 2.73±0.19       1.646±0.16        0.741186      
+siren   hmm_factorial_n02      ok                3 0.7185±0.084    0.2905±0.0043     -2.74065      
+siren   hmm_factorial_n04      ok                3 1.106±0.043     0.5373±0.022      -2.70379      
+siren   hmm_factorial_n06      ok                3 1.667±0.043     0.8676±0.029      -2.64018      
+siren   hmm_first_order_n02    ok                3 0.5005±0.0082   0.1962±0.0051     -2.00747      
+siren   hmm_first_order_n08    ok                3 1.383±0.061     0.7823±0.011      -1.58488      
+siren   hmm_first_order_n14    ok                3 2.517±0.066     1.454±0.11        -2.34728      
+siren   hmm_second_order_n04   ok                3 0.7693±0.068    0.3615±0.021      -2.77399      
+siren   hmm_second_order_n08   ok                3 1.488±0.057     0.8727±0.046      -1.6961       
+siren   hmm_second_order_n14   ok                3 2.49±0.051      1.414±0.068       -2.33627      
+siren   king_ei_d20            ok                3 3.202±0.26      1.809±0.13        0.321429      
+siren   king_ei_d60            ok                3 2.734±0.09      1.613±0.067       0.329121      
+siren   outliers_n08           ok                3 4.285±0.092     3.693±0.07        1.9997        
+siren   outliers_n18           ok                3 20.21±0.87      18.71±0.78        2.00015       
+siren   polyreg                TIMEOUT           1 >300             -                  -             
+siren   run_walk_hrm           ok                3 1.814±0.17      1.193±0.12        82.0408       
+siren   secret_ballot_n04      ok                3 0.8533±0.093    0.4298±0.033      0.648167      
+siren   secret_ballot_n128     ok                3 152±6.8         38.89±3           0.590667      
+siren   sir_model_n12          ok                3 1.878±0.079     1.029±0.066       0.504312      
+siren   sir_model_n72          ok                3 35.28±0.6       10.23±0.47        0.555306      
+siren   soft_kmeans_n04        ok                3 1.481±0.056     0.7914±0.028      -2.80587      
+siren   soft_kmeans_n12        ok                3 4.182±0.25      2.342±0.12        -2.99027      
+siren   spike_and_slab         TIMEOUT           1 >300             -                  -             
+=========================================================================================
+RUNS     = successful runs measured (1 if the first run timed out / errored / was BAD).
+WALL(s)  = median ± sample-stddev of total process wall-clock over RUNS runs.
+INFER(s) = median ± sample-stddev of inference-only time.
+           pluck: inference_seconds (via PLUCK_STATS); hybit: reported t.time.
+           psi:   '-' (no inference line) — use WALL(s) as the comparable number.
+           slicstan: WALL(s)=total pipeline (slic+stanc+build+sample); INFER(s)=slic
+           +sample (SlicStan->Stan compile + HMC; EXCLUDES the stanc + C++ build that
+           are CmdStan overhead). mean(param)+Rhat and the per-component breakdown are
+           in the SlicStan timing table above (also logs/slicstan_<name>.log).
+STATUS   = ok | TIMEOUT | OOM | ERROR(rc=N) | BAD | ERROR(run)
+           | ERROR(slic) | ERROR(stanc) | ERROR(build) | NODATA.
+           OOM = SIGKILLed before the timeout = out of memory (the container hit its
+           memory limit); WALL is the actual time it ran before dying, not a real
+           inference time. Give Docker more memory to measure these.
+           slicstan: ERROR(slic) = .slicstan uses a feature SlicStan's DSL lacks;
+           ERROR(stanc)/ERROR(build) = its generated Stan is invalid / fails to
+           compile (SlicStan codegen); ERROR(run) = HMC could not initialize;
+           NODATA = compiles but no slicstan-data/<name>.json.
+           BAD = process exited 0 but did not actually infer. For PSI this is
+           'Pr[error] = 1' (posterior collapsed, e.g. observing a continuous
+           variable at an exact value — measure-zero in PSI's exact semantics).
+           A BAD/ERROR/TIMEOUT row's WALL is the single failing run, NOT a real
+           inference time — do not compare it against ok rows.
+
+logs:    /results/reduced_20261010_004546/logs/<system>_<program>.log   (every run preserved)
+table:   /results/reduced_20261010_004546/results_siren_p400.txt
+csv:     /results/reduced_20261010_004546/results_siren_p400.csv

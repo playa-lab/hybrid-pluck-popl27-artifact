@@ -1,0 +1,13 @@
+(include "examples/shared/changepoint_coal.pluck")
+
+;; SCALING PARAMETER: number of years (data points) to fit, the first N of 111.
+(define N 30)
+(define data (take N counts))
+(define n-boundaries (- N 1))
+
+;; posterior over the model dimension k (number of changepoints).
+(query num-changepoints
+  (let ((k   (draw-k))
+        (cps (place-cps n-boundaries k))
+        (h0  (gamma alpha beta)))
+    (Posterior k (observe-bins data h0 cps))))

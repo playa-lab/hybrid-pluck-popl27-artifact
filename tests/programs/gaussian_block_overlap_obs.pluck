@@ -1,0 +1,18 @@
+; Same event as gaussian_block_disjoint_obs written with OVERLAPPING scopes
+; (x0 = 1, x0 + x1 = 3; unit Jacobian) against the same independent reference
+; branch. Overlapping leaves always merged, so this form was correct before
+; the block-closure fix too; the two snapshots locking the same value pins
+; down written-form invariance.
+(query
+ (let ((x (gaussian {0.0, 0.0} {{1.0, 0.5}, {0.5, 1.0}}))
+       (u (gaussian 0.0 1.0))
+       (w (gaussian 0.0 1.0))
+       (b (flip 0.5)))
+   (Posterior b
+     (if b
+         (if (close (vector_index x @0) 1.0)
+             (close (+. (vector_index x @0) (vector_index x @1)) 3.0)
+             False)
+         (if (close u 1.0)
+             (close w 2.0)
+             False)))))

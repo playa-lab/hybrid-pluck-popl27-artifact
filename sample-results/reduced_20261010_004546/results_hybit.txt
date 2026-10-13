@@ -1,0 +1,76 @@
+
+======================================== RESULTS ========================================
+SYSTEM  PROGRAM                STATUS         RUNS WALL(s)          INFER(s)           RESULT        
+------  -------                ------         ---- -------          --------           ------        
+hybit   GPA                    ok                2 276±7.7         0.6182±0.081      0.611511      
+hybit   addFun_max             TIMEOUT           1 >300             -                  -             
+hybit   addFun_sum             ok                3 28.5±4.1        0.5329±0.18       -0.00390625   
+hybit   burglary_alarm         ok                3 13.38±0.96      0.02342±0.008     0.00299345    
+hybit   changepoint_coal_k1    ok                3 60.81±10        4.973±0.65        3.02136       
+hybit   changepoint_coal_n020  TIMEOUT           1 >300             -                  -             
+hybit   changepoint_coal_n050  TIMEOUT           1 >300             -                  -             
+hybit   clickGraph             ok                3 46.26±5.8       2.137±0.046       0.600146      
+hybit   clinicalTrial1         ok                3 22.7±7.5        5.946±0.82        0.170131      
+hybit   clinicalTrial2         ok                3 16.13±4         0.3767±0.076      0.285889      
+hybit   coinBias               ok                3 25.78±8.8       0.1397±0.012      0.415843      
+hybit   conjugate_gaussians    ok                3 47.41±0.81      3.021±0.2         1.00065       
+hybit   dawid_skene_n08        TIMEOUT           1 >300             -                  -             
+hybit   dawid_skene_n16        TIMEOUT           1 >300             -                  -             
+hybit   diamond_network        ok                3 14.24±1.8       0.02914±0.0089    0.995012      
+hybit   f81_rate               ok                3 25.7±7.8        0.1345±0.028      0.763053      
+hybit   hmm_factorial_n02      TIMEOUT           1 >300             -                  -             
+hybit   hmm_factorial_n04      TIMEOUT           1 >300             -                  -             
+hybit   hmm_factorial_n06      TIMEOUT           1 >300             -                  -             
+hybit   hmm_first_order_n02    ok                3 230.2±41        186.1±36          -1.44223      
+hybit   hmm_first_order_n08    TIMEOUT           1 >300             -                  -             
+hybit   hmm_first_order_n14    TIMEOUT           1 >300             -                  -             
+hybit   hmm_second_order_n04   TIMEOUT           1 >300             -                  -             
+hybit   hmm_second_order_n08   TIMEOUT           1 >300             -                  -             
+hybit   hmm_second_order_n14   TIMEOUT           1 >300             -                  -             
+hybit   king_ei_d20            TIMEOUT           1 >300             -                  -             
+hybit   king_ei_d60            TIMEOUT           1 >300             -                  -             
+hybit   linear_regression      ok                3 54.8±6.9        6.273±1.1         1.88881       
+hybit   normal_mixture         TIMEOUT           1 >300             -                  -             
+hybit   outliers_n08           TIMEOUT           1 >300             -                  -             
+hybit   outliers_n18           TIMEOUT           1 >300             -                  -             
+hybit   polyreg                TIMEOUT           1 >300             -                  -             
+hybit   run_walk_hrm           TIMEOUT           1 >300             -                  -             
+hybit   secret_ballot_n04      TIMEOUT           1 >300             -                  -             
+hybit   secret_ballot_n128     TIMEOUT           1 >300             -                  -             
+hybit   sir_model_n12          ok                3 252.2±17        242.9±17          0.522548      
+hybit   sir_model_n72          TIMEOUT           1 >300             -                  -             
+hybit   soft_kmeans_n04        TIMEOUT           1 >300             -                  -             
+hybit   soft_kmeans_n12        TIMEOUT           1 >300             -                  -             
+hybit   spacex                 ok                3 40.7±0.46       28.67±0.29        -             
+hybit   spike_and_slab         TIMEOUT           1 >300             -                  -             
+hybit   trueskill              ok                3 213±7.9         197.3±7.4         -             
+hybit   tug_of_war             TIMEOUT           1 >300             -                  -             
+hybit   weekend                ok                3 10.8±0.54       0.1609±0.01       -             
+=========================================================================================
+RUNS     = successful runs measured (1 if the first run timed out / errored / was BAD).
+WALL(s)  = median ± sample-stddev of total process wall-clock over RUNS runs.
+INFER(s) = median ± sample-stddev of inference-only time.
+           pluck: inference_seconds (via PLUCK_STATS); hybit: reported t.time.
+           psi:   '-' (no inference line) — use WALL(s) as the comparable number.
+           slicstan: WALL(s)=total pipeline (slic+stanc+build+sample); INFER(s)=slic
+           +sample (SlicStan->Stan compile + HMC; EXCLUDES the stanc + C++ build that
+           are CmdStan overhead). mean(param)+Rhat and the per-component breakdown are
+           in the SlicStan timing table above (also logs/slicstan_<name>.log).
+STATUS   = ok | TIMEOUT | OOM | ERROR(rc=N) | BAD | ERROR(run)
+           | ERROR(slic) | ERROR(stanc) | ERROR(build) | NODATA.
+           OOM = SIGKILLed before the timeout = out of memory (the container hit its
+           memory limit); WALL is the actual time it ran before dying, not a real
+           inference time. Give Docker more memory to measure these.
+           slicstan: ERROR(slic) = .slicstan uses a feature SlicStan's DSL lacks;
+           ERROR(stanc)/ERROR(build) = its generated Stan is invalid / fails to
+           compile (SlicStan codegen); ERROR(run) = HMC could not initialize;
+           NODATA = compiles but no slicstan-data/<name>.json.
+           BAD = process exited 0 but did not actually infer. For PSI this is
+           'Pr[error] = 1' (posterior collapsed, e.g. observing a continuous
+           variable at an exact value — measure-zero in PSI's exact semantics).
+           A BAD/ERROR/TIMEOUT row's WALL is the single failing run, NOT a real
+           inference time — do not compare it against ok rows.
+
+logs:    /results/reduced_20261010_004546/logs/<system>_<program>.log   (every run preserved)
+table:   /results/reduced_20261010_004546/results_hybit.txt
+csv:     /results/reduced_20261010_004546/results_hybit.csv

@@ -1,0 +1,7 @@
+(define N 40)
+
+(include "examples/shared/pcfg.pluck")
+
+(query learned-probabilities
+  (let ((p (make-probs)))
+    (Posterior (vector_index (index 0 p) @0) (observe-sentences p (take N sentences)))))

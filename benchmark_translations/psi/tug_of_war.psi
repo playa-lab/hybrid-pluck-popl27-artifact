@@ -1,0 +1,17 @@
+def main() {
+    alice := gauss(5, 1);
+    bob   := gauss(5, 1);
+    lag := 2;
+
+    m1 := (if flip(1/3) { alice - lag } else { alice }) < (if flip(1/3) { bob - lag } else { bob });
+    m2 := (if flip(1/3) { alice - lag } else { alice }) < (if flip(1/3) { bob - lag } else { bob });
+    m3 := (if flip(1/3) { alice - lag } else { alice }) < (if flip(1/3) { bob - lag } else { bob });
+    m4 := (if flip(1/3) { alice - lag } else { alice }) < (if flip(1/3) { bob - lag } else { bob });
+    m5 := (if flip(1/3) { alice - lag } else { alice }) < (if flip(1/3) { bob - lag } else { bob });
+
+    observe(m1);
+    observe(!m2);
+    observe(m3);
+    observe(!m4);
+    return m5;
+}

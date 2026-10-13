@@ -1,0 +1,107 @@
+Benchmark run — N=3 runs/program, per-run timeout = 300s
+run id:  reduced_20261010_004546
+tag:     turing_p64_i400  (results_turing_p64_i400.csv)
+run dir: /results/reduced_20261010_004546
+logs:    /results/reduced_20261010_004546/logs
+scratch: /results/reduced_20261010_004546/scratch
+programs: @table3
+
+==> Running turing programs (N=3, PG particles=64, iters=400, timeout 300s, Julia + Turing.jl + sysimage)
+  turing changepoint_coal_k1    ... ok            n=3  wall=43.55±1
+  turing changepoint_coal_n020  ... ok            n=3  wall=66.36±3.6
+  turing changepoint_coal_n050  ... ok            n=3  wall=115.5±22
+  turing dawid_skene_n08        ... ok            n=3  wall=55.12±19
+  turing dawid_skene_n16        ... ok            n=3  wall=64.73±0.49
+  turing f81_joint              ... ok            n=3  wall=64.97±3.2
+  turing f81_rate               ... ok            n=3  wall=62.55±1
+  turing hmm_factorial_n02      ... ok            n=3  wall=28.89±0.35
+  turing hmm_factorial_n04      ... ok            n=3  wall=42.81±2.7
+  turing hmm_factorial_n06      ... ok            n=3  wall=49.18±2.1
+  turing hmm_first_order_n02    ... ok            n=3  wall=20.65±1
+  turing hmm_first_order_n08    ... ok            n=3  wall=40.3±1.2
+  turing hmm_first_order_n14    ... ok            n=3  wall=55.33±1.8
+  turing hmm_second_order_n04   ... ok            n=3  wall=25.24±0.34
+  turing hmm_second_order_n08   ... ok            n=3  wall=39.02±0.12
+  turing hmm_second_order_n14   ... ok            n=3  wall=53.84±2.8
+  turing king_ei_d20            ... ok            n=3  wall=27.96±1.3
+  turing king_ei_d60            ... ok            n=3  wall=27.56±0.13
+  turing outliers_n08           ... ok            n=3  wall=44.86±2.5
+  turing outliers_n18           ... ok            n=3  wall=72.18±7.2
+  turing pcfg_ambiguous         ... TIMEOUT       n=1  wall=>300
+  turing pcfg_n020              ... ok            n=3  wall=59.37±3
+  turing polyreg                ... ok            n=3  wall=36±1.6
+  turing run_walk_hrm           ... ok            n=3  wall=53.12±0.96
+  turing secret_ballot_n04      ... ok            n=3  wall=24.78±0.39
+  turing secret_ballot_n128     ... TIMEOUT       n=1  wall=>300
+  turing sir_model_n12          ... ok            n=3  wall=42.78±0.42
+  turing sir_model_n72          ... ok            n=3  wall=203.2±13
+  turing soccer_n03             ... ok            n=3  wall=40.15±0.27
+  turing soccer_n07             ... ok            n=3  wall=84.74±5.4
+  turing soft_kmeans_n04        ... ok            n=3  wall=46±1.2
+  turing soft_kmeans_n12        ... ok            n=3  wall=96.92±6.6
+  turing spike_and_slab         ... ok            n=3  wall=34.81±0.83
+
+======================================== RESULTS ========================================
+SYSTEM  PROGRAM                STATUS         RUNS WALL(s)          INFER(s)           RESULT        
+------  -------                ------         ---- -------          --------           ------        
+turing  changepoint_coal_k1    ok                3 43.55±1         29.36±1.7         2.98785       
+turing  changepoint_coal_n020  ok                3 66.36±3.6       50.49±4.1         0.468333      
+turing  changepoint_coal_n050  ok                3 115.5±22        98.55±23          1.64083       
+turing  dawid_skene_n08        ok                3 55.12±19        40.33±13          0.669128      
+turing  dawid_skene_n16        ok                3 64.73±0.49      51.51±0.38        0.759229      
+turing  f81_joint              ok                3 64.97±3.2       48.28±3.6         0.504657      
+turing  f81_rate               ok                3 62.55±1         49.96±1.1         0.500467      
+turing  hmm_factorial_n02      ok                3 28.89±0.35      17.98±0.35        -2.74026      
+turing  hmm_factorial_n04      ok                3 42.81±2.7       31.18±2.1         -2.68095      
+turing  hmm_factorial_n06      ok                3 49.18±2.1       38.42±1.8         -2.67428      
+turing  hmm_first_order_n02    ok                3 20.65±1         10.3±0.74         -2.01762      
+turing  hmm_first_order_n08    ok                3 40.3±1.2        30.59±1.2         -1.63936      
+turing  hmm_first_order_n14    ok                3 55.33±1.8       44.82±1.5         -2.37667      
+turing  hmm_second_order_n04   ok                3 25.24±0.34      15.44±0.28        -2.73518      
+turing  hmm_second_order_n08   ok                3 39.02±0.12      29.09±0.3         -1.74077      
+turing  hmm_second_order_n14   ok                3 53.84±2.8       44.26±2.5         -2.34788      
+turing  king_ei_d20            ok                3 27.96±1.3       15.88±0.83        0.499732      
+turing  king_ei_d60            ok                3 27.56±0.13      15.85±0.13        0.499284      
+turing  outliers_n08           ok                3 44.86±2.5       31.48±2.3         1.9894        
+turing  outliers_n18           ok                3 72.18±7.2       59.29±7.3         1.98818       
+turing  pcfg_ambiguous         TIMEOUT           1 >300             -                  -             
+turing  pcfg_n020              ok                3 59.37±3         41.16±2.8         0.834424      
+turing  polyreg                ok                3 36±1.6          23.47±1.8         0             
+turing  run_walk_hrm           ok                3 53.12±0.96      39.96±0.92        81.8564       
+turing  secret_ballot_n04      ok                3 24.78±0.39      13.96±0.48        0.644519      
+turing  secret_ballot_n128     TIMEOUT           1 >300             -                  -             
+turing  sir_model_n12          ok                3 42.78±0.42      29.11±0.32        0.47151       
+turing  sir_model_n72          ok                3 203.2±13        187±12            0.588289      
+turing  soccer_n03             ok                3 40.15±0.27      26.79±0.27        0.7425        
+turing  soccer_n07             ok                3 84.74±5.4       71.43±4.5         0.869167      
+turing  soft_kmeans_n04        ok                3 46±1.2          35.65±1.2         -2.87171      
+turing  soft_kmeans_n12        ok                3 96.92±6.6       86.46±6.7         -2.56923      
+turing  spike_and_slab         ok                3 34.81±0.83      23.63±0.97        0.601667      
+=========================================================================================
+RUNS     = successful runs measured (1 if the first run timed out / errored / was BAD).
+WALL(s)  = median ± sample-stddev of total process wall-clock over RUNS runs.
+INFER(s) = median ± sample-stddev of inference-only time.
+           pluck: inference_seconds (via PLUCK_STATS); hybit: reported t.time.
+           psi:   '-' (no inference line) — use WALL(s) as the comparable number.
+           slicstan: WALL(s)=total pipeline (slic+stanc+build+sample); INFER(s)=slic
+           +sample (SlicStan->Stan compile + HMC; EXCLUDES the stanc + C++ build that
+           are CmdStan overhead). mean(param)+Rhat and the per-component breakdown are
+           in the SlicStan timing table above (also logs/slicstan_<name>.log).
+STATUS   = ok | TIMEOUT | OOM | ERROR(rc=N) | BAD | ERROR(run)
+           | ERROR(slic) | ERROR(stanc) | ERROR(build) | NODATA.
+           OOM = SIGKILLed before the timeout = out of memory (the container hit its
+           memory limit); WALL is the actual time it ran before dying, not a real
+           inference time. Give Docker more memory to measure these.
+           slicstan: ERROR(slic) = .slicstan uses a feature SlicStan's DSL lacks;
+           ERROR(stanc)/ERROR(build) = its generated Stan is invalid / fails to
+           compile (SlicStan codegen); ERROR(run) = HMC could not initialize;
+           NODATA = compiles but no slicstan-data/<name>.json.
+           BAD = process exited 0 but did not actually infer. For PSI this is
+           'Pr[error] = 1' (posterior collapsed, e.g. observing a continuous
+           variable at an exact value — measure-zero in PSI's exact semantics).
+           A BAD/ERROR/TIMEOUT row's WALL is the single failing run, NOT a real
+           inference time — do not compare it against ok rows.
+
+logs:    /results/reduced_20261010_004546/logs/<system>_<program>.log   (every run preserved)
+table:   /results/reduced_20261010_004546/results_turing_p64_i400.txt
+csv:     /results/reduced_20261010_004546/results_turing_p64_i400.csv

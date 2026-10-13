@@ -1,0 +1,39 @@
+// PSI port of examples/fig_sir_listing.pluck (Figure 1): SIR epidemic HMM, 3 patients x 10
+// days, shared Beta rates, initial state infected w.p. the infection rate.
+//   rec ~ Beta(2,4), inf ~ Beta(1,6), bas ~ Beta(1,12), sym ~ Beta(3,2)
+// Wall-clock is the comparable number (PSI reports no inference-only time).
+
+def main() {
+    H0 := [0, 0, 1, 1, 1, 1, 1, 0, 0, 0];
+    H1 := [0, 1, 1, 0, 0, 1, 1, 0, 0, 0];
+    H2 := [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    rec := beta(2, 4);
+    inf := beta(1, 6);
+    bas := beta(1, 12);
+    sym := beta(3, 2);
+
+    state0 := if flip(inf) { 1 } else { 0 };
+    for n in [0..10) {
+        pobs := if state0 == 1 { sym } else { bas };
+        observe(flip(pobs) == (H0[n] == 1));
+        state0 = if state0 == 1 { (if flip(rec) { 0 } else { 1 }) }
+                 else           { (if flip(inf) { 1 } else { 0 }) };
+    }
+    state1 := if flip(inf) { 1 } else { 0 };
+    for n in [0..10) {
+        pobs := if state1 == 1 { sym } else { bas };
+        observe(flip(pobs) == (H1[n] == 1));
+        state1 = if state1 == 1 { (if flip(rec) { 0 } else { 1 }) }
+                 else           { (if flip(inf) { 1 } else { 0 }) };
+    }
+    state2 := if flip(inf) { 1 } else { 0 };
+    for n in [0..10) {
+        pobs := if state2 == 1 { sym } else { bas };
+        observe(flip(pobs) == (H2[n] == 1));
+        state2 = if state2 == 1 { (if flip(rec) { 0 } else { 1 }) }
+                 else           { (if flip(inf) { 1 } else { 0 }) };
+    }
+
+    return Expectation(inf);
+}

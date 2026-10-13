@@ -1,0 +1,20 @@
+[
+  {
+    "query": "(let((b(flip 0.5)) (s(native_leq(S(if b(O) (S(O)))) @1))) (Posterior(if b s(not s)) True))",
+    "kind": {
+      "result_kind": "distribution",
+      "items": [
+        {
+          "display": "True",
+          "log_probability": 0.0,
+          "posteriors": {
+            "beta": [],
+            "dirichlet": [],
+            "gamma": [],
+            "gaussian": []
+          }
+        }
+      ]
+    }
+  }
+]

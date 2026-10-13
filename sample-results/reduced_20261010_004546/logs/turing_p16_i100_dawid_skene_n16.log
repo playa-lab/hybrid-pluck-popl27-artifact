@@ -1,0 +1,15 @@
+===== ok  wall=18.9739s  rc=0  =====
+RESULT: 0.588845
+dawid_skene (Turing PG)  n_items=16  n_annotators=3  particles=16  iters=100
+annotator 0 posterior: tp=0.589 (true 0.95)   fp=0.286 (true 0.05)
+inference_seconds: 4.583
+===== ok  wall=21.6059s  rc=0  =====
+RESULT: 0.581789
+dawid_skene (Turing PG)  n_items=16  n_annotators=3  particles=16  iters=100
+annotator 0 posterior: tp=0.582 (true 0.95)   fp=0.256 (true 0.05)
+inference_seconds: 5.505
+===== ok  wall=26.3449s  rc=0  =====
+RESULT: 0.524535
+dawid_skene (Turing PG)  n_items=16  n_annotators=3  particles=16  iters=100
+annotator 0 posterior: tp=0.525 (true 0.95)   fp=0.367 (true 0.05)
+inference_seconds: 6.949

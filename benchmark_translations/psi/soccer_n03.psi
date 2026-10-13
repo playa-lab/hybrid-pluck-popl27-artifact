@@ -1,0 +1,24 @@
+// matchup scale at identity-sum index k in {0..5}: 1.5^(k-2), home uses k+1.
+def scaleOf(k:ℕ){
+    return if k==0 {4.0/9.0} else { if k==1 {2.0/3.0} else { if k==2 {1.0}
+           else { if k==3 {1.5} else { if k==4 {2.25} else {3.375} } } } };
+}
+
+def main(){
+    a0:=gamma(1,1); a1:=gamma(1,1); a2:=gamma(1,1); sa:=a0+a1+a2;
+    th0:=a0/sa; th1:=a1/sa; th2:=a2/sa;          // theta ~ Dirichlet(1,1,1)
+    id0:=categorical([th0,th1,th2]);
+    id1:=categorical([th0,th1,th2]);
+    id2:=categorical([th0,th1,th2]);
+    r0:=gamma(4,4); r1:=gamma(4,4); r2:=gamma(4,4);   // Gamma(shape 4, rate 4), mean 1
+
+    // Game home away goals_home goals_away  (home boosted: scaleOf(p+1))
+    p:=id0+id1;  observe(poisson(r0*scaleOf(p+1))==2);  observe(poisson(r1*scaleOf(p))==0);   // (0,1,2,0)
+    p2:=id0+id2; observe(poisson(r0*scaleOf(p2+1))==3); observe(poisson(r2*scaleOf(p2))==1);   // (0,2,3,1)
+    p3:=id1+id0; observe(poisson(r1*scaleOf(p3+1))==3); observe(poisson(r0*scaleOf(p3))==2);   // (1,0,3,2)
+    p4:=id1+id2; observe(poisson(r1*scaleOf(p4+1))==0); observe(poisson(r2*scaleOf(p4))==1);   // (1,2,0,1)
+    p5:=id2+id0; observe(poisson(r2*scaleOf(p5+1))==2); observe(poisson(r0*scaleOf(p5))==4);   // (2,0,2,4)
+    p6:=id2+id1; observe(poisson(r2*scaleOf(p6+1))==0); observe(poisson(r1*scaleOf(p6))==0);   // (2,1,0,0)
+
+    return id0;   // posterior over team T0's identity (defend/balanced/attack)
+}

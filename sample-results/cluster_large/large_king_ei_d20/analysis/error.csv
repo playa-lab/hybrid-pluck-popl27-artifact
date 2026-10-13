@@ -1,0 +1,2 @@
+program,backend,setting,exact_value,approx_value,abs_err,rel_err,n_repeats,rel_err_mean,rel_err_median,rel_err_p75,rel_err_max
+king_ei_d20,pluck,-,0.316009,0.316009,0,0,1,0,0,0,0

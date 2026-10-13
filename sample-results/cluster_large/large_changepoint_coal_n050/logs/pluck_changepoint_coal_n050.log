@@ -1,0 +1,19 @@
+===== ok  wall=135.8849s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 4
+continuous latents (Beta/Gaussian/…) : 270825
+BDD vars allocated (discrete bits)    : 270824
+BDD recursive calls (compile work)    : 204592436
+BDD guard nodes  : sum=1002155  max=939626  mean=250538
+SPN nodes (TREE) : sum=96975  max=92121  mean=24243
+SPN nodes (DAG)  : per-world-max=56448  all-worlds-unique=58951  intern-table=2111208
+SPN leaf nodes   : sum=77323  (max sum-arity=1, max prod-arity=18424)
+posterior mixture components (total)  : 19650
+time (s): parse=0.0001  symbolic-exec=117.2680  wmc=5.3501  posterior=7.9508  flatten=0.0016  display/naming=0.6081  total=131.1787
+===================
+inference_seconds: 131.17871832
+num-changepoints:
+  1  0.6068954362398536
+  2  0.2874584539925253
+  3  0.10181801777930256
+  0  0.0038280919883216936

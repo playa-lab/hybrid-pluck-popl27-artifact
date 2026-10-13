@@ -1,0 +1,21 @@
+def main(){
+    counts := [4,5,4,0,1,4,3,4,0,6,3,3,4,0,2,6,3,3,5,4,5,3,1,4,4,1,5,5,3,4];
+    N := 30;
+    h0 := gamma(2,1);
+    h1 := gamma(2,1);
+    h2 := gamma(2,1);
+    h3 := gamma(2,1);
+    k := categorical([1/2.75, 1/2.75, 0.5/2.75, 0.25/2.75]);
+    kleft := k;
+    seg := 0;
+    observe(poisson(h0) == counts[0]);
+    for i in [1..N){
+        rem := N - i;
+        cut := bernoulli(kleft / rem);
+        kleft = kleft - cut;
+        seg = seg + cut;
+        rate := if seg == 0 { h0 } else { if seg == 1 { h1 } else { if seg == 2 { h2 } else { h3 } } };
+        observe(poisson(rate) == counts[i]);
+    }
+    return k;
+}

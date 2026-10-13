@@ -1,0 +1,11 @@
+def main(){
+    counts := [4,5,4,0,1,4,3,4,0,6,3,3,4,0,2,6,3,3,5,4];
+    e := gamma(2,1);
+    l := gamma(2,1);
+    w := 1.0/19.0;
+    tau := categorical([w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w,w]);  // 0..18 -> boundary tau+1 in 1..19
+    for i in [0..20){
+        observe((if (i+1) <= tau+1 { poisson(e) } else { poisson(l) }) == counts[i]);
+    }
+    return Expectation(e);   // posterior mean of the early rate (~3)
+}

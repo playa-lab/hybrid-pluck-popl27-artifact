@@ -1,0 +1,29 @@
+def scaleOf(k:ℕ){
+    return if k==0 {4.0/9.0} else { if k==1 {2.0/3.0} else { if k==2 {1.0}
+           else { if k==3 {1.5} else { if k==4 {2.25} else {3.375} } } } };
+}
+
+def main(){
+    a0:=gamma(1,1); a1:=gamma(1,1); a2:=gamma(1,1); sa:=a0+a1+a2;
+    th0:=a0/sa; th1:=a1/sa; th2:=a2/sa;
+    id0:=categorical([th0,th1,th2]);
+    id1:=categorical([th0,th1,th2]);
+    id2:=categorical([th0,th1,th2]);
+    id3:=categorical([th0,th1,th2]);
+    r0:=gamma(4,4); r1:=gamma(4,4); r2:=gamma(4,4); r3:=gamma(4,4);
+
+    p:=id0+id1;  observe(poisson(r0*scaleOf(p+1))==3);  observe(poisson(r1*scaleOf(p))==1);
+    p2:=id0+id2; observe(poisson(r0*scaleOf(p2+1))==1); observe(poisson(r2*scaleOf(p2))==2);
+    p3:=id0+id3; observe(poisson(r0*scaleOf(p3+1))==1); observe(poisson(r3*scaleOf(p3))==2);
+    p4:=id1+id0; observe(poisson(r1*scaleOf(p4+1))==4); observe(poisson(r0*scaleOf(p4))==0);
+    p5:=id1+id2; observe(poisson(r1*scaleOf(p5+1))==1); observe(poisson(r2*scaleOf(p5))==0);
+    p6:=id1+id3; observe(poisson(r1*scaleOf(p6+1))==1); observe(poisson(r3*scaleOf(p6))==1);
+    p7:=id2+id0; observe(poisson(r2*scaleOf(p7+1))==4); observe(poisson(r0*scaleOf(p7))==1);
+    p8:=id2+id1; observe(poisson(r2*scaleOf(p8+1))==4); observe(poisson(r1*scaleOf(p8))==0);
+    p9:=id2+id3; observe(poisson(r2*scaleOf(p9+1))==1); observe(poisson(r3*scaleOf(p9))==3);
+    p10:=id3+id0; observe(poisson(r3*scaleOf(p10+1))==2); observe(poisson(r0*scaleOf(p10))==2);
+    p11:=id3+id1; observe(poisson(r3*scaleOf(p11+1))==2); observe(poisson(r1*scaleOf(p11))==2);
+    p12:=id3+id2; observe(poisson(r3*scaleOf(p12+1))==0); observe(poisson(r2*scaleOf(p12))==3);
+
+    return id0;
+}

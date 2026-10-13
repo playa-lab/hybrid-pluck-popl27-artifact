@@ -1,0 +1,74 @@
+def main() {
+    prevalence := beta(1, 1);
+
+    tp0 := beta(2, 1);
+    tp1 := beta(2, 1);
+    tp2 := beta(2, 1);
+    fp0 := beta(1, 2);
+    fp1 := beta(1, 2);
+    fp2 := beta(1, 2);
+
+    z0 := flip(prevalence);
+    z1 := flip(prevalence);
+    z2 := flip(prevalence);
+    z3 := flip(prevalence);
+    z4 := flip(prevalence);
+    z5 := flip(prevalence);
+    z6 := flip(prevalence);
+    z7 := flip(prevalence);
+    z8 := flip(prevalence);
+    z9 := flip(prevalence);
+    z10 := flip(prevalence);
+    z11 := flip(prevalence);
+    z12 := flip(prevalence);
+    z13 := flip(prevalence);
+    z14 := flip(prevalence);
+    z15 := flip(prevalence);
+    z16 := flip(prevalence);
+    z17 := flip(prevalence);
+    z18 := flip(prevalence);
+    z19 := flip(prevalence);
+    z20 := flip(prevalence);
+    z21 := flip(prevalence);
+
+    observe(flip((if z0 { tp0 } else { fp0 })) == false);
+    observe(flip((if z0 { tp1 } else { fp1 })) == false);
+    observe(flip((if z1 { tp1 } else { fp1 })) == false);
+    observe(flip((if z2 { tp0 } else { fp0 })) == true);
+    observe(flip((if z2 { tp1 } else { fp1 })) == true);
+    observe(flip((if z2 { tp2 } else { fp2 })) == true);
+    observe(flip((if z3 { tp2 } else { fp2 })) == true);
+    observe(flip((if z4 { tp1 } else { fp1 })) == false);
+    observe(flip((if z4 { tp2 } else { fp2 })) == true);
+    observe(flip((if z5 { tp0 } else { fp0 })) == false);
+    observe(flip((if z5 { tp1 } else { fp1 })) == false);
+    observe(flip((if z6 { tp0 } else { fp0 })) == false);
+    observe(flip((if z6 { tp1 } else { fp1 })) == false);
+    observe(flip((if z8 { tp2 } else { fp2 })) == false);
+    observe(flip((if z9 { tp0 } else { fp0 })) == true);
+    observe(flip((if z9 { tp2 } else { fp2 })) == true);
+    observe(flip((if z10 { tp0 } else { fp0 })) == true);
+    observe(flip((if z10 { tp1 } else { fp1 })) == false);
+    observe(flip((if z10 { tp2 } else { fp2 })) == false);
+    observe(flip((if z11 { tp0 } else { fp0 })) == false);
+    observe(flip((if z11 { tp1 } else { fp1 })) == false);
+    observe(flip((if z11 { tp2 } else { fp2 })) == false);
+    observe(flip((if z12 { tp0 } else { fp0 })) == true);
+    observe(flip((if z13 { tp2 } else { fp2 })) == true);
+    observe(flip((if z14 { tp2 } else { fp2 })) == false);
+    observe(flip((if z15 { tp0 } else { fp0 })) == false);
+    observe(flip((if z15 { tp1 } else { fp1 })) == false);
+    observe(flip((if z16 { tp0 } else { fp0 })) == true);
+    observe(flip((if z17 { tp0 } else { fp0 })) == false);
+    observe(flip((if z17 { tp1 } else { fp1 })) == false);
+    observe(flip((if z18 { tp1 } else { fp1 })) == false);
+    observe(flip((if z18 { tp2 } else { fp2 })) == false);
+    observe(flip((if z19 { tp2 } else { fp2 })) == false);
+    observe(flip((if z20 { tp0 } else { fp0 })) == false);
+    observe(flip((if z20 { tp2 } else { fp2 })) == false);
+    observe(flip((if z21 { tp0 } else { fp0 })) == false);
+    observe(flip((if z21 { tp1 } else { fp1 })) == false);
+    observe(flip((if z21 { tp2 } else { fp2 })) == false);
+
+    return tp0;
+}

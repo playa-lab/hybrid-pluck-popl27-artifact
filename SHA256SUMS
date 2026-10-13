@@ -1,0 +1,17 @@
+# SHA-256 digests of the artifact's Docker images on Docker Hub, built from commit
+# 4261913 of this repository. They identify images, not files, so check them with Docker
+# rather than shasum:
+#
+#   docker pull theodorelong98/hybrid-pluck:popl     # prints "Digest: " and the first digest
+#   docker buildx imagetools inspect theodorelong98/hybrid-pluck:popl    # all three
+
+sha256:3e1d6f3cd421a11a5f96ca1bfc95cddc72f5e2a2f32cac8f6731196407817eb9  theodorelong98/hybrid-pluck:popl (both architectures)
+sha256:0c40a7748f62cd9aca7d000dce8cc5026514c117f923613c5691ebd2b1c45506  theodorelong98/hybrid-pluck:popl-arm64
+sha256:419e0c59731a4dbaf55a259b6a572012f66dcd009e2ff00345d4bfe38bb5b232  theodorelong98/hybrid-pluck:popl-amd64
+
+# The image IDs, as `docker image inspect --format '{{.Id}}' hybrid-pluck:popl` prints them
+# with Docker's default image store (the containerd image store may print the first
+# digest above instead):
+
+sha256:46dd4d4a7932042d7dbb2fe2640e3066b764dff1a430f4823c27913afb6f3903  arm64
+sha256:7a8558ed3c09737b643d77abbeb9f1efde62b8a45cbcf7c0172be8843477acff  amd64

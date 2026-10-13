@@ -1,0 +1,51 @@
+===== ok  wall=0.1169s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 2
+BDD vars allocated (discrete bits)    : 11
+BDD recursive calls (compile work)    : 1231
+BDD guard nodes  : sum=11  max=11  mean=11
+SPN nodes (TREE) : sum=3  max=3  mean=3
+SPN nodes (DAG)  : per-world-max=3  all-worlds-unique=3  intern-table=18
+SPN leaf nodes   : sum=2  (max sum-arity=0, max prod-arity=1)
+posterior mixture components (total)  : 1
+time (s): parse=0.0000  symbolic-exec=0.0003  wmc=0.0000  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0004
+===================
+inference_seconds: 0.00035371
+clinicalTrial2:
+  p  1
+        p ~ Beta(2.000000, 5.000000)
+===== ok  wall=0.1174s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 2
+BDD vars allocated (discrete bits)    : 11
+BDD recursive calls (compile work)    : 1231
+BDD guard nodes  : sum=11  max=11  mean=11
+SPN nodes (TREE) : sum=3  max=3  mean=3
+SPN nodes (DAG)  : per-world-max=3  all-worlds-unique=3  intern-table=18
+SPN leaf nodes   : sum=2  (max sum-arity=0, max prod-arity=1)
+posterior mixture components (total)  : 1
+time (s): parse=0.0000  symbolic-exec=0.0002  wmc=0.0000  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0003
+===================
+inference_seconds: 0.00030121
+clinicalTrial2:
+  p  1
+        p ~ Beta(2.000000, 5.000000)
+===== ok  wall=0.1071s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 2
+BDD vars allocated (discrete bits)    : 11
+BDD recursive calls (compile work)    : 1231
+BDD guard nodes  : sum=11  max=11  mean=11
+SPN nodes (TREE) : sum=3  max=3  mean=3
+SPN nodes (DAG)  : per-world-max=3  all-worlds-unique=3  intern-table=18
+SPN leaf nodes   : sum=2  (max sum-arity=0, max prod-arity=1)
+posterior mixture components (total)  : 1
+time (s): parse=0.0000  symbolic-exec=0.0002  wmc=0.0000  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0003
+===================
+inference_seconds: 0.00029617
+clinicalTrial2:
+  p  1
+        p ~ Beta(2.000000, 5.000000)

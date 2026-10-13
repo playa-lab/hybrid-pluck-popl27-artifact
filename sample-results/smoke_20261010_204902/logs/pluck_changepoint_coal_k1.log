@@ -1,0 +1,72 @@
+===== ok  wall=0.1531s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 229
+BDD vars allocated (discrete bits)    : 227
+BDD recursive calls (compile work)    : 84192
+BDD guard nodes  : sum=398  max=398  mean=398
+SPN nodes (TREE) : sum=58  max=58  mean=58
+SPN nodes (DAG)  : per-world-max=58  all-worlds-unique=58  intern-table=1333
+SPN leaf nodes   : sum=38  (max sum-arity=1, max prod-arity=19)
+posterior mixture components (total)  : 19
+time (s): parse=0.0001  symbolic-exec=0.0144  wmc=0.0010  posterior=0.0001  flatten=0.0000  display/naming=0.0000  total=0.0158
+===================
+inference_seconds: 0.01576844
+changepoint_coal_k1:
+  λ  1.0000000000000018
+    ├ 7.987726%
+    │       λ ~ Gamma(45.000000, 16.000000)
+
+    ├ 6.677001%
+    │       λ ~ Gamma(6.000000, 2.000000)
+
+    ├ 6.677001%
+    │       λ ~ Gamma(62.000000, 20.000000)
+
+    ├ 6.261081%
+    │       λ ~ Gamma(15.000000, 4.000000)
+
+    ├ 6.085243%
+    │       λ ~ Gamma(11.000000, 3.000000)
+
+    ├ 6.085243%
+    │       λ ~ Gamma(57.000000, 19.000000)
+
+    ├ 6.036264%
+    │       λ ~ Gamma(27.000000, 10.000000)
+
+    ├ 5.654846%
+    │       λ ~ Gamma(16.000000, 6.000000)
+
+    ├ 5.635649%
+    │       λ ~ Gamma(43.000000, 15.000000)
+
+    ├ 5.267259%
+    │       λ ~ Gamma(54.000000, 18.000000)
+
+    ├ 4.766994%
+    │       λ ~ Gamma(51.000000, 17.000000)
+
+    ├ 4.556686%
+    │       λ ~ Gamma(15.000000, 5.000000)
+
+    ├ 4.501489%
+    │       λ ~ Gamma(20.000000, 7.000000)
+
+    ├ 4.349806%
+    │       λ ~ Gamma(23.000000, 8.000000)
+
+    ├ 3.942512%
+    │       λ ~ Gamma(39.000000, 13.000000)
+
+    ├ 3.899187%
+    │       λ ~ Gamma(27.000000, 9.000000)
+
+    ├ 3.886547%
+    │       λ ~ Gamma(43.000000, 14.000000)
+
+    ├ 3.878509%
+    │       λ ~ Gamma(36.000000, 12.000000)
+
+    └ 3.850960%
+            λ ~ Gamma(33.000000, 11.000000)

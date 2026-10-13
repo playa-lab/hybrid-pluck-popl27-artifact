@@ -1,0 +1,13 @@
+;; The single-changepoint REDUCTION of changepoint_coal.pluck
+
+(include "examples/shared/changepoint_coal.pluck")
+
+(define N 20)
+(define data (take N counts))
+(define n-boundaries (- N 1))
+
+;; posterior over the early-segment rate e under a single (k=1) changepoint.
+(query changepoint_coal_k1
+  (let ((e   (gamma alpha beta))
+        (cps (place-cps n-boundaries 1)))   ; FIXED k=1: one uniform changepoint
+    (Posterior e (observe-bins data e cps))))

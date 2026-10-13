@@ -1,0 +1,7 @@
+(define N 20)
+
+(include "examples/shared/pcfg_ambiguous.pluck")
+
+(query learned-probabilities
+  (let ((p (make-probs)))
+    (Posterior p (observe-sentences p (take N sentences)))))

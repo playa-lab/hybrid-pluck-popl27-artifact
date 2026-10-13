@@ -1,0 +1,12 @@
+===== ok  wall=20.2648s  rc=0  =====
+hmm_second_order (Turing PG)  N=8  particles=32  iters=200
+RESULT: -1.639705
+inference_seconds: 9.399
+===== ok  wall=22.6621s  rc=0  =====
+hmm_second_order (Turing PG)  N=8  particles=32  iters=200
+RESULT: -1.514086
+inference_seconds: 10.040
+===== ok  wall=21.4481s  rc=0  =====
+hmm_second_order (Turing PG)  N=8  particles=32  iters=200
+RESULT: -1.666451
+inference_seconds: 10.774

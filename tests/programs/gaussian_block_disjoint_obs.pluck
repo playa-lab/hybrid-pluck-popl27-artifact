@@ -1,0 +1,19 @@
+; Two disjoint single-component equality observations on one correlated
+; Gaussian block (rho = 0.5) must weigh as the JOINT germ N(b; A mu, A Sigma A^T),
+; not a product of marginals. The reference branch is the same pair of
+; observations on genuinely independent variables.
+; Correct: P(b) = N([1,2]; 0, Sigma) / (N([1,2]; 0, Sigma) + N(1)N(2)) = 0.65562...
+; The pre-block-closure engine gave 0.5 (product of marginals).
+(query
+ (let ((x (gaussian {0.0, 0.0} {{1.0, 0.5}, {0.5, 1.0}}))
+       (u (gaussian 0.0 1.0))
+       (w (gaussian 0.0 1.0))
+       (b (flip 0.5)))
+   (Posterior b
+     (if b
+         (if (close (vector_index x @0) 1.0)
+             (close (vector_index x @1) 2.0)
+             False)
+         (if (close u 1.0)
+             (close w 2.0)
+             False)))))

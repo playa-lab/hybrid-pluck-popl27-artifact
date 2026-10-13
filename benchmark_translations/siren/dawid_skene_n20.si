@@ -1,0 +1,64 @@
+
+
+
+let symbolic prevalence <- beta(1., 1.) in
+let symbolic tp0 <- beta(2., 1.) in
+let symbolic fp0 <- beta(1., 2.) in
+let symbolic tp1 <- beta(2., 1.) in
+let symbolic fp1 <- beta(1., 2.) in
+let symbolic tp2 <- beta(2., 1.) in
+let symbolic fp2 <- beta(1., 2.) in
+let sample z0 <- bernoulli(prevalence) in
+let () = observe(bernoulli(if z0 then tp0 else fp0), false) in
+let () = observe(bernoulli(if z0 then tp1 else fp1), false) in
+let sample z1 <- bernoulli(prevalence) in
+let () = observe(bernoulli(if z1 then tp1 else fp1), false) in
+let sample z2 <- bernoulli(prevalence) in
+let () = observe(bernoulli(if z2 then tp0 else fp0), true) in
+let () = observe(bernoulli(if z2 then tp1 else fp1), true) in
+let () = observe(bernoulli(if z2 then tp2 else fp2), true) in
+let sample z3 <- bernoulli(prevalence) in
+let () = observe(bernoulli(if z3 then tp2 else fp2), true) in
+let sample z4 <- bernoulli(prevalence) in
+let () = observe(bernoulli(if z4 then tp1 else fp1), false) in
+let () = observe(bernoulli(if z4 then tp2 else fp2), true) in
+let sample z5 <- bernoulli(prevalence) in
+let () = observe(bernoulli(if z5 then tp0 else fp0), false) in
+let () = observe(bernoulli(if z5 then tp1 else fp1), false) in
+let sample z6 <- bernoulli(prevalence) in
+let () = observe(bernoulli(if z6 then tp0 else fp0), false) in
+let () = observe(bernoulli(if z6 then tp1 else fp1), false) in
+let sample z7 <- bernoulli(prevalence) in
+let sample z8 <- bernoulli(prevalence) in
+let () = observe(bernoulli(if z8 then tp2 else fp2), false) in
+let sample z9 <- bernoulli(prevalence) in
+let () = observe(bernoulli(if z9 then tp0 else fp0), true) in
+let () = observe(bernoulli(if z9 then tp2 else fp2), true) in
+let sample z10 <- bernoulli(prevalence) in
+let () = observe(bernoulli(if z10 then tp0 else fp0), true) in
+let () = observe(bernoulli(if z10 then tp1 else fp1), false) in
+let () = observe(bernoulli(if z10 then tp2 else fp2), false) in
+let sample z11 <- bernoulli(prevalence) in
+let () = observe(bernoulli(if z11 then tp0 else fp0), false) in
+let () = observe(bernoulli(if z11 then tp1 else fp1), false) in
+let () = observe(bernoulli(if z11 then tp2 else fp2), false) in
+let sample z12 <- bernoulli(prevalence) in
+let () = observe(bernoulli(if z12 then tp0 else fp0), true) in
+let sample z13 <- bernoulli(prevalence) in
+let () = observe(bernoulli(if z13 then tp2 else fp2), true) in
+let sample z14 <- bernoulli(prevalence) in
+let () = observe(bernoulli(if z14 then tp2 else fp2), false) in
+let sample z15 <- bernoulli(prevalence) in
+let () = observe(bernoulli(if z15 then tp0 else fp0), false) in
+let () = observe(bernoulli(if z15 then tp1 else fp1), false) in
+let sample z16 <- bernoulli(prevalence) in
+let () = observe(bernoulli(if z16 then tp0 else fp0), true) in
+let sample z17 <- bernoulli(prevalence) in
+let () = observe(bernoulli(if z17 then tp0 else fp0), false) in
+let () = observe(bernoulli(if z17 then tp1 else fp1), false) in
+let sample z18 <- bernoulli(prevalence) in
+let () = observe(bernoulli(if z18 then tp1 else fp1), false) in
+let () = observe(bernoulli(if z18 then tp2 else fp2), false) in
+let sample z19 <- bernoulli(prevalence) in
+let () = observe(bernoulli(if z19 then tp2 else fp2), false) in
+tp0

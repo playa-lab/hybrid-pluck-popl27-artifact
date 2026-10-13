@@ -1,0 +1,51 @@
+===== ok  wall=0.1118s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 12
+BDD vars allocated (discrete bits)    : 10
+BDD recursive calls (compile work)    : 1509
+BDD guard nodes  : sum=10  max=10  mean=10
+SPN nodes (TREE) : sum=1  max=1  mean=1
+SPN nodes (DAG)  : per-world-max=1  all-worlds-unique=1  intern-table=30
+SPN leaf nodes   : sum=1  (max sum-arity=0, max prod-arity=0)
+posterior mixture components (total)  : 1
+time (s): parse=0.0000  symbolic-exec=0.0004  wmc=0.0000  posterior=0.0001  flatten=0.0000  display/naming=0.0000  total=0.0005
+===================
+inference_seconds: 0.00053904
+linear_regression:
+  x  1
+        x ~ N(1.895331, 0.681509)
+===== ok  wall=0.1103s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 12
+BDD vars allocated (discrete bits)    : 10
+BDD recursive calls (compile work)    : 1509
+BDD guard nodes  : sum=10  max=10  mean=10
+SPN nodes (TREE) : sum=1  max=1  mean=1
+SPN nodes (DAG)  : per-world-max=1  all-worlds-unique=1  intern-table=30
+SPN leaf nodes   : sum=1  (max sum-arity=0, max prod-arity=0)
+posterior mixture components (total)  : 1
+time (s): parse=0.0000  symbolic-exec=0.0005  wmc=0.0000  posterior=0.0001  flatten=0.0000  display/naming=0.0000  total=0.0007
+===================
+inference_seconds: 0.00068117
+linear_regression:
+  x  1
+        x ~ N(1.895331, 0.681509)
+===== ok  wall=0.1113s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 12
+BDD vars allocated (discrete bits)    : 10
+BDD recursive calls (compile work)    : 1509
+BDD guard nodes  : sum=10  max=10  mean=10
+SPN nodes (TREE) : sum=1  max=1  mean=1
+SPN nodes (DAG)  : per-world-max=1  all-worlds-unique=1  intern-table=30
+SPN leaf nodes   : sum=1  (max sum-arity=0, max prod-arity=0)
+posterior mixture components (total)  : 1
+time (s): parse=0.0000  symbolic-exec=0.0010  wmc=0.0000  posterior=0.0001  flatten=0.0000  display/naming=0.0000  total=0.0011
+===================
+inference_seconds: 0.00114683
+linear_regression:
+  x  1
+        x ~ N(1.895331, 0.681509)

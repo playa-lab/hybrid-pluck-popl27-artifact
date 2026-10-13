@@ -1,0 +1,47 @@
+data int[20] counts;
+data vector[19] tp;
+
+real e ~ gamma(2, 1);
+real l ~ gamma(2, 1);
+int<19> tau ~ categorical(tp);
+
+if (1 <= tau) { counts[1] ~ poisson(e); }
+else { counts[1] ~ poisson(l); }
+if (2 <= tau) { counts[2] ~ poisson(e); }
+else { counts[2] ~ poisson(l); }
+if (3 <= tau) { counts[3] ~ poisson(e); }
+else { counts[3] ~ poisson(l); }
+if (4 <= tau) { counts[4] ~ poisson(e); }
+else { counts[4] ~ poisson(l); }
+if (5 <= tau) { counts[5] ~ poisson(e); }
+else { counts[5] ~ poisson(l); }
+if (6 <= tau) { counts[6] ~ poisson(e); }
+else { counts[6] ~ poisson(l); }
+if (7 <= tau) { counts[7] ~ poisson(e); }
+else { counts[7] ~ poisson(l); }
+if (8 <= tau) { counts[8] ~ poisson(e); }
+else { counts[8] ~ poisson(l); }
+if (9 <= tau) { counts[9] ~ poisson(e); }
+else { counts[9] ~ poisson(l); }
+if (10 <= tau) { counts[10] ~ poisson(e); }
+else { counts[10] ~ poisson(l); }
+if (11 <= tau) { counts[11] ~ poisson(e); }
+else { counts[11] ~ poisson(l); }
+if (12 <= tau) { counts[12] ~ poisson(e); }
+else { counts[12] ~ poisson(l); }
+if (13 <= tau) { counts[13] ~ poisson(e); }
+else { counts[13] ~ poisson(l); }
+if (14 <= tau) { counts[14] ~ poisson(e); }
+else { counts[14] ~ poisson(l); }
+if (15 <= tau) { counts[15] ~ poisson(e); }
+else { counts[15] ~ poisson(l); }
+if (16 <= tau) { counts[16] ~ poisson(e); }
+else { counts[16] ~ poisson(l); }
+if (17 <= tau) { counts[17] ~ poisson(e); }
+else { counts[17] ~ poisson(l); }
+if (18 <= tau) { counts[18] ~ poisson(e); }
+else { counts[18] ~ poisson(l); }
+if (19 <= tau) { counts[19] ~ poisson(e); }
+else { counts[19] ~ poisson(l); }
+if (20 <= tau) { counts[20] ~ poisson(e); }
+else { counts[20] ~ poisson(l); }

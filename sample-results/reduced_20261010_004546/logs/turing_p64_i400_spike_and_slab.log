@@ -1,0 +1,27 @@
+===== ok  wall=35.1947s  rc=0  =====
+spike_and_slab (Turing PG)  particles=64  iters=400
+per-predictor inclusion probability P(g_j = 1):
+  x1  P(include)=0.98
+  x2  P(include)=1.00
+  x3  P(include)=0.02
+  x4  P(include)=0.00
+RESULT: 0.977500
+inference_seconds: 24.159
+===== ok  wall=33.6043s  rc=0  =====
+spike_and_slab (Turing PG)  particles=64  iters=400
+per-predictor inclusion probability P(g_j = 1):
+  x1  P(include)=0.72
+  x2  P(include)=0.03
+  x3  P(include)=0.72
+  x4  P(include)=0.95
+RESULT: 0.725000
+inference_seconds: 22.278
+===== ok  wall=34.8117s  rc=0  =====
+spike_and_slab (Turing PG)  particles=64  iters=400
+per-predictor inclusion probability P(g_j = 1):
+  x1  P(include)=0.10
+  x2  P(include)=0.00
+  x3  P(include)=0.00
+  x4  P(include)=0.80
+RESULT: 0.102500
+inference_seconds: 23.629

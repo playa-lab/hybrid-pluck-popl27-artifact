@@ -1,0 +1,33 @@
+def trans(prev) {
+    return if prev == 0 { categorical([0.6, 0.3, 0.1]) }
+           else { if prev == 1 { categorical([0.2, 0.6, 0.2]) } else { categorical([0.1, 0.3, 0.6]) } };
+}
+
+def pickMu(z, h, m1, m2, m3, m4, m5, m6, m7, m8, m9) {
+    return if z == 0 {
+             if h == 0 { m1 } else { if h == 1 { m2 } else { m3 } }
+           } else { if z == 1 {
+             if h == 0 { m2 } else { if h == 1 { m4 } else { m6 } }
+           } else {
+             if h == 0 { m3 } else { if h == 1 { m6 } else { m9 } }
+           } };
+}
+
+def main() {
+    obs := [-2.1, 1.68, -1.38];
+    m1 := gauss(-3,1); m2 := gauss(-1.5,1); m3 := gauss(-0.5,1);
+    m4 := gauss(1,1); m5 := gauss(0,1); m6 := gauss(2,1);
+    m7 := gauss(0,1); m8 := gauss(0,1); m9 := gauss(3.5,1);
+
+    z := categorical([0.5, 0.3, 0.2]);
+    h := categorical([0.5, 0.3, 0.2]);
+    cobserve(gauss(pickMu(z, h, m1, m2, m3, m4, m5, m6, m7, m8, m9), 1), obs[0]);
+
+    z = trans(z); h = trans(h);
+    cobserve(gauss(pickMu(z, h, m1, m2, m3, m4, m5, m6, m7, m8, m9), 1), obs[1]);
+
+    z = trans(z); h = trans(h);
+    cobserve(gauss(pickMu(z, h, m1, m2, m3, m4, m5, m6, m7, m8, m9), 1), obs[2]);
+
+    return Expectation(m1);
+}

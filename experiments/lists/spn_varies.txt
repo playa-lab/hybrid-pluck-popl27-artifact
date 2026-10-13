@@ -1,0 +1,12 @@
+# Pluck programs whose SPN sizes (Tables 4 and 5: interned, tree, compression) are
+# not the same on every run or machine; their BDD counts and answers are. Found by
+# running each program three times natively and comparing with arm64 and amd64
+# Docker runs. compare_to_paper.py reports these cells as varying, not as
+# differences.
+dawid_skene_n08         # differs between machines (155, 157, 159 interned)
+dawid_skene_n18         # varies from run to run (interned 6.1k-10.5k)
+secret_ballot_n08       # differs between runs and machines
+secret_ballot_n16       # varies from run to run
+secret_ballot_n32       # varies from run to run
+secret_ballot_n64       # varies from run to run
+secret_ballot_n128      # differs from the paper (2381934 interned vs 2382330; not scanned)

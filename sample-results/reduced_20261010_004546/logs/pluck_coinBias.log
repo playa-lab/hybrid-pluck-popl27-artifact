@@ -1,0 +1,51 @@
+===== ok  wall=0.1624s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 1
+BDD vars allocated (discrete bits)    : 5
+BDD recursive calls (compile work)    : 467
+BDD guard nodes  : sum=5  max=5  mean=5
+SPN nodes (TREE) : sum=1  max=1  mean=1
+SPN nodes (DAG)  : per-world-max=1  all-worlds-unique=1  intern-table=7
+SPN leaf nodes   : sum=1  (max sum-arity=0, max prod-arity=0)
+posterior mixture components (total)  : 1
+time (s): parse=0.0000  symbolic-exec=0.0001  wmc=0.0000  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0002
+===================
+inference_seconds: 0.00021446
+coinBias:
+  p  1
+        p ~ Beta(5.000000, 7.000000)
+===== ok  wall=0.1102s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 1
+BDD vars allocated (discrete bits)    : 5
+BDD recursive calls (compile work)    : 467
+BDD guard nodes  : sum=5  max=5  mean=5
+SPN nodes (TREE) : sum=1  max=1  mean=1
+SPN nodes (DAG)  : per-world-max=1  all-worlds-unique=1  intern-table=7
+SPN leaf nodes   : sum=1  (max sum-arity=0, max prod-arity=0)
+posterior mixture components (total)  : 1
+time (s): parse=0.0000  symbolic-exec=0.0001  wmc=0.0000  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0002
+===================
+inference_seconds: 0.00019267
+coinBias:
+  p  1
+        p ~ Beta(5.000000, 7.000000)
+===== ok  wall=0.1091s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 1
+BDD vars allocated (discrete bits)    : 5
+BDD recursive calls (compile work)    : 467
+BDD guard nodes  : sum=5  max=5  mean=5
+SPN nodes (TREE) : sum=1  max=1  mean=1
+SPN nodes (DAG)  : per-world-max=1  all-worlds-unique=1  intern-table=7
+SPN leaf nodes   : sum=1  (max sum-arity=0, max prod-arity=0)
+posterior mixture components (total)  : 1
+time (s): parse=0.0000  symbolic-exec=0.0001  wmc=0.0000  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0002
+===================
+inference_seconds: 0.00017063
+coinBias:
+  p  1
+        p ~ Beta(5.000000, 7.000000)

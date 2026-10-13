@@ -1,0 +1,31 @@
+// PSI port of examples/fig_mixture_listing.pluck (Figure 1): 2D Gaussian mixture with an
+// unknown number of components K.
+//   K ~ truncated geometric on {1..4} (weights 1, 0.5, 0.25, 0.125)
+//   component means ~ N(0,3) per coordinate -> gauss(0,9)
+//   each point picks a component uniformly among the first K
+//   observations ~ N(mean, 0.6) per coordinate -> gauss(., 0.36)
+// Wall-clock is the comparable number (PSI reports no inference-only time).
+
+def main() {
+    px := [-2.3, -1.7, -2.2, 1.2, 1.8, 2.75, 3.3];
+    py := [-1.0, -1.8, -1.5, 2.2, 1.7, 0.75, 0.25];
+
+    k := categorical([1/1.875, 0.5/1.875, 0.25/1.875, 0.125/1.875]) + 1;
+
+    m0x := gauss(0, 9); m0y := gauss(0, 9);
+    m1x := gauss(0, 9); m1y := gauss(0, 9);
+    m2x := gauss(0, 9); m2y := gauss(0, 9);
+    m3x := gauss(0, 9); m3y := gauss(0, 9);
+
+    for n in [0..7) {
+        z := if k == 1 { 0 }
+             else { if k == 2 { categorical([1/2, 1/2, 0, 0]) }
+             else { if k == 3 { categorical([1/3, 1/3, 1/3, 0]) }
+             else { categorical([1/4, 1/4, 1/4, 1/4]) } } };
+        mx := if z == 0 { m0x } else { if z == 1 { m1x } else { if z == 2 { m2x } else { m3x } } };
+        my := if z == 0 { m0y } else { if z == 1 { m1y } else { if z == 2 { m2y } else { m3y } } };
+        cobserve(gauss(mx, 0.36), px[n]);
+        cobserve(gauss(my, 0.36), py[n]);
+    }
+    return k;
+}

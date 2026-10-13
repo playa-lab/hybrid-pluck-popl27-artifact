@@ -1,0 +1,35 @@
+
+
+data int[13] r;
+
+real prevalence;
+prevalence ~ beta(1.0, 1.0);
+real tp1; tp1 ~ beta(2.0, 1.0);
+real fp1; fp1 ~ beta(1.0, 2.0);
+real tp2; tp2 ~ beta(2.0, 1.0);
+real fp2; fp2 ~ beta(1.0, 2.0);
+real tp3; tp3 ~ beta(2.0, 1.0);
+real fp3; fp3 ~ beta(1.0, 2.0);
+
+int<2> z1 ~ categorical(to_vector([1 - prevalence, prevalence]));
+int<2> z2 ~ categorical(to_vector([1 - prevalence, prevalence]));
+int<2> z3 ~ categorical(to_vector([1 - prevalence, prevalence]));
+int<2> z4 ~ categorical(to_vector([1 - prevalence, prevalence]));
+int<2> z5 ~ categorical(to_vector([1 - prevalence, prevalence]));
+int<2> z6 ~ categorical(to_vector([1 - prevalence, prevalence]));
+int<2> z7 ~ categorical(to_vector([1 - prevalence, prevalence]));
+int<2> z8 ~ categorical(to_vector([1 - prevalence, prevalence]));
+
+if (z1 > 1) { r[1] ~ bernoulli(tp1); } else { r[1] ~ bernoulli(fp1); }
+if (z1 > 1) { r[2] ~ bernoulli(tp2); } else { r[2] ~ bernoulli(fp2); }
+if (z2 > 1) { r[3] ~ bernoulli(tp2); } else { r[3] ~ bernoulli(fp2); }
+if (z3 > 1) { r[4] ~ bernoulli(tp1); } else { r[4] ~ bernoulli(fp1); }
+if (z3 > 1) { r[5] ~ bernoulli(tp2); } else { r[5] ~ bernoulli(fp2); }
+if (z3 > 1) { r[6] ~ bernoulli(tp3); } else { r[6] ~ bernoulli(fp3); }
+if (z4 > 1) { r[7] ~ bernoulli(tp3); } else { r[7] ~ bernoulli(fp3); }
+if (z5 > 1) { r[8] ~ bernoulli(tp2); } else { r[8] ~ bernoulli(fp2); }
+if (z5 > 1) { r[9] ~ bernoulli(tp3); } else { r[9] ~ bernoulli(fp3); }
+if (z6 > 1) { r[10] ~ bernoulli(tp1); } else { r[10] ~ bernoulli(fp1); }
+if (z6 > 1) { r[11] ~ bernoulli(tp2); } else { r[11] ~ bernoulli(fp2); }
+if (z7 > 1) { r[12] ~ bernoulli(tp1); } else { r[12] ~ bernoulli(fp1); }
+if (z7 > 1) { r[13] ~ bernoulli(tp2); } else { r[13] ~ bernoulli(fp2); }

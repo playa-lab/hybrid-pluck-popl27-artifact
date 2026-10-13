@@ -1,0 +1,48 @@
+;; title: Figure 1 row -- 2D Gaussian mixture, unknown number of components
+;; Seven 2D points; the number of mixture components K is itself unknown
+;; (truncated-geometric prior), each component's 2D mean has a Gaussian prior,
+;; and each point picks a component uniformly at random. Exact joint posterior
+;; over K, the cluster assignments, and the component means.
+(define points
+  [(Pair -2.3 -1.0), (Pair -1.7 -1.8), (Pair -2.2 -1.5),
+   (Pair 1.2 2.2),   (Pair 1.8 1.7),
+   (Pair 2.75 0.75), (Pair 3.3 0.25)])
+
+(define (draw-k) (discrete (1 1.0) (2 0.5) (3 0.25) (4 0.125)))
+
+(define spread 0.6)
+
+;; uniformly random component index in {0 .. k-1}
+(define (unif-nat k)
+  (if (== k 1) 0
+    (if (flip (/. 1.0 (float-of-nat k)))
+      0
+      (+ 1 (unif-nat (- k 1))))))
+
+(define-type component (Comp mean-x mean-y spread))
+
+(define (comp-mean-x c) (match c Comp x y s => x))
+(define (comp-mean-y c) (match c Comp x y s => y))
+(define (comp-spread c) (match c Comp x y s => s))
+
+;; walk the points, assigning each to a component and conditioning the 2D
+;; observation in the same recursion step; return assignments + evidence.
+(define (assign-points ps comps k)
+  (match ps
+    Nil => (Pair (Nil) (True))
+    Cons p rest =>
+      (let ((z (unif-nat k))
+            (c (index z comps))
+            (ok (and (real=? (normal (comp-mean-x c) (comp-spread c)) (fst p))
+                     (real=? (normal (comp-mean-y c) (comp-spread c)) (snd p))))
+            (out (assign-points rest comps k)))
+        (Pair (Cons z (fst out)) (and ok (snd out))))))
+
+(define-type result (Result k assignments components))
+
+(query mixture
+  (let ((k (draw-k))
+        (comps (map (fn _ -> (Comp (normal 0.0 3.0) (normal 0.0 3.0) spread))
+                    (range k)))
+        (out (assign-points points comps k)))
+    (Posterior (Result k (fst out) comps) (snd out))))

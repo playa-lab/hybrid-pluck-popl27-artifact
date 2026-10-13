@@ -1,0 +1,39 @@
+===== ok  wall=33.5072s  rc=0  =====
+pcfg (Turing PG)  n_sentences=20  particles=16  iters=100
+recovered production probabilities (posterior mean):
+  Sent      [NP VP=0.92, NP VP Conj Sent=0.08]
+  VP        [Verb=0.44, VT NP=0.56]
+  Verb      [barks=0.78, eats=0.22]
+  Adj       [happy=0.43, sad=0.27, tasty=0.30]
+  Det       [the=0.24, a=0.76]
+  Noun      [Adj Noun=0.34, noun-word=0.66]
+  Noun-word [cat=0.37, dog=0.22, bone=0.41]
+  Conj      [and=0.64, but=0.36]
+RESULT: 0.923422
+inference_seconds: 4.072
+===== ok  wall=27.3507s  rc=0  =====
+pcfg (Turing PG)  n_sentences=20  particles=16  iters=100
+recovered production probabilities (posterior mean):
+  Sent      [NP VP=0.86, NP VP Conj Sent=0.14]
+  VP        [Verb=0.45, VT NP=0.55]
+  Verb      [barks=0.70, eats=0.30]
+  Adj       [happy=0.08, sad=0.23, tasty=0.69]
+  Det       [the=0.59, a=0.41]
+  Noun      [Adj Noun=0.21, noun-word=0.79]
+  Noun-word [cat=0.43, dog=0.21, bone=0.36]
+  Conj      [and=0.49, but=0.51]
+RESULT: 0.863531
+inference_seconds: 2.825
+===== ok  wall=29.2649s  rc=0  =====
+pcfg (Turing PG)  n_sentences=20  particles=16  iters=100
+recovered production probabilities (posterior mean):
+  Sent      [NP VP=0.80, NP VP Conj Sent=0.20]
+  VP        [Verb=0.54, VT NP=0.46]
+  Verb      [barks=0.83, eats=0.17]
+  Adj       [happy=0.10, sad=0.46, tasty=0.44]
+  Det       [the=0.37, a=0.63]
+  Noun      [Adj Noun=0.34, noun-word=0.66]
+  Noun-word [cat=0.29, dog=0.32, bone=0.40]
+  Conj      [and=0.29, but=0.71]
+RESULT: 0.802766
+inference_seconds: 2.459

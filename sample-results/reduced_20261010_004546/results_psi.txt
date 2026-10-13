@@ -1,0 +1,79 @@
+
+======================================== RESULTS ========================================
+SYSTEM  PROGRAM                STATUS         RUNS WALL(s)          INFER(s)           RESULT        
+------  -------                ------         ---- -------          --------           ------        
+psi     GPA                    ok                3 0.9459±0.079    -                  -             
+psi     addFun_max             ok                3 0.0163±0.0006   -                  -             
+psi     addFun_sum             ok                3 0.0115±0.00017  -                  -             
+psi     burglary_alarm         ok                3 0.0796±0.0016   -                  -             
+psi     changepoint_coal_k1    ok                3 20.36±1.5       -                  -             
+psi     changepoint_coal_n020  TIMEOUT           1 >300             -                  -             
+psi     changepoint_coal_n050  TIMEOUT           1 >300             -                  -             
+psi     clickGraph             ok                3 3.559±0.25      -                  -             
+psi     clinicalTrial1         TIMEOUT           1 >300             -                  -             
+psi     clinicalTrial2         ok                3 0.7713±0.097    -                  -             
+psi     coinBias               ok                3 0.322±0.026     -                  -             
+psi     conjugate_gaussians    ok                3 0.0255±0.0059   -                  -             
+psi     dawid_skene_n08        TIMEOUT           1 >300             -                  -             
+psi     dawid_skene_n16        TIMEOUT           1 >300             -                  -             
+psi     diamond_network        ok                3 2.815±0.066     -                  -             
+psi     f81_joint              TIMEOUT           1 >300             -                  -             
+psi     f81_rate               TIMEOUT           1 >300             -                  -             
+psi     hmm_factorial_n02      ok                3 4.85±0.7        -                  -             
+psi     hmm_factorial_n04      TIMEOUT           1 >300             -                  -             
+psi     hmm_factorial_n06      TIMEOUT           1 >300             -                  -             
+psi     hmm_first_order_n02    ok                3 1.111±0.27      -                  -             
+psi     hmm_first_order_n08    TIMEOUT           1 >300             -                  -             
+psi     hmm_first_order_n14    TIMEOUT           1 >300             -                  -             
+psi     hmm_second_order_n04   ok                3 156±3.7         -                  -             
+psi     hmm_second_order_n08   TIMEOUT           1 >300             -                  -             
+psi     hmm_second_order_n14   TIMEOUT           1 >300             -                  -             
+psi     king_ei_d20            TIMEOUT           1 >300             -                  -             
+psi     king_ei_d60            TIMEOUT           1 >300             -                  -             
+psi     linear_regression      ok                3 0.8786±0.091    -                  -             
+psi     normal_mixture         TIMEOUT           1 >300             -                  -             
+psi     outliers_n08           TIMEOUT           1 >300             -                  -             
+psi     outliers_n18           TIMEOUT           1 >300             -                  -             
+psi     polyreg                TIMEOUT           1 >300             -                  -             
+psi     run_walk_hrm           TIMEOUT           1 >300             -                  -             
+psi     secret_ballot_n04      TIMEOUT           1 >300             -                  -             
+psi     secret_ballot_n128     TIMEOUT           1 >300             -                  -             
+psi     sir_model_n12          TIMEOUT           1 >300             -                  -             
+psi     sir_model_n72          TIMEOUT           1 >300             -                  -             
+psi     soccer_n03             TIMEOUT           1 >300             -                  -             
+psi     soccer_n07             TIMEOUT           1 >300             -                  -             
+psi     soft_kmeans_n04        ok                3 29.11±0.93      -                  -             
+psi     soft_kmeans_n12        TIMEOUT           1 >300             -                  -             
+psi     spacex                 ok                3 0.1486±0.045    -                  -             
+psi     spike_and_slab         ok                3 44.49±8.2       -                  -             
+psi     trueskill              ok                3 0.1207±0.096    -                  -             
+psi     tug_of_war             ok                3 11.69±0.099     -                  -             
+psi     weekend                ok                3 0.0938±0.013    -                  -             
+=========================================================================================
+RUNS     = successful runs measured (1 if the first run timed out / errored / was BAD).
+WALL(s)  = median ± sample-stddev of total process wall-clock over RUNS runs.
+INFER(s) = median ± sample-stddev of inference-only time.
+           pluck: inference_seconds (via PLUCK_STATS); hybit: reported t.time.
+           psi:   '-' (no inference line) — use WALL(s) as the comparable number.
+           slicstan: WALL(s)=total pipeline (slic+stanc+build+sample); INFER(s)=slic
+           +sample (SlicStan->Stan compile + HMC; EXCLUDES the stanc + C++ build that
+           are CmdStan overhead). mean(param)+Rhat and the per-component breakdown are
+           in the SlicStan timing table above (also logs/slicstan_<name>.log).
+STATUS   = ok | TIMEOUT | OOM | ERROR(rc=N) | BAD | ERROR(run)
+           | ERROR(slic) | ERROR(stanc) | ERROR(build) | NODATA.
+           OOM = SIGKILLed before the timeout = out of memory (the container hit its
+           memory limit); WALL is the actual time it ran before dying, not a real
+           inference time. Give Docker more memory to measure these.
+           slicstan: ERROR(slic) = .slicstan uses a feature SlicStan's DSL lacks;
+           ERROR(stanc)/ERROR(build) = its generated Stan is invalid / fails to
+           compile (SlicStan codegen); ERROR(run) = HMC could not initialize;
+           NODATA = compiles but no slicstan-data/<name>.json.
+           BAD = process exited 0 but did not actually infer. For PSI this is
+           'Pr[error] = 1' (posterior collapsed, e.g. observing a continuous
+           variable at an exact value — measure-zero in PSI's exact semantics).
+           A BAD/ERROR/TIMEOUT row's WALL is the single failing run, NOT a real
+           inference time — do not compare it against ok rows.
+
+logs:    /results/reduced_20261010_004546/logs/<system>_<program>.log   (every run preserved)
+table:   /results/reduced_20261010_004546/results_psi.txt
+csv:     /results/reduced_20261010_004546/results_psi.csv

@@ -1,0 +1,128 @@
+
+data int[15] tip0; data int[15] tip1;
+data int[15] tip2; data int[15] tip3;
+
+real p ~ beta(1, 1);
+vector[4] pi = to_vector([0.3, 0.2, 0.2, 0.3]);
+
+int<4> root1 ~ categorical(pi);
+vector[4] tL1 = (1 - p) * pi; tL1[root1] = tL1[root1] + p; int<4> L1 ~ categorical(tL1);
+vector[4] tM1 = (1 - p) * pi; tM1[root1] = tM1[root1] + p; int<4> M1 ~ categorical(tM1);
+vector[4] e0_1 = (1 - p) * pi; e0_1[L1] = e0_1[L1] + p; tip0[1] ~ categorical(e0_1);
+vector[4] e1_1 = (1 - p) * pi; e1_1[L1] = e1_1[L1] + p; tip1[1] ~ categorical(e1_1);
+vector[4] e2_1 = (1 - p) * pi; e2_1[M1] = e2_1[M1] + p; tip2[1] ~ categorical(e2_1);
+vector[4] e3_1 = (1 - p) * pi; e3_1[M1] = e3_1[M1] + p; tip3[1] ~ categorical(e3_1);
+
+int<4> root2 ~ categorical(pi);
+vector[4] tL2 = (1 - p) * pi; tL2[root2] = tL2[root2] + p; int<4> L2 ~ categorical(tL2);
+vector[4] tM2 = (1 - p) * pi; tM2[root2] = tM2[root2] + p; int<4> M2 ~ categorical(tM2);
+vector[4] e0_2 = (1 - p) * pi; e0_2[L2] = e0_2[L2] + p; tip0[2] ~ categorical(e0_2);
+vector[4] e1_2 = (1 - p) * pi; e1_2[L2] = e1_2[L2] + p; tip1[2] ~ categorical(e1_2);
+vector[4] e2_2 = (1 - p) * pi; e2_2[M2] = e2_2[M2] + p; tip2[2] ~ categorical(e2_2);
+vector[4] e3_2 = (1 - p) * pi; e3_2[M2] = e3_2[M2] + p; tip3[2] ~ categorical(e3_2);
+
+int<4> root3 ~ categorical(pi);
+vector[4] tL3 = (1 - p) * pi; tL3[root3] = tL3[root3] + p; int<4> L3 ~ categorical(tL3);
+vector[4] tM3 = (1 - p) * pi; tM3[root3] = tM3[root3] + p; int<4> M3 ~ categorical(tM3);
+vector[4] e0_3 = (1 - p) * pi; e0_3[L3] = e0_3[L3] + p; tip0[3] ~ categorical(e0_3);
+vector[4] e1_3 = (1 - p) * pi; e1_3[L3] = e1_3[L3] + p; tip1[3] ~ categorical(e1_3);
+vector[4] e2_3 = (1 - p) * pi; e2_3[M3] = e2_3[M3] + p; tip2[3] ~ categorical(e2_3);
+vector[4] e3_3 = (1 - p) * pi; e3_3[M3] = e3_3[M3] + p; tip3[3] ~ categorical(e3_3);
+
+int<4> root4 ~ categorical(pi);
+vector[4] tL4 = (1 - p) * pi; tL4[root4] = tL4[root4] + p; int<4> L4 ~ categorical(tL4);
+vector[4] tM4 = (1 - p) * pi; tM4[root4] = tM4[root4] + p; int<4> M4 ~ categorical(tM4);
+vector[4] e0_4 = (1 - p) * pi; e0_4[L4] = e0_4[L4] + p; tip0[4] ~ categorical(e0_4);
+vector[4] e1_4 = (1 - p) * pi; e1_4[L4] = e1_4[L4] + p; tip1[4] ~ categorical(e1_4);
+vector[4] e2_4 = (1 - p) * pi; e2_4[M4] = e2_4[M4] + p; tip2[4] ~ categorical(e2_4);
+vector[4] e3_4 = (1 - p) * pi; e3_4[M4] = e3_4[M4] + p; tip3[4] ~ categorical(e3_4);
+
+int<4> root5 ~ categorical(pi);
+vector[4] tL5 = (1 - p) * pi; tL5[root5] = tL5[root5] + p; int<4> L5 ~ categorical(tL5);
+vector[4] tM5 = (1 - p) * pi; tM5[root5] = tM5[root5] + p; int<4> M5 ~ categorical(tM5);
+vector[4] e0_5 = (1 - p) * pi; e0_5[L5] = e0_5[L5] + p; tip0[5] ~ categorical(e0_5);
+vector[4] e1_5 = (1 - p) * pi; e1_5[L5] = e1_5[L5] + p; tip1[5] ~ categorical(e1_5);
+vector[4] e2_5 = (1 - p) * pi; e2_5[M5] = e2_5[M5] + p; tip2[5] ~ categorical(e2_5);
+vector[4] e3_5 = (1 - p) * pi; e3_5[M5] = e3_5[M5] + p; tip3[5] ~ categorical(e3_5);
+
+int<4> root6 ~ categorical(pi);
+vector[4] tL6 = (1 - p) * pi; tL6[root6] = tL6[root6] + p; int<4> L6 ~ categorical(tL6);
+vector[4] tM6 = (1 - p) * pi; tM6[root6] = tM6[root6] + p; int<4> M6 ~ categorical(tM6);
+vector[4] e0_6 = (1 - p) * pi; e0_6[L6] = e0_6[L6] + p; tip0[6] ~ categorical(e0_6);
+vector[4] e1_6 = (1 - p) * pi; e1_6[L6] = e1_6[L6] + p; tip1[6] ~ categorical(e1_6);
+vector[4] e2_6 = (1 - p) * pi; e2_6[M6] = e2_6[M6] + p; tip2[6] ~ categorical(e2_6);
+vector[4] e3_6 = (1 - p) * pi; e3_6[M6] = e3_6[M6] + p; tip3[6] ~ categorical(e3_6);
+
+int<4> root7 ~ categorical(pi);
+vector[4] tL7 = (1 - p) * pi; tL7[root7] = tL7[root7] + p; int<4> L7 ~ categorical(tL7);
+vector[4] tM7 = (1 - p) * pi; tM7[root7] = tM7[root7] + p; int<4> M7 ~ categorical(tM7);
+vector[4] e0_7 = (1 - p) * pi; e0_7[L7] = e0_7[L7] + p; tip0[7] ~ categorical(e0_7);
+vector[4] e1_7 = (1 - p) * pi; e1_7[L7] = e1_7[L7] + p; tip1[7] ~ categorical(e1_7);
+vector[4] e2_7 = (1 - p) * pi; e2_7[M7] = e2_7[M7] + p; tip2[7] ~ categorical(e2_7);
+vector[4] e3_7 = (1 - p) * pi; e3_7[M7] = e3_7[M7] + p; tip3[7] ~ categorical(e3_7);
+
+int<4> root8 ~ categorical(pi);
+vector[4] tL8 = (1 - p) * pi; tL8[root8] = tL8[root8] + p; int<4> L8 ~ categorical(tL8);
+vector[4] tM8 = (1 - p) * pi; tM8[root8] = tM8[root8] + p; int<4> M8 ~ categorical(tM8);
+vector[4] e0_8 = (1 - p) * pi; e0_8[L8] = e0_8[L8] + p; tip0[8] ~ categorical(e0_8);
+vector[4] e1_8 = (1 - p) * pi; e1_8[L8] = e1_8[L8] + p; tip1[8] ~ categorical(e1_8);
+vector[4] e2_8 = (1 - p) * pi; e2_8[M8] = e2_8[M8] + p; tip2[8] ~ categorical(e2_8);
+vector[4] e3_8 = (1 - p) * pi; e3_8[M8] = e3_8[M8] + p; tip3[8] ~ categorical(e3_8);
+
+int<4> root9 ~ categorical(pi);
+vector[4] tL9 = (1 - p) * pi; tL9[root9] = tL9[root9] + p; int<4> L9 ~ categorical(tL9);
+vector[4] tM9 = (1 - p) * pi; tM9[root9] = tM9[root9] + p; int<4> M9 ~ categorical(tM9);
+vector[4] e0_9 = (1 - p) * pi; e0_9[L9] = e0_9[L9] + p; tip0[9] ~ categorical(e0_9);
+vector[4] e1_9 = (1 - p) * pi; e1_9[L9] = e1_9[L9] + p; tip1[9] ~ categorical(e1_9);
+vector[4] e2_9 = (1 - p) * pi; e2_9[M9] = e2_9[M9] + p; tip2[9] ~ categorical(e2_9);
+vector[4] e3_9 = (1 - p) * pi; e3_9[M9] = e3_9[M9] + p; tip3[9] ~ categorical(e3_9);
+
+int<4> root10 ~ categorical(pi);
+vector[4] tL10 = (1 - p) * pi; tL10[root10] = tL10[root10] + p; int<4> L10 ~ categorical(tL10);
+vector[4] tM10 = (1 - p) * pi; tM10[root10] = tM10[root10] + p; int<4> M10 ~ categorical(tM10);
+vector[4] e0_10 = (1 - p) * pi; e0_10[L10] = e0_10[L10] + p; tip0[10] ~ categorical(e0_10);
+vector[4] e1_10 = (1 - p) * pi; e1_10[L10] = e1_10[L10] + p; tip1[10] ~ categorical(e1_10);
+vector[4] e2_10 = (1 - p) * pi; e2_10[M10] = e2_10[M10] + p; tip2[10] ~ categorical(e2_10);
+vector[4] e3_10 = (1 - p) * pi; e3_10[M10] = e3_10[M10] + p; tip3[10] ~ categorical(e3_10);
+
+int<4> root11 ~ categorical(pi);
+vector[4] tL11 = (1 - p) * pi; tL11[root11] = tL11[root11] + p; int<4> L11 ~ categorical(tL11);
+vector[4] tM11 = (1 - p) * pi; tM11[root11] = tM11[root11] + p; int<4> M11 ~ categorical(tM11);
+vector[4] e0_11 = (1 - p) * pi; e0_11[L11] = e0_11[L11] + p; tip0[11] ~ categorical(e0_11);
+vector[4] e1_11 = (1 - p) * pi; e1_11[L11] = e1_11[L11] + p; tip1[11] ~ categorical(e1_11);
+vector[4] e2_11 = (1 - p) * pi; e2_11[M11] = e2_11[M11] + p; tip2[11] ~ categorical(e2_11);
+vector[4] e3_11 = (1 - p) * pi; e3_11[M11] = e3_11[M11] + p; tip3[11] ~ categorical(e3_11);
+
+int<4> root12 ~ categorical(pi);
+vector[4] tL12 = (1 - p) * pi; tL12[root12] = tL12[root12] + p; int<4> L12 ~ categorical(tL12);
+vector[4] tM12 = (1 - p) * pi; tM12[root12] = tM12[root12] + p; int<4> M12 ~ categorical(tM12);
+vector[4] e0_12 = (1 - p) * pi; e0_12[L12] = e0_12[L12] + p; tip0[12] ~ categorical(e0_12);
+vector[4] e1_12 = (1 - p) * pi; e1_12[L12] = e1_12[L12] + p; tip1[12] ~ categorical(e1_12);
+vector[4] e2_12 = (1 - p) * pi; e2_12[M12] = e2_12[M12] + p; tip2[12] ~ categorical(e2_12);
+vector[4] e3_12 = (1 - p) * pi; e3_12[M12] = e3_12[M12] + p; tip3[12] ~ categorical(e3_12);
+
+int<4> root13 ~ categorical(pi);
+vector[4] tL13 = (1 - p) * pi; tL13[root13] = tL13[root13] + p; int<4> L13 ~ categorical(tL13);
+vector[4] tM13 = (1 - p) * pi; tM13[root13] = tM13[root13] + p; int<4> M13 ~ categorical(tM13);
+vector[4] e0_13 = (1 - p) * pi; e0_13[L13] = e0_13[L13] + p; tip0[13] ~ categorical(e0_13);
+vector[4] e1_13 = (1 - p) * pi; e1_13[L13] = e1_13[L13] + p; tip1[13] ~ categorical(e1_13);
+vector[4] e2_13 = (1 - p) * pi; e2_13[M13] = e2_13[M13] + p; tip2[13] ~ categorical(e2_13);
+vector[4] e3_13 = (1 - p) * pi; e3_13[M13] = e3_13[M13] + p; tip3[13] ~ categorical(e3_13);
+
+int<4> root14 ~ categorical(pi);
+vector[4] tL14 = (1 - p) * pi; tL14[root14] = tL14[root14] + p; int<4> L14 ~ categorical(tL14);
+vector[4] tM14 = (1 - p) * pi; tM14[root14] = tM14[root14] + p; int<4> M14 ~ categorical(tM14);
+vector[4] e0_14 = (1 - p) * pi; e0_14[L14] = e0_14[L14] + p; tip0[14] ~ categorical(e0_14);
+vector[4] e1_14 = (1 - p) * pi; e1_14[L14] = e1_14[L14] + p; tip1[14] ~ categorical(e1_14);
+vector[4] e2_14 = (1 - p) * pi; e2_14[M14] = e2_14[M14] + p; tip2[14] ~ categorical(e2_14);
+vector[4] e3_14 = (1 - p) * pi; e3_14[M14] = e3_14[M14] + p; tip3[14] ~ categorical(e3_14);
+
+int<4> root15 ~ categorical(pi);
+vector[4] tL15 = (1 - p) * pi; tL15[root15] = tL15[root15] + p; int<4> L15 ~ categorical(tL15);
+vector[4] tM15 = (1 - p) * pi; tM15[root15] = tM15[root15] + p; int<4> M15 ~ categorical(tM15);
+vector[4] e0_15 = (1 - p) * pi; e0_15[L15] = e0_15[L15] + p; tip0[15] ~ categorical(e0_15);
+vector[4] e1_15 = (1 - p) * pi; e1_15[L15] = e1_15[L15] + p; tip1[15] ~ categorical(e1_15);
+vector[4] e2_15 = (1 - p) * pi; e2_15[M15] = e2_15[M15] + p; tip2[15] ~ categorical(e2_15);
+vector[4] e3_15 = (1 - p) * pi; e3_15[M15] = e3_15[M15] + p; tip3[15] ~ categorical(e3_15);
+
+

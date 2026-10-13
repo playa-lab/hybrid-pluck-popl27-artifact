@@ -1,0 +1,34 @@
+def observePrecinct(bw, bb, wc, bc, tt) {
+    observe(binomial(wc, bw) + binomial(bc, bb) == tt);
+}
+
+def main() {
+    bw := beta(1, 1);
+    bb := beta(1, 1);
+
+    observePrecinct(bw, bb, 54, 9, 25);
+    observePrecinct(bw, bb, 31, 9, 17);
+    observePrecinct(bw, bb, 55, 10, 26);
+    observePrecinct(bw, bb, 6, 9, 11);
+    observePrecinct(bw, bb, 4, 15, 16);
+    observePrecinct(bw, bb, 1, 2, 3);
+    observePrecinct(bw, bb, 18, 13, 17);
+    observePrecinct(bw, bb, 8, 7, 10);
+    observePrecinct(bw, bb, 53, 13, 28);
+    observePrecinct(bw, bb, 13, 2, 7);
+    observePrecinct(bw, bb, 17, 15, 19);
+    observePrecinct(bw, bb, 24, 12, 20);
+    observePrecinct(bw, bb, 19, 3, 9);
+    observePrecinct(bw, bb, 5, 2, 4);
+    observePrecinct(bw, bb, 40, 14, 26);
+    observePrecinct(bw, bb, 35, 13, 24);
+    observePrecinct(bw, bb, 4, 2, 3);
+    observePrecinct(bw, bb, 41, 14, 28);
+    observePrecinct(bw, bb, 5, 7, 9);
+    observePrecinct(bw, bb, 13, 7, 10);
+    observePrecinct(bw, bb, 5, 7, 9);
+    observePrecinct(bw, bb, 2, 2, 3);
+    observePrecinct(bw, bb, 4, 3, 5);
+
+    return bw;
+}

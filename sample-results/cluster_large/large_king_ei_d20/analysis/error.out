@@ -1,0 +1,7 @@
+criterion: p75-error  (REL_ERR below; error.csv has all spread stats)
+
+PROGRAM                  BACKEND   SETTING          EXACT     APPROX    ABS_ERR   REL_ERR   N
+--------------------------------------------------------------------------------------------
+king_ei_d20              pluck     -                0.316      0.316          0         0   1
+
+wrote /results/cluster_large/large_king_ei_d20/analysis/error.csv  (1 rows)

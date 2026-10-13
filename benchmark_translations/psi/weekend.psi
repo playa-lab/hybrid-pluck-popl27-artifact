@@ -1,0 +1,14 @@
+def hoursPrior(μ,ν){
+	return sample(infer((){
+		r := gauss(μ,ν);
+		observe(0<=r && r<=8);
+		return r;
+	}));
+}
+
+def main(){
+	isWeekend := flip(2/7);
+	hour := if isWeekend { hoursPrior(5,4^2) } else { hoursPrior(2,4^2) };
+	cobserve(hour,6);
+	return isWeekend;
+}

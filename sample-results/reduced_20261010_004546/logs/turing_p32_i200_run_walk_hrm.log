@@ -1,0 +1,18 @@
+===== ok  wall=28.7178s  rc=0  =====
+run_walk_hrm (Turing PG)  particles=32  iters=200
+start_rate=0.275  stop_rate=0.362  base_hr=83.0  run_hr=121.8 (base+incr)
+  (data: walking ~80 bpm, running ~120 bpm)
+RESULT: 82.991668
+inference_seconds: 12.275
+===== ok  wall=28.1579s  rc=0  =====
+run_walk_hrm (Turing PG)  particles=32  iters=200
+start_rate=0.304  stop_rate=0.525  base_hr=83.0  run_hr=124.2 (base+incr)
+  (data: walking ~80 bpm, running ~120 bpm)
+RESULT: 83.013562
+inference_seconds: 13.185
+===== ok  wall=30.5588s  rc=0  =====
+run_walk_hrm (Turing PG)  particles=32  iters=200
+start_rate=0.416  stop_rate=0.363  base_hr=81.7  run_hr=122.6 (base+incr)
+  (data: walking ~80 bpm, running ~120 bpm)
+RESULT: 81.719102
+inference_seconds: 13.783

@@ -1,0 +1,28 @@
+// PSI port of examples/fig_changepoint_listing.pluck (Figure 1): coal-mining disasters,
+// unknown NUMBER of changepoints, on the 1880-1899 window of Green's data.
+//   k ~ truncated Poisson(1) on {0,1,2,3} (weights 1, 1, 0.5, 0.25)
+//   changepoints at a uniform random k-subset of the 19 boundaries
+//   each segment has its own rate h_g ~ Gamma(2,1); counts[i] ~ Poisson(h)
+// Wall-clock is the comparable number (PSI reports no inference-only time).
+
+def main(){
+    counts := [4,2,5,2,2,3,4,2,1,3,2,2,1,1,1,1,3,0,0,1];
+    N := 20;
+    h0 := gamma(2,1);
+    h1 := gamma(2,1);
+    h2 := gamma(2,1);
+    h3 := gamma(2,1);
+    k := categorical([1/2.75, 1/2.75, 0.5/2.75, 0.25/2.75]);
+    kleft := k;
+    seg := 0;
+    observe(poisson(h0) == counts[0]);
+    for i in [1..N){
+        rem := N - i;
+        cut := bernoulli(kleft / rem);
+        kleft = kleft - cut;
+        seg = seg + cut;
+        rate := if seg == 0 { h0 } else { if seg == 1 { h1 } else { if seg == 2 { h2 } else { h3 } } };
+        observe(poisson(rate) == counts[i]);
+    }
+    return k;
+}

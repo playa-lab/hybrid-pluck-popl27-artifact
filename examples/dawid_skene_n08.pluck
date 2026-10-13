@@ -1,0 +1,55 @@
+(define n-annotators 3)
+
+;; ---------- Beta priors on the confusion rates ----------
+(define a-tp 2.0) (define b-tp 1.0)   ;; sensitivity  tp ~ Beta(2,1): mildly favour high
+(define a-fp 1.0) (define b-fp 2.0)   ;; false-pos     fp ~ Beta(1,2): mildly favour low
+
+;; an annotation: item index, annotator index (Peano nats), reported label (bool)
+(define-type annotation (Annot any any any))
+
+;; ---------- synthetic data (generated offline in Python) ----------
+;; prevalence 0.4; TRUE rates tp = [.95 .90 .85 .80 .72 .65],
+;; fp = [.05 .08 .15 .12 .25 .30]; coverage 0.65; seed 42.
+(define annotation-rows
+  [[(Annot 0 0 false) (Annot 0 1 false)]
+   [(Annot 1 1 false)]
+   [(Annot 2 0 true) (Annot 2 1 true) (Annot 2 2 true)]
+   [(Annot 3 2 true)]
+   [(Annot 4 1 false) (Annot 4 2 true)]
+   [(Annot 5 0 false) (Annot 5 1 false)]
+   [(Annot 6 0 false) (Annot 6 1 false)]
+   []])
+
+;; one annotator's confusion rates, drawn from the Beta priors.
+(define (draw-rates) (Pair (beta a-tp b-tp) (beta a-fp b-fp)))
+
+;; observe a single annotation of an item whose true label is z: annotator j
+;; says 1 with prob tp_j if z, else fp_j; require that draw to match the
+;; reported label.
+(define (obs-annot z rates a)
+  (match a
+    Annot i j label =>
+      (let ((r (index j rates)))
+        (iff (flip (if z (fst r) (snd r))) label))))
+
+;; conjoin all of one item's annotations given its true label z.
+(define (obs-item z rates as)
+  (match as
+    Nil => (True)
+    Cons a rest => (and (obs-annot z rates a) (obs-item z rates rest))))
+
+
+(define (obs-items prevalence rates rows)
+  (match rows
+    Nil => (True)
+    Cons row rest =>
+      (let ((z (flip prevalence)))
+        (and (obs-item z rates row)
+             (obs-items prevalence rates rest)))))
+
+;; Posterior over the FIRST annotator's (sensitivity, false-positive) Beta pair,
+;; marginalising out the unknown true labels z_i (and the other annotators).
+(query dawid-skene
+  (let ((prevalence (beta 1.0 1.0))
+        (rates (map (fn j -> (draw-rates)) (range n-annotators))))
+    (Posterior (fst (index 0 rates)) (obs-items prevalence rates annotation-rows))))

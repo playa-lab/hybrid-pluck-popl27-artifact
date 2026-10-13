@@ -1,0 +1,169 @@
+#!/usr/bin/env bash
+#
+# artifact — run the benchmarks and regenerate the paper's tables and figures.
+#
+#   artifact smoke                   every system on two small programs, plus Figure 1
+#                                    with short timeouts (about 10 minutes)
+#   artifact run TIER [SYSTEM...]    run a tier (smoke, reduced, paper, extra; see
+#                                    tiers/), then analyze and compare it
+#   artifact analyze RUN             (re)generate RUN/analysis/: tables, error.csv, plots
+#   artifact compare RUN             write RUN/analysis/comparison.md against the paper
+#   artifact exact RUN [RUN...]      write RUN/exact_answers.csv from the runs' Pluck logs
+#   artifact fig1 [TIER]             Figure 1 only, with TIER's settings (default reduced)
+#   artifact overview                the numbers of the Section 2.4 overview example
+#   artifact test                    the engine's unit tests (cargo test --release)
+#
+# Results go to /results, which must be a folder mounted from the host
+# (docker run -v "$PWD/results:/results" ...). Each run writes a new directory
+# /results/<tier>_<timestamp> and never overwrites an earlier one. RUN is such a
+# directory, by name or path. Settings come from tiers/TIER.env; any of them can
+# be overridden from the environment (docker run -e JOBS=3 -e FILTER=...), see
+# run_suite.sh.
+#
+set -uo pipefail
+EXP="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PY="$EXP/.venv/bin/python"
+RESULTS=/results
+
+die() { echo "artifact: $*" >&2; exit 2; }
+
+# Refuse to write results inside the container, where they would be lost. Only the
+# smoke test may run without a mounted /results.
+require_results() {
+  mountpoint -q "$RESULTS" 2>/dev/null && return
+  if [ "${1:-}" = smoke ]; then
+    echo "WARNING: $RESULTS is not mounted from the host; this smoke test's outputs are" \
+         "lost when the container exits." >&2
+    mkdir -p "$RESULTS"
+  else
+    die "$RESULTS is not mounted. Add -v \"\$PWD/results:/results\" to docker run."
+  fi
+}
+
+# Give everything written under $1 to the owner of /results, so that results on a
+# Linux host are not owned by root.
+give_back() {
+  chown -R --reference="$RESULTS" "$1" 2>/dev/null || true
+}
+
+new_run_dir() {  # new_run_dir NAME: create /results/NAME, which must not exist yet
+  local d="$RESULTS/$1"
+  [ -e "$d" ] && die "$d already exists; earlier runs are never overwritten"
+  mkdir -p "$d" || exit 1
+  echo "$d"
+}
+
+run_dir() {  # run_dir RUN: the path of an existing run, given by name or path
+  local d="$1"
+  [ -d "$d" ] || d="$RESULTS/$1"
+  [ -d "$d" ] || die "no run '$1' (looked in . and $RESULTS)"
+  (cd "$d" && pwd)
+}
+
+tier_get() {  # tier_get TIER VAR: VAR from the environment, else from tiers/TIER.env
+  if [ -n "${!2:-}" ]; then echo "${!2}"; return; fi
+  ( set -a; . "$EXP/tiers/$1.env"; echo "${!2:-}" )
+}
+
+check_tier() {
+  [ -f "$EXP/tiers/$1.env" ] || die "unknown tier '$1' (one of: $(cd "$EXP/tiers" && ls | sed 's/\.env$//' | tr '\n' ' '))"
+}
+
+fig1() {  # fig1 TIER DIR: Figure 1 panels and metrics into DIR/fig1
+  local t p
+  t=$(tier_get "$1" FIG1_TIME); p=$(tier_get "$1" FIG1_PSI_TIMEOUT)
+  echo "== Figure 1 (median of $t runs; PSI timeout $p s)"
+  ( echo "settings: time=$t psi_timeout=$p"
+    cd "$EXP/.." && "$PY" "$EXP/figure1/make_figure1_panels.py" --out "$2/fig1" \
+      --time "$t" --time-psi --psi-timeout "$p" ) > "$2/fig1.out" 2>&1 \
+    || { echo "Figure 1 failed; see $2/fig1.out" >&2; return 1; }
+}
+
+analyze() {  # analyze DIR
+  local d="$1" a="$1/analysis" failed=0 tier
+  tier=$(sed -n 's/^tier=//p' "$d/suite.env" 2>/dev/null)
+  mkdir -p "$a"
+  step() {  # step NAME CMD...: run one analysis script, logging to analysis/NAME.out
+    local name="$1"; shift
+    echo "== $name"
+    if ! (cd "$EXP/analysis" && "$@") > "$a/$name.out" 2>&1; then
+      echo "   failed; see $a/$name.out" >&2; failed=1
+    fi
+  }
+  if ls "$d"/results_*.csv > /dev/null 2>&1; then
+    step error "$PY" compute_error.py "$d"
+    # The extra tier's programs are in no paper table, so only their errors apply.
+    if [ "$tier" != extra ]; then
+      step tables "$PY" make_table.py --run-dir "$d"
+      if [ -f "$d/results_pluck.csv" ]; then
+        step pluck_stats "$PY" make_pluck_stats_table.py --run-dir "$d"
+      fi
+      step fig9 "$PY" make_approx_plots.py --run-dir "$d"
+    fi
+  fi
+  step overview "$PY" overview_sir.py
+  give_back "$a"
+  echo "analysis: $a"
+  return $failed
+}
+
+compare() {  # compare DIR
+  (cd "$EXP/analysis" && "$PY" compare_to_paper.py "$1")
+  local rc=$?
+  give_back "$1/analysis"
+  return $rc
+}
+
+cmd="${1:-}"; [ $# -gt 0 ] && shift
+case "$cmd" in
+  smoke)
+    exec "$0" run smoke ;;
+  run)
+    [ $# -ge 1 ] || die "usage: artifact run TIER [SYSTEM...]"
+    tier="$1"; shift
+    check_tier "$tier"
+    require_results "$tier"
+    d=$(new_run_dir "${RUN_ID:-${tier}_$(date +%Y%m%d_%H%M%S)}") || exit 2
+    trap 'give_back "$d"' EXIT
+    TIER="$tier" RUN_ID="$(basename "$d")" BENCH_OUT="$RESULTS" "$EXP/run_suite.sh" "$@"
+    rc=0
+    # Figure 1 runs with the whole tier (not when the run names its systems).
+    if [ $# -eq 0 ] && [ -n "$(tier_get "$tier" FIG1_TIME)" ]; then
+      fig1 "$tier" "$d" || rc=1
+    fi
+    analyze "$d" || rc=1
+    compare "$d" || rc=1
+    exit $rc ;;
+  analyze)
+    [ $# -eq 1 ] || die "usage: artifact analyze RUN"
+    d=$(run_dir "$1") || exit 2
+    analyze "$d" ;;
+  compare)
+    [ $# -eq 1 ] || die "usage: artifact compare RUN"
+    d=$(run_dir "$1") || exit 2
+    compare "$d" ;;
+  exact)
+    [ $# -ge 1 ] || die "usage: artifact exact RUN [RUN...]"
+    dirs=()
+    for r in "$@"; do d=$(run_dir "$r") || exit 2; dirs+=("$d"); done
+    out="${dirs[0]}/exact_answers.csv"
+    (cd "$EXP/analysis" && "$PY" make_exact_answers.py --out "$out" "${dirs[@]}")
+    rc=$?
+    give_back "$out"
+    exit $rc ;;
+  fig1)
+    tier="${1:-reduced}"
+    check_tier "$tier"
+    [ -n "$(tier_get "$tier" FIG1_TIME)" ] || die "tier '$tier' has no Figure 1 settings"
+    require_results
+    d=$(new_run_dir "fig1_${tier}_$(date +%Y%m%d_%H%M%S)") || exit 2
+    trap 'give_back "$d"' EXIT
+    fig1 "$tier" "$d" && compare "$d" ;;
+  overview)
+    cd "$EXP/analysis" && exec "$PY" overview_sir.py ;;
+  test)
+    cd "$EXP/.." && exec cargo test --release --offline ;;
+  *)
+    sed -n '3,21p' "$0" | sed 's/^# \{0,1\}//'
+    [ -z "$cmd" ] || [ "$cmd" = help ] || [ "$cmd" = -h ] || exit 2 ;;
+esac

@@ -1,0 +1,31 @@
+
+let symbolic start_rate <- beta(1., 1.) in
+let symbolic stop_rate  <- beta(1., 1.) in
+let symbolic base_hr <- gaussian(70., 400.) in
+let symbolic incr    <- gaussian(40., 400.) in
+let run_hr = base_hr + incr in
+
+let running = false in
+(* step 0 *) let () = observe(gaussian(if running then run_hr else base_hr, 25.), 82.) in let () = resample() in
+let sample t0 <- bernoulli(if running then stop_rate else start_rate) in
+let running = if running then (if t0 then false else true) else t0 in
+(* step 1 *) let () = observe(gaussian(if running then run_hr else base_hr, 25.), 81.) in let () = resample() in
+let sample t1 <- bernoulli(if running then stop_rate else start_rate) in
+let running = if running then (if t1 then false else true) else t1 in
+(* step 2 *) let () = observe(gaussian(if running then run_hr else base_hr, 25.), 80.) in let () = resample() in
+let sample t2 <- bernoulli(if running then stop_rate else start_rate) in
+let running = if running then (if t2 then false else true) else t2 in
+(* step 3 *) let () = observe(gaussian(if running then run_hr else base_hr, 25.), 83.) in let () = resample() in
+let sample t3 <- bernoulli(if running then stop_rate else start_rate) in
+let running = if running then (if t3 then false else true) else t3 in
+(* step 4 *) let () = observe(gaussian(if running then run_hr else base_hr, 25.), 120.) in let () = resample() in
+let sample t4 <- bernoulli(if running then stop_rate else start_rate) in
+let running = if running then (if t4 then false else true) else t4 in
+(* step 5 *) let () = observe(gaussian(if running then run_hr else base_hr, 25.), 124.) in let () = resample() in
+let sample t5 <- bernoulli(if running then stop_rate else start_rate) in
+let running = if running then (if t5 then false else true) else t5 in
+(* step 6 *) let () = observe(gaussian(if running then run_hr else base_hr, 25.), 120.) in let () = resample() in
+let sample t6 <- bernoulli(if running then stop_rate else start_rate) in
+let running = if running then (if t6 then false else true) else t6 in
+(* step 7 *) let () = observe(gaussian(if running then run_hr else base_hr, 25.), 85.) in let () = resample() in
+base_hr

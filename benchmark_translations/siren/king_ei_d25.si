@@ -1,0 +1,52 @@
+
+
+
+let symbolic bw <- beta(1., 1.) in
+let sample bb <- beta(1., 1.) in
+let sample kw0 <- binomial(43, bw) in
+let () = observe(binomial(7, bb), 20 - kw0) in let () = resample() in
+let sample kw1 <- binomial(25, bw) in
+let () = observe(binomial(7, bb), 13 - kw1) in let () = resample() in
+let sample kw2 <- binomial(44, bw) in
+let () = observe(binomial(8, bb), 21 - kw2) in let () = resample() in
+let sample kw3 <- binomial(4, bw) in
+let () = observe(binomial(7, bb), 9 - kw3) in let () = resample() in
+let sample kw4 <- binomial(3, bw) in
+let () = observe(binomial(12, bb), 13 - kw4) in let () = resample() in
+let sample kw5 <- binomial(1, bw) in
+let () = observe(binomial(1, bb), 2 - kw5) in let () = resample() in
+let sample kw6 <- binomial(14, bw) in
+let () = observe(binomial(10, bb), 14 - kw6) in let () = resample() in
+let sample kw7 <- binomial(6, bw) in
+let () = observe(binomial(6, bb), 8 - kw7) in let () = resample() in
+let sample kw8 <- binomial(43, bw) in
+let () = observe(binomial(11, bb), 23 - kw8) in let () = resample() in
+let sample kw9 <- binomial(10, bw) in
+let () = observe(binomial(2, bb), 5 - kw9) in let () = resample() in
+let sample kw10 <- binomial(14, bw) in
+let () = observe(binomial(12, bb), 15 - kw10) in let () = resample() in
+let sample kw11 <- binomial(19, bw) in
+let () = observe(binomial(10, bb), 16 - kw11) in let () = resample() in
+let sample kw12 <- binomial(15, bw) in
+let () = observe(binomial(2, bb), 7 - kw12) in let () = resample() in
+let sample kw13 <- binomial(4, bw) in
+let () = observe(binomial(2, bb), 3 - kw13) in let () = resample() in
+let sample kw14 <- binomial(32, bw) in
+let () = observe(binomial(11, bb), 21 - kw14) in let () = resample() in
+let sample kw15 <- binomial(28, bw) in
+let () = observe(binomial(10, bb), 19 - kw15) in let () = resample() in
+let sample kw16 <- binomial(3, bw) in
+let () = observe(binomial(2, bb), 2 - kw16) in let () = resample() in
+let sample kw17 <- binomial(33, bw) in
+let () = observe(binomial(11, bb), 23 - kw17) in let () = resample() in
+let sample kw18 <- binomial(4, bw) in
+let () = observe(binomial(5, bb), 7 - kw18) in let () = resample() in
+let sample kw19 <- binomial(10, bw) in
+let () = observe(binomial(5, bb), 8 - kw19) in let () = resample() in
+let sample kw20 <- binomial(4, bw) in
+let () = observe(binomial(6, bb), 7 - kw20) in let () = resample() in
+let sample kw21 <- binomial(1, bw) in
+let () = observe(binomial(2, bb), 2 - kw21) in let () = resample() in
+let sample kw22 <- binomial(3, bw) in
+let () = observe(binomial(3, bb), 4 - kw22) in let () = resample() in
+bw

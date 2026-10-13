@@ -1,0 +1,16 @@
+settings: time=1 psi_timeout=60
+polyreg: {'deg': {'Quadratic': 0.702, 'Linear': 0.272, 'Constant': 0.016}, 'P(outlier)': [0.05, 0.03, 0.02, 0.02, 0.02, 0.04, 0.28, 0.31, 0.74, 0.75]}
+sir: {'patientB': [0.17, 0.87, 0.88, 0.41, 0.41, 0.89, 0.88, 0.25, 0.13, 0.12]}
+changepoint: {'P(k)': {0: 0.11, 1: 0.511, 2: 0.266, 3: 0.113}, 'E[rate] first,last': [2.65, 1.28]}
+dawid_skene: {'P(label)': [0.93, 0.93, 0.92, 0.96, 0.1, 0.11, 0.1, 0.84]}
+mixture: {'P(K)': {1: 0.0, 2: 0.353, 3: 0.483, 4: 0.164}, 'top2': [0.443, 0.388]}
+time polyreg: 1.798s
+time sir: 1.069s
+time changepoint: 1.403s
+time dawid_skene: 0.016s
+time mixture: 1.328s
+psi polyreg: t/o
+psi sir: t/o
+psi changepoint: t/o
+psi dawid_skene: t/o
+psi mixture: t/o

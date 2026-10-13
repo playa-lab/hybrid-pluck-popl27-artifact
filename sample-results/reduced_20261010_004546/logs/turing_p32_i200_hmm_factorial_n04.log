@@ -1,0 +1,12 @@
+===== ok  wall=18.4085s  rc=0  =====
+hmm_factorial (Turing PG)  N=4  particles=32  iters=200
+RESULT: -2.684141
+inference_seconds: 8.001
+===== ok  wall=19.4969s  rc=0  =====
+hmm_factorial (Turing PG)  N=4  particles=32  iters=200
+RESULT: -2.641257
+inference_seconds: 8.203
+===== ok  wall=20.3769s  rc=0  =====
+hmm_factorial (Turing PG)  N=4  particles=32  iters=200
+RESULT: -2.780839
+inference_seconds: 8.331

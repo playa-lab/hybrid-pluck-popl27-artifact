@@ -1,0 +1,39 @@
+(include "examples/shared/king_ei.pluck")
+
+;; per-precinct counts at resolution D
+;; (Precinct wc bc tc) with wc = Nw/D, bc = Nb/D, tc = min(T/D, wc+bc).
+(define precincts
+  [(Precinct 54 9 25)    ;; 71-1  raw 1085/186/511
+   (Precinct 31 9 17)    ;; 71-2  raw 625/180/348
+   (Precinct 55 10 26)   ;; 71-3  raw 1119/202/536
+   (Precinct 6 9 11)     ;; 72-1  raw 121/189/239
+   (Precinct 4 15 16)    ;; 72-2  raw 95/318/337
+   (Precinct 1 2 3)      ;; 72-3  raw 34/47/63
+   (Precinct 18 13 17)   ;; 72-4  raw 372/262/355
+   (Precinct 8 7 10)     ;; 72-5  raw 164/152/207
+   (Precinct 53 13 28)   ;; 73-1  raw 1079/278/575
+   (Precinct 13 2 7)     ;; 73-2  raw 272/59/146
+   (Precinct 17 15 19)   ;; 73-3  raw 357/304/397
+   (Precinct 24 12 20)   ;; 73-4  raw 492/251/406
+   (Precinct 19 3 9)     ;; 73-5  raw 381/68/198
+   (Precinct 5 2 4)      ;; 73-6  raw 112/50/81
+   (Precinct 40 14 26)   ;; 74-1  raw 800/280/530
+   (Precinct 35 13 24)   ;; 74-2  raw 716/272/496
+   (Precinct 4 2 3)      ;; 74-3  raw 93/53/65
+   (Precinct 41 14 28)   ;; 74-4  raw 825/291/575
+   (Precinct 5 7 9)      ;; 75-1  raw 118/148/199
+   (Precinct 13 7 10)    ;; 75-2  raw 270/147/219
+   (Precinct 5 7 9)      ;; 75-3  raw 114/150/194
+   (Precinct 2 2 3)      ;; 75-4  raw 47/53/67
+   (Precinct 4 3 5)      ;; 75-5  raw 93/75/112
+  ])
+
+;; Beta(1,1) = Uniform[0,1] prior on each district-wide support rate.
+;; Posterior over ONLY the White Malloy rate bw, given every precinct margin at
+;; resolution D. The non-White rate bb is still a model latent, marginalised out
+;; of the reported posterior.
+(query king-ei
+  (let ((bw (beta 1.0 1.0))
+        (bb (beta 1.0 1.0)))
+    (Posterior bw
+               (observe-precincts bw bb precincts))))

@@ -1,0 +1,11 @@
+;; Three independent draws x_i ~ N(0,1), summed. Pluck returns the full
+;; marginal of x1 + x2 + x3, which is N(0, sqrt(3)); the error scalar is its
+;; mean, 0. (HyBit's translation sums only x1 + x3, as selected by indices
+;; [1,0,1]; its mean is also 0.)
+
+(query addFun_sum
+  (Marginal
+    (let ((x1 (gaussian 0.0 1.0))
+          (x2 (gaussian 0.0 1.0))
+          (x3 (gaussian 0.0 1.0)))
+      (+. (+. x1 x2) x3))))

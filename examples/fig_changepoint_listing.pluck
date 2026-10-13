@@ -1,0 +1,56 @@
+;; title: Figure 1 row -- Coal-mining disasters, unknown number of changepoints
+;; Yearly counts of British coal-mining disasters, 1880-1899 (Jarrett 1979; the
+;; dataset of Green's 1995 RJMCMC example). The NUMBER of changepoints k is
+;; itself unknown (truncated-Poisson prior); each segment has its own
+;; Gamma-distributed disaster rate. Exact posterior over k and the locations.
+(define data
+  [@4 @2 @5 @2 @2 @3 @4 @2 @1 @3    ;; 1880-1889
+   @2 @2 @1 @1 @1 @1 @3 @0 @0 @1])  ;; 1890-1899
+
+(define n-boundaries 19)
+(define bin-width 1.0)
+(define alpha 2.0)   ;; per-segment rate h ~ Gamma(alpha, beta), mean 2/yr
+(define beta  1.0)
+
+;; truncated Poisson(1) prior on the number of changepoints
+(define (draw-k) (discrete (0 1) (1 1) (2 0.5) (3 0.25)))
+
+;; uniformly random k-subset of the year boundaries
+(define (place-cps remaining k-left)
+  (if (== remaining 0)
+    (Nil)
+    (let ((p (/. (float-of-nat k-left) (float-of-nat remaining))))
+      (if (flip p)
+        (Cons (True)  (place-cps (- remaining 1) (- k-left 1)))
+        (Cons (False) (place-cps (- remaining 1) k-left))))))
+
+;; each year's count ~ Poisson(h); a fresh Gamma rate after each changepoint.
+;; Returns the per-year rates alongside the accumulated evidence.
+(define (walk-bins cs h cps)
+  (match cs
+    Nil => (Pair (Nil) (True))
+    Cons c rest =>
+      (let ((ok (native_eq (poisson (*. h bin-width)) c)))
+        (match rest
+          Nil => (Pair (Cons h (Nil)) ok)
+          Cons _ _ =>
+            (match cps
+              Cons is-cp cps2 =>
+                (let ((h2 (if is-cp (gamma alpha beta) h))
+                      (out (walk-bins rest h2 cps2)))
+                  (Pair (Cons h (fst out)) (and ok (snd out)))))))))
+
+(define (cp-indices cps i)
+  (match cps
+    Nil => (Nil)
+    Cons b rest =>
+      (let ((rest2 (cp-indices rest (+ i 1))))
+        (if b (Cons i rest2) rest2))))
+
+(define-type result (Result k changepoints yearly-rates))
+
+(query changepoints
+  (let ((k   (draw-k))
+        (cps (place-cps n-boundaries k))
+        (out (walk-bins data (gamma alpha beta) cps)))
+    (Posterior (Result k (cp-indices cps 0) (fst out)) (snd out))))

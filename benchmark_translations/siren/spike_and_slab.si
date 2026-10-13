@@ -1,0 +1,30 @@
+
+
+let sample g1 <- bernoulli(0.5) in
+let sample g2 <- bernoulli(0.5) in
+let sample g3 <- bernoulli(0.5) in
+let sample g4 <- bernoulli(0.5) in
+let symbolic s1 <- gaussian(0., 100.) in
+let symbolic s2 <- gaussian(0., 100.) in
+let symbolic s3 <- gaussian(0., 100.) in
+let symbolic s4 <- gaussian(0., 100.) in
+let b1 = if g1 then s1 else 0. in
+let b2 = if g2 then s2 else 0. in
+let b3 = if g3 then s3 else 0. in
+let b4 = if g4 then s4 else 0. in
+let symbolic b0 <- gaussian(0., 10000.) in
+
+let () = observe(gaussian(b0 + ((b1 *  7.) + ((b2 * 26.) + ((b3 *  6.) + (b4 * 60.)))), 6.25),  78.5)  in
+let () = observe(gaussian(b0 + ((b1 *  1.) + ((b2 * 29.) + ((b3 * 15.) + (b4 * 52.)))), 6.25),  74.3)  in
+let () = observe(gaussian(b0 + ((b1 * 11.) + ((b2 * 56.) + ((b3 *  8.) + (b4 * 20.)))), 6.25), 104.3)  in
+let () = observe(gaussian(b0 + ((b1 * 11.) + ((b2 * 31.) + ((b3 *  8.) + (b4 * 47.)))), 6.25),  87.6)  in
+let () = observe(gaussian(b0 + ((b1 *  7.) + ((b2 * 52.) + ((b3 *  6.) + (b4 * 33.)))), 6.25),  95.9)  in
+let () = observe(gaussian(b0 + ((b1 * 11.) + ((b2 * 55.) + ((b3 *  9.) + (b4 * 22.)))), 6.25), 109.2)  in
+let () = observe(gaussian(b0 + ((b1 *  3.) + ((b2 * 71.) + ((b3 * 17.) + (b4 *  6.)))), 6.25), 102.7)  in
+let () = observe(gaussian(b0 + ((b1 *  1.) + ((b2 * 31.) + ((b3 * 22.) + (b4 * 44.)))), 6.25),  72.5)  in
+let () = observe(gaussian(b0 + ((b1 *  2.) + ((b2 * 54.) + ((b3 * 18.) + (b4 * 22.)))), 6.25),  93.1)  in
+let () = observe(gaussian(b0 + ((b1 * 21.) + ((b2 * 47.) + ((b3 *  4.) + (b4 * 26.)))), 6.25), 115.9)  in
+let () = observe(gaussian(b0 + ((b1 *  1.) + ((b2 * 40.) + ((b3 * 23.) + (b4 * 34.)))), 6.25),  83.8)  in
+let () = observe(gaussian(b0 + ((b1 * 11.) + ((b2 * 66.) + ((b3 *  9.) + (b4 * 12.)))), 6.25), 113.3)  in
+let () = observe(gaussian(b0 + ((b1 * 10.) + ((b2 * 68.) + ((b3 *  8.) + (b4 * 12.)))), 6.25), 109.4)  in
+g1

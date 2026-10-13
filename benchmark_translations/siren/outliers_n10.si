@@ -1,0 +1,27 @@
+
+
+
+let symbolic alpha <- gaussian(0., 100.) in
+let symbolic beta  <- gaussian(0., 100.) in
+let symbolic pi    <- beta(1., 1.) in
+let sample o0 <- bernoulli(pi) in
+let () = observe(gaussian(alpha * 1.0 + beta, if o0 then 100.0 else 0.25), 3.0) in let () = resample() in
+let sample o1 <- bernoulli(pi) in
+let () = observe(gaussian(alpha * 2.0 + beta, if o1 then 100.0 else 0.25), 5.0) in let () = resample() in
+let sample o2 <- bernoulli(pi) in
+let () = observe(gaussian(alpha * 3.0 + beta, if o2 then 100.0 else 0.25), 7.0) in let () = resample() in
+let sample o3 <- bernoulli(pi) in
+let () = observe(gaussian(alpha * 4.0 + beta, if o3 then 100.0 else 0.25), 22.0) in let () = resample() in
+let sample o4 <- bernoulli(pi) in
+let () = observe(gaussian(alpha * 5.0 + beta, if o4 then 100.0 else 0.25), 11.0) in let () = resample() in
+let sample o5 <- bernoulli(pi) in
+let () = observe(gaussian(alpha * 6.0 + beta, if o5 then 100.0 else 0.25), 13.0) in let () = resample() in
+let sample o6 <- bernoulli(pi) in
+let () = observe(gaussian(alpha * 7.0 + beta, if o6 then 100.0 else 0.25), 15.0) in let () = resample() in
+let sample o7 <- bernoulli(pi) in
+let () = observe(gaussian(alpha * 8.0 + beta, if o7 then 100.0 else 0.25), 17.0) in let () = resample() in
+let sample o8 <- bernoulli(pi) in
+let () = observe(gaussian(alpha * 9.0 + beta, if o8 then 100.0 else 0.25), 19.0) in let () = resample() in
+let sample o9 <- bernoulli(pi) in
+let () = observe(gaussian(alpha * 10.0 + beta, if o9 then 100.0 else 0.25), 21.0) in let () = resample() in
+alpha

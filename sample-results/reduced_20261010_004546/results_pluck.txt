@@ -1,0 +1,123 @@
+
+======================================== RESULTS ========================================
+SYSTEM  PROGRAM                STATUS         RUNS WALL(s)          INFER(s)           RESULT        
+------  -------                ------         ---- -------          --------           ------        
+pluck   GPA                    ok                3 0.1064±0.002    0.0001363±0.00093 -             
+pluck   addFun_sum             ok                3 0.1081±0.0077   6.583e-05±1.6e-05 -             
+pluck   burglary_alarm         ok                3 0.1095±0.0026   0.0001179±8e-06   -             
+pluck   changepoint_coal_k1    ok                3 0.1125±0.0032   0.01661±0.0022    -             
+pluck   changepoint_coal_n010  ok                3 0.1091±0.0018   0.03532±0.0039    -             
+pluck   changepoint_coal_n015  ok                3 0.3156±0.01     0.2254±0.019      -             
+pluck   changepoint_coal_n020  ok                3 0.8662±0.019    0.7421±0.014      -             
+pluck   changepoint_coal_n025  ok                3 2.911±0.063     2.675±0.054       -             
+pluck   changepoint_coal_n030  ok                3 7.424±0.41      6.898±0.39        -             
+pluck   changepoint_coal_n035  ok                3 22.14±3.8       20.94±3.4         -             
+pluck   changepoint_coal_n040  ok                3 184.7±34        154.5±31          -             
+pluck   clickGraph             ok                3 0.1163±0.0081   0.0007571±0.00056 -             
+pluck   clinicalTrial1         ok                3 0.1113±0.0043   0.04635±0.011     -             
+pluck   clinicalTrial2         ok                3 0.1169±0.0058   0.0003012±3.2e-05 -             
+pluck   coinBias               ok                3 0.1102±0.03     0.0001927±2.2e-05 -             
+pluck   conjugate_gaussians    ok                3 0.1076±0.0067   0.0001973±9.2e-05 -             
+pluck   dawid_skene_n08        ok                3 0.1145±0.0046   0.003071±0.00097  -             
+pluck   dawid_skene_n12        ok                3 0.1176±0.00065  0.02198±0.0029    -             
+pluck   dawid_skene_n16        ok                3 0.2264±0.063    0.1409±0.038      -             
+pluck   dawid_skene_n18        ok                3 0.3461±0.069    0.2114±0.013      -             
+pluck   dawid_skene_n20        ok                3 0.3661±0.055    0.2797±0.026      -             
+pluck   dawid_skene_n22        ok                3 1.278±0.13      1.084±0.068       -             
+pluck   diamond_network        ok                3 0.1217±0.0067   0.02315±0.0075    -             
+pluck   f81_joint              ok                3 4.308±0.2       1.245±0.1         -             
+pluck   f81_rate               ok                3 0.2116±0.057    0.1438±0.032      -             
+pluck   hmm_factorial_n02      ok                3 0.1084±0.0058   0.001456±0.00031  -             
+pluck   hmm_factorial_n03      ok                3 0.1112±0.0043   0.006057±0.00091  -             
+pluck   hmm_factorial_n04      ok                3 0.119±0.039     0.02121±0.001     -             
+pluck   hmm_factorial_n05      ok                3 0.2187±0.057    0.09785±0.021     -             
+pluck   hmm_factorial_n06      ok                3 0.5515±0.068    0.4657±0.068      -             
+pluck   hmm_factorial_n07      ok                3 4.489±0.44      3.759±0.39        -             
+pluck   hmm_first_order_n02    ok                3 0.1104±0.0042   0.0004208±0.00044 -             
+pluck   hmm_first_order_n04    ok                3 0.1179±0.0024   0.001778±0.002    -             
+pluck   hmm_first_order_n06    ok                3 0.1179±0.001    0.007155±0.0017   -             
+pluck   hmm_first_order_n08    ok                3 0.1132±0.0044   0.07081±0.0074    -             
+pluck   hmm_first_order_n10    ok                3 0.6681±0.16     0.523±0.12        -             
+pluck   hmm_first_order_n12    ok                3 5.699±0.48      4.884±0.33        -             
+pluck   hmm_first_order_n14    ok                2 453±71          122.3±55          -             
+pluck   hmm_second_order_n02   ok                3 0.1161±0.0063   0.0004027±0.00062 -             
+pluck   hmm_second_order_n04   ok                3 0.1175±0.023    0.002564±0.0037   -             
+pluck   hmm_second_order_n06   ok                3 0.1192±0.0063   0.0125±0.00094    -             
+pluck   hmm_second_order_n08   ok                3 0.1184±0.0065   0.06781±0.014     -             
+pluck   hmm_second_order_n10   ok                3 0.7868±0.11     0.6701±0.11       -             
+pluck   hmm_second_order_n12   ok                3 6.842±0.58      6.022±0.46        -             
+pluck   hmm_second_order_n14   ok                3 468.5±96        147±22            -             
+pluck   king_ei_d25            ok                3 124.9±37        124.4±37          -             
+pluck   king_ei_d30            ok                3 13.6±7.3        13.32±7.2         -             
+pluck   king_ei_d40            ok                3 4.462±0.38      4.29±0.31         -             
+pluck   king_ei_d60            ok                3 0.5625±0.055    0.5156±0.089      -             
+pluck   king_ei_d80            ok                3 0.2287±0.0025   0.1598±0.013      -             
+pluck   linear_regression      ok                3 0.1113±0.00076  0.0006812±0.00032 -             
+pluck   normal_mixture         ok                3 7.872±0.29      6.93±0.18         -             
+pluck   outliers_n08           ok                3 0.1131±0.00061  0.01508±0.0034    -             
+pluck   outliers_n10           ok                3 0.1225±0.0025   0.06162±0.0018    -             
+pluck   outliers_n12           ok                3 0.4667±0.07     0.3057±0.02       -             
+pluck   outliers_n14           ok                3 2.664±0.28      2.289±0.28        -             
+pluck   outliers_n16           ok                3 13.32±0.26      11.36±0.23        -             
+pluck   outliers_n18           ok                3 187.1±56        87.86±9.4         -             
+pluck   pcfg_ambiguous         ok                3 0.5547±0.051    0.4268±0.053      -             
+pluck   pcfg_n010              ok                3 0.2151±0.098    0.1695±0.05       -             
+pluck   pcfg_n020              ok                3 0.4387±0.0089   0.3683±0.033      -             
+pluck   pcfg_n040              ok                3 2.262±0.71      2.093±0.7         -             
+pluck   pcfg_n060              ok                3 8.172±0.67      7.941±0.61        -             
+pluck   pcfg_n080              ok                3 25.41±7.6       25.01±7.5         -             
+pluck   pcfg_n100              ok                3 93.69±42        93.3±41           -             
+pluck   polyreg                ok                3 0.1228±0.021    0.03213±0.017     -             
+pluck   run_walk_hrm           ok                3 0.112±0.0045    0.01074±0.0036    -             
+pluck   secret_ballot_n04      ok                3 0.108±0.0013    0.00204±0.00015   -             
+pluck   secret_ballot_n08      ok                3 0.1108±0.0021   0.02882±0.0056    -             
+pluck   secret_ballot_n16      ok                3 0.3367±0.061    0.2288±0.054      -             
+pluck   secret_ballot_n32      ok                3 2.324±0.22      1.708±0.14        -             
+pluck   secret_ballot_n64      ok                3 29.29±16        23.39±7           -             
+pluck   sir_model_n12          ok                3 0.1173±0.0019   0.008544±0.005    -             
+pluck   sir_model_n24          ok                3 0.3647±0.007    0.3016±0.0018     -             
+pluck   sir_model_n36          ok                3 3.589±0.1       3.05±0.072        -             
+pluck   sir_model_n48          ok                3 131.3±68        23.35±12          -             
+pluck   sir_model_n60          TIMEOUT           1 >600             -                  -             
+pluck   soccer_n03             ok                3 0.1254±0.037    0.01241±0.0043    -             
+pluck   soccer_n04             ok                3 0.1114±0.0042   0.05736±0.0081    -             
+pluck   soccer_n05             ok                3 0.3405±0.076    0.2689±0.059      -             
+pluck   soccer_n06             ok                3 1.77±0.35       1.644±0.35        -             
+pluck   soccer_n07             ok                3 91.34±21        90.56±21          -             
+pluck   soft_kmeans_n02        ok                3 0.1091±0.0043   0.001396±0.00067  -             
+pluck   soft_kmeans_n04        ok                3 0.1085±0.0063   0.005556±0.0013   -             
+pluck   soft_kmeans_n06        ok                3 0.1135±0.0039   0.03468±0.0053    -             
+pluck   soft_kmeans_n08        ok                3 0.3585±0.071    0.2881±0.042      -             
+pluck   soft_kmeans_n10        ok                3 2.76±0.69       2.449±0.58        -             
+pluck   soft_kmeans_n11        ok                3 10.3±1.9        8.356±0.95        -             
+pluck   soft_kmeans_n12        ok                3 196.8±14        75.01±10          -             
+pluck   spike_and_slab         ok                3 0.1095±0.0064   0.01336±0.0014    -             
+pluck   typos                  ok                3 0.1083±0.0054   0.02977±0.0091    -             
+=========================================================================================
+RUNS     = successful runs measured (1 if the first run timed out / errored / was BAD).
+WALL(s)  = median ± sample-stddev of total process wall-clock over RUNS runs.
+INFER(s) = median ± sample-stddev of inference-only time.
+           pluck: inference_seconds (via PLUCK_STATS); hybit: reported t.time.
+           psi:   '-' (no inference line) — use WALL(s) as the comparable number.
+           slicstan: WALL(s)=total pipeline (slic+stanc+build+sample); INFER(s)=slic
+           +sample (SlicStan->Stan compile + HMC; EXCLUDES the stanc + C++ build that
+           are CmdStan overhead). mean(param)+Rhat and the per-component breakdown are
+           in the SlicStan timing table above (also logs/slicstan_<name>.log).
+STATUS   = ok | TIMEOUT | OOM | ERROR(rc=N) | BAD | ERROR(run)
+           | ERROR(slic) | ERROR(stanc) | ERROR(build) | NODATA.
+           OOM = SIGKILLed before the timeout = out of memory (the container hit its
+           memory limit); WALL is the actual time it ran before dying, not a real
+           inference time. Give Docker more memory to measure these.
+           slicstan: ERROR(slic) = .slicstan uses a feature SlicStan's DSL lacks;
+           ERROR(stanc)/ERROR(build) = its generated Stan is invalid / fails to
+           compile (SlicStan codegen); ERROR(run) = HMC could not initialize;
+           NODATA = compiles but no slicstan-data/<name>.json.
+           BAD = process exited 0 but did not actually infer. For PSI this is
+           'Pr[error] = 1' (posterior collapsed, e.g. observing a continuous
+           variable at an exact value — measure-zero in PSI's exact semantics).
+           A BAD/ERROR/TIMEOUT row's WALL is the single failing run, NOT a real
+           inference time — do not compare it against ok rows.
+
+logs:    /results/reduced_20261010_004546/logs/<system>_<program>.log   (every run preserved)
+table:   /results/reduced_20261010_004546/results_pluck.txt
+csv:     /results/reduced_20261010_004546/results_pluck.csv

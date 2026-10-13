@@ -1,0 +1,51 @@
+===== ok  wall=31.3045s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 8
+BDD vars allocated (discrete bits)    : 3263
+BDD recursive calls (compile work)    : 26108564
+BDD guard nodes  : sum=1106  max=1106  mean=1106
+SPN nodes (TREE) : sum=9  max=9  mean=9
+SPN nodes (DAG)  : per-world-max=9  all-worlds-unique=9  intern-table=2223
+SPN leaf nodes   : sum=8  (max sum-arity=0, max prod-arity=1)
+posterior mixture components (total)  : 1
+time (s): parse=0.0042  symbolic-exec=30.8715  wmc=0.0254  posterior=0.0008  flatten=0.0000  display/naming=0.0002  total=30.9022
+===================
+inference_seconds: 30.90223168
+learned-probabilities:
+  p₀  1
+        p ~ Dirichlet(81.000000, 33.000000)
+===== ok  wall=25.4122s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 8
+BDD vars allocated (discrete bits)    : 3263
+BDD recursive calls (compile work)    : 26108564
+BDD guard nodes  : sum=1106  max=1106  mean=1106
+SPN nodes (TREE) : sum=9  max=9  mean=9
+SPN nodes (DAG)  : per-world-max=9  all-worlds-unique=9  intern-table=2223
+SPN leaf nodes   : sum=8  (max sum-arity=0, max prod-arity=1)
+posterior mixture components (total)  : 1
+time (s): parse=0.0024  symbolic-exec=24.9726  wmc=0.0284  posterior=0.0021  flatten=0.0000  display/naming=0.0006  total=25.0062
+===================
+inference_seconds: 25.00618264
+learned-probabilities:
+  p₀  1
+        p ~ Dirichlet(81.000000, 33.000000)
+===== ok  wall=16.1533s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 8
+BDD vars allocated (discrete bits)    : 3263
+BDD recursive calls (compile work)    : 26108564
+BDD guard nodes  : sum=1106  max=1106  mean=1106
+SPN nodes (TREE) : sum=9  max=9  mean=9
+SPN nodes (DAG)  : per-world-max=9  all-worlds-unique=9  intern-table=2223
+SPN leaf nodes   : sum=8  (max sum-arity=0, max prod-arity=1)
+posterior mixture components (total)  : 1
+time (s): parse=0.0032  symbolic-exec=15.9118  wmc=0.0219  posterior=0.0002  flatten=0.0000  display/naming=0.0001  total=15.9372
+===================
+inference_seconds: 15.93718717
+learned-probabilities:
+  p₀  1
+        p ~ Dirichlet(81.000000, 33.000000)

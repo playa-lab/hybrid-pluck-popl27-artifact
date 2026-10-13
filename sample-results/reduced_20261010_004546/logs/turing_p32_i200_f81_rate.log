@@ -1,0 +1,15 @@
+===== ok  wall=51.5609s  rc=0  =====
+f81_rate / F81 (Turing PG)  n_sites=15  particles=32  iters=200
+retention prob p = 0.517   (true 0.8)
+RESULT: 0.516749
+inference_seconds: 27.518
+===== ok  wall=51.2361s  rc=0  =====
+f81_rate / F81 (Turing PG)  n_sites=15  particles=32  iters=200
+retention prob p = 0.468   (true 0.8)
+RESULT: 0.468009
+inference_seconds: 26.929
+===== ok  wall=63.7929s  rc=0  =====
+f81_rate / F81 (Turing PG)  n_sites=15  particles=32  iters=200
+retention prob p = 0.511   (true 0.8)
+RESULT: 0.511471
+inference_seconds: 40.680

@@ -1,0 +1,94 @@
+;; A deliberately, HIGHLY AMBIGUOUS counterpart to shared/pcfg.pluck. The English
+;; grammar there is unambiguous: every sentence has exactly one parse, so the
+;; parse tree is determined by the data and learning p is a single conjugate
+;; Dirichlet draw. Here ambiguity comes from PP attachment, and sentences may
+;; carry SEVERAL prepositional phrases:
+;;
+;;   "the dog saw the cat with the dog"        (1 PP)
+;;     high / VP-attachment:  VP -> V NP PP     (saw ... with the dog)
+;;     low  / NP-attachment:  NP -> Det N PP    (the cat with the dog)
+;;
+;; A sentence with k trailing PPs has Catalan(k) parses (1, 2, 5, 14, 42, ... for
+;; k = 1,2,3,4,5), because each PP can attach at any open NP/VP site and the PPs
+;; nest through NP -> Det N PP. So the corpus below (sentences with 0..4 PPs) is
+;; highly ambiguous and the exact engine must enumerate the whole parse forest.
+;;
+;; The competing parses use DIFFERENT productions, so the attachment counts and
+;; the latent parse couple: which rule we believe is common shifts how each
+;; sentence is parsed, and how each sentence is parsed shifts the counts. No-PP
+;; sentences ("the dog saw the cat") are unambiguous and anchor the baselines.
+;;
+;; Grammar (latent Dirichlet per rule with a real choice):
+;;   Sent -> NP VP
+;;   NP   -> Det N        | Det N PP      index 0  (low / noun attachment)
+;;   VP   -> V NP         | V NP PP       index 1  (high / verb attachment)
+;;   N    -> "dog"        | "cat"         index 2
+;;   PP   -> P NP
+;;   Det  -> "the"   V -> "saw"   P -> "with"      (deterministic terminals)
+
+(define-type non-terminal (Sent) (NP) (VP) (PP) (N) (Det) (V) (P))
+
+;; ---- latent production probabilities ---------------------------------------
+;; One Dirichlet per rule with a real choice, gathered into a bundle `p`.
+(define (make-probs)
+  [(dirichlet 1.0 1.0)        ;; 0 NP : Det N | Det N PP
+   (dirichlet 1.0 1.0)        ;; 1 VP : V NP  | V NP PP
+   (dirichlet 1.0 1.0)])      ;; 2 N  : dog   | cat
+
+;; pick alternative 0 of a 2-way rule? `categorical` returns a Native(Int); keep
+;; the test inside the lazy `if` at each call site so recursive rules (NP via PP)
+;; only expand the branch actually taken.
+(define (alt0? theta) (native_eq (categorical theta) @0))
+
+(define (generate-english nt p)
+  (match nt
+    Sent => (append (generate-english (NP) p) (generate-english (VP) p))
+    NP   => (if (alt0? (index 0 p))
+                (append (generate-english (Det) p) (generate-english (N) p))
+                (append (append (generate-english (Det) p) (generate-english (N) p))
+                        (generate-english (PP) p)))
+    VP   => (if (alt0? (index 1 p))
+                (append (generate-english (V) p) (generate-english (NP) p))
+                (append (append (generate-english (V) p) (generate-english (NP) p))
+                        (generate-english (PP) p)))
+    PP   => (append (generate-english (P) p) (generate-english (NP) p))
+    N    => (Cons (if (alt0? (index 2 p)) "dog" "cat") (Nil))
+    Det  => (Cons "the" (Nil))
+    V    => (Cons "saw" (Nil))
+    P    => (Cons "with" (Nil))))
+
+;; ---- observations ----------------------------------------------------------
+(define sentence=? (list=? string=?))
+
+;; evidence: each observed sentence is one the grammar could have produced.
+(define (observe-sentences p sentences)
+  (match sentences
+    Nil => (True)
+    Cons s rest => (and (sentence=? (generate-english (Sent) p) s)
+                        (observe-sentences p rest))))
+
+;; ---- corpus ----------------------------------------------------------------
+;; 20 sentences carrying 0..4 PPs. A k-PP sentence has Catalan(k) parses, so the
+;; corpus is highly ambiguous; ordered so `take N` ramps the PP depth (and hence
+;; the exact engine's parse-forest size) gradually.
+(define sentences
+  [["the" "dog" "saw" "the" "cat"]                                                                 ;; 0 PP
+   ["the" "cat" "saw" "the" "dog"]                                                                 ;; 0 PP
+   ["the" "dog" "saw" "the" "cat" "with" "the" "dog"]                                              ;; 1 PP
+   ["the" "cat" "saw" "the" "dog" "with" "the" "cat"]                                              ;; 1 PP
+   ["the" "dog" "saw" "the" "dog"]                                                                 ;; 0 PP
+   ["the" "cat" "saw" "the" "cat" "with" "the" "dog"]                                              ;; 1 PP
+   ["the" "dog" "saw" "the" "cat" "with" "the" "dog" "with" "the" "cat"]                           ;; 2 PP
+   ["the" "cat" "saw" "the" "dog" "with" "the" "cat" "with" "the" "dog"]                           ;; 2 PP
+   ["the" "dog" "saw" "the" "cat" "with" "the" "cat"]                                              ;; 1 PP
+   ["the" "cat" "saw" "the" "dog" "with" "the" "dog" "with" "the" "cat" "with" "the" "dog"]        ;; 3 PP
+   ["the" "dog" "saw" "the" "cat"]                                                                 ;; 0 PP
+   ["the" "cat" "saw" "the" "dog" "with" "the" "cat" "with" "the" "cat"]                           ;; 2 PP
+   ["the" "dog" "saw" "the" "dog" "with" "the" "cat" "with" "the" "dog" "with" "the" "cat"]        ;; 3 PP
+   ["the" "cat" "saw" "the" "cat"]                                                                 ;; 0 PP
+   ["the" "dog" "saw" "the" "cat" "with" "the" "dog" "with" "the" "cat" "with" "the" "dog" "with" "the" "cat"]  ;; 4 PP
+   ["the" "cat" "saw" "the" "dog" "with" "the" "dog"]                                              ;; 1 PP
+   ["the" "dog" "saw" "the" "cat" "with" "the" "cat" "with" "the" "dog"]                           ;; 2 PP
+   ["the" "cat" "saw" "the" "dog" "with" "the" "cat" "with" "the" "dog" "with" "the" "cat"]        ;; 3 PP
+   ["the" "dog" "saw" "the" "dog" "with" "the" "cat"]                                              ;; 1 PP
+   ["the" "cat" "saw" "the" "dog" "with" "the" "cat" "with" "the" "dog" "with" "the" "cat" "with" "the" "dog"]])  ;; 4 PP

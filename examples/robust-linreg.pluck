@@ -1,0 +1,25 @@
+(define xs [1.0, 2.0, 3.0, 4.0, 5.0])
+(define ys [1.2, 2.1, 3.2, 3.9, 4.85])
+
+(define-type Line (Line m b))
+
+(define (sum-bools xs)
+  (match xs
+    Nil => 0
+    Cons x xs => (+ (sum-bools xs) (if x 1 0))))
+
+(define (map2 f xs ys)
+  (match xs
+    Nil => Nil
+    Cons x xs => (match ys
+                   Cons y ys => (Cons (f x y) (map2 f xs ys)))))
+
+(query params
+       (let
+        ((p (beta 1.0 1.0))
+         (m (normal 0.0 1.0))
+         (b (normal 0.0 1.0))
+         (os (map (fn x -> (flip p)) xs))
+         (f (fn x -> (+. b (*. m x))))
+         (data (map2 (fn x o -> (if o (normal 0.0 10.0) (normal (f x) 0.05))) xs os)))
+         (Posterior (Pair (Line m b) (sum-bools os)) (list=? real=? data ys))))

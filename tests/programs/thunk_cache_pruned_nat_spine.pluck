@@ -1,0 +1,11 @@
+; Loss-free used_information P4: `force_int` walks a Peano spine whose
+; inner thunk is branch-pruned to one world under pc = b; it must thread
+; that used_information (= b) into `s`'s cache entry. Discarding it caches
+; `used = true`: under b the nat is 1 (1 <= 1, True); the ~b branch then
+; hits the stale entry and reports (not True) = False. Correct: under ~b
+; the nat is 2 (2 <= 1 is False), so (not False) = True — a single
+; True item at probability 1.
+(query
+ (let ((b (flip 0.5))
+       (s (native_leq (S (if b (O) (S (O)))) @1)))
+   (Posterior (if b s (not s)) True)))

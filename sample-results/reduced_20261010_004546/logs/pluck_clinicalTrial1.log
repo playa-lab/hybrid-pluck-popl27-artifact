@@ -1,0 +1,51 @@
+===== ok  wall=0.1079s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 3
+BDD vars allocated (discrete bits)    : 401
+BDD recursive calls (compile work)    : 194134
+BDD guard nodes  : sum=402  max=201  mean=201
+SPN nodes (TREE) : sum=4  max=3  mean=2
+SPN nodes (DAG)  : per-world-max=3  all-worlds-unique=4  intern-table=504
+SPN leaf nodes   : sum=3  (max sum-arity=0, max prod-arity=1)
+posterior mixture components (total)  : 2
+time (s): parse=0.0001  symbolic-exec=0.0548  wmc=0.0006  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0555
+===================
+inference_seconds: 0.05547158
+clinicalTrial1:
+  False  0.8296384506487172
+  True  0.17036154935128467
+===== ok  wall=0.1164s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 3
+BDD vars allocated (discrete bits)    : 401
+BDD recursive calls (compile work)    : 194134
+BDD guard nodes  : sum=402  max=201  mean=201
+SPN nodes (TREE) : sum=4  max=3  mean=2
+SPN nodes (DAG)  : per-world-max=3  all-worlds-unique=4  intern-table=504
+SPN leaf nodes   : sum=3  (max sum-arity=0, max prod-arity=1)
+posterior mixture components (total)  : 2
+time (s): parse=0.0001  symbolic-exec=0.0338  wmc=0.0005  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0344
+===================
+inference_seconds: 0.03443329
+clinicalTrial1:
+  False  0.8296384506487172
+  True  0.17036154935128467
+===== ok  wall=0.1113s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 3
+BDD vars allocated (discrete bits)    : 401
+BDD recursive calls (compile work)    : 194134
+BDD guard nodes  : sum=402  max=201  mean=201
+SPN nodes (TREE) : sum=4  max=3  mean=2
+SPN nodes (DAG)  : per-world-max=3  all-worlds-unique=4  intern-table=504
+SPN leaf nodes   : sum=3  (max sum-arity=0, max prod-arity=1)
+posterior mixture components (total)  : 2
+time (s): parse=0.0001  symbolic-exec=0.0455  wmc=0.0007  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0464
+===================
+inference_seconds: 0.04635137
+clinicalTrial1:
+  False  0.8296384506487172
+  True  0.17036154935128467

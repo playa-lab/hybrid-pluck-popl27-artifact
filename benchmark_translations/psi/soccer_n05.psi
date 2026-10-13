@@ -1,0 +1,38 @@
+def scaleOf(k:ℕ){
+    return if k==0 {4.0/9.0} else { if k==1 {2.0/3.0} else { if k==2 {1.0}
+           else { if k==3 {1.5} else { if k==4 {2.25} else {3.375} } } } };
+}
+
+def main(){
+    a0:=gamma(1,1); a1:=gamma(1,1); a2:=gamma(1,1); sa:=a0+a1+a2;
+    th0:=a0/sa; th1:=a1/sa; th2:=a2/sa;
+    id0:=categorical([th0,th1,th2]);
+    id1:=categorical([th0,th1,th2]);
+    id2:=categorical([th0,th1,th2]);
+    id3:=categorical([th0,th1,th2]);
+    id4:=categorical([th0,th1,th2]);
+    r0:=gamma(4,4); r1:=gamma(4,4); r2:=gamma(4,4); r3:=gamma(4,4); r4:=gamma(4,4);
+
+    p:=id0+id1;  observe(poisson(r0*scaleOf(p+1))==2);  observe(poisson(r1*scaleOf(p))==0);
+    p2:=id0+id2; observe(poisson(r0*scaleOf(p2+1))==0); observe(poisson(r2*scaleOf(p2))==1);
+    p3:=id0+id3; observe(poisson(r0*scaleOf(p3+1))==5); observe(poisson(r3*scaleOf(p3))==1);
+    p4:=id0+id4; observe(poisson(r0*scaleOf(p4+1))==1); observe(poisson(r4*scaleOf(p4))==1);
+    p5:=id1+id0; observe(poisson(r1*scaleOf(p5+1))==2); observe(poisson(r0*scaleOf(p5))==1);
+    p6:=id1+id2; observe(poisson(r1*scaleOf(p6+1))==0); observe(poisson(r2*scaleOf(p6))==1);
+    p7:=id1+id3; observe(poisson(r1*scaleOf(p7+1))==0); observe(poisson(r3*scaleOf(p7))==2);
+    p8:=id1+id4; observe(poisson(r1*scaleOf(p8+1))==0); observe(poisson(r4*scaleOf(p8))==0);
+    p9:=id2+id0; observe(poisson(r2*scaleOf(p9+1))==2); observe(poisson(r0*scaleOf(p9))==1);
+    p10:=id2+id1; observe(poisson(r2*scaleOf(p10+1))==0); observe(poisson(r1*scaleOf(p10))==1);
+    p11:=id2+id3; observe(poisson(r2*scaleOf(p11+1))==3); observe(poisson(r3*scaleOf(p11))==0);
+    p12:=id2+id4; observe(poisson(r2*scaleOf(p12+1))==4); observe(poisson(r4*scaleOf(p12))==0);
+    p13:=id3+id0; observe(poisson(r3*scaleOf(p13+1))==3); observe(poisson(r0*scaleOf(p13))==3);
+    p14:=id3+id1; observe(poisson(r3*scaleOf(p14+1))==0); observe(poisson(r1*scaleOf(p14))==1);
+    p15:=id3+id2; observe(poisson(r3*scaleOf(p15+1))==2); observe(poisson(r2*scaleOf(p15))==2);
+    p16:=id3+id4; observe(poisson(r3*scaleOf(p16+1))==1); observe(poisson(r4*scaleOf(p16))==1);
+    p17:=id4+id0; observe(poisson(r4*scaleOf(p17+1))==1); observe(poisson(r0*scaleOf(p17))==1);
+    p18:=id4+id1; observe(poisson(r4*scaleOf(p18+1))==0); observe(poisson(r1*scaleOf(p18))==0);
+    p19:=id4+id2; observe(poisson(r4*scaleOf(p19+1))==0); observe(poisson(r2*scaleOf(p19))==0);
+    p20:=id4+id3; observe(poisson(r4*scaleOf(p20+1))==3); observe(poisson(r3*scaleOf(p20))==1);
+
+    return id0;
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "query": "(let(x(gaussian 0.0 1.0)) (Posterior True(and(close x 0.3) (and(close x 0.3) (not(close x 0.3))))))",
+    "kind": {
+      "result_kind": "distribution",
+      "items": []
+    }
+  }
+]

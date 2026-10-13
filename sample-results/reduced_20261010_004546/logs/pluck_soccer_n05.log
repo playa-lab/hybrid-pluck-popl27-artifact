@@ -1,0 +1,51 @@
+===== ok  wall=0.3277s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 206
+BDD vars allocated (discrete bits)    : 210
+BDD recursive calls (compile work)    : 822606
+BDD guard nodes  : sum=8798  max=5784  mean=4399
+SPN nodes (TREE) : sum=1703  max=1135  mean=851
+SPN nodes (DAG)  : per-world-max=913  all-worlds-unique=1321  intern-table=16252
+SPN leaf nodes   : sum=1458  (max sum-arity=1, max prod-arity=162)
+posterior mixture components (total)  : 243
+time (s): parse=0.0001  symbolic-exec=0.1994  wmc=0.0655  posterior=0.0037  flatten=0.0000  display/naming=0.0001  total=0.2689
+===================
+inference_seconds: 0.26890213
+soccer-T0-identity:
+  True  0.6144638325229089
+  False  0.3855361674770935
+===== ok  wall=0.4651s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 206
+BDD vars allocated (discrete bits)    : 210
+BDD recursive calls (compile work)    : 822606
+BDD guard nodes  : sum=8798  max=5784  mean=4399
+SPN nodes (TREE) : sum=1703  max=1135  mean=851
+SPN nodes (DAG)  : per-world-max=913  all-worlds-unique=1321  intern-table=16252
+SPN leaf nodes   : sum=1458  (max sum-arity=1, max prod-arity=162)
+posterior mixture components (total)  : 243
+time (s): parse=0.0001  symbolic-exec=0.2805  wmc=0.0790  posterior=0.0041  flatten=0.0000  display/naming=0.0002  total=0.3639
+===================
+inference_seconds: 0.36394479
+soccer-T0-identity:
+  True  0.6144638325229089
+  False  0.3855361674770935
+===== ok  wall=0.3405s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 206
+BDD vars allocated (discrete bits)    : 210
+BDD recursive calls (compile work)    : 822606
+BDD guard nodes  : sum=8798  max=5784  mean=4399
+SPN nodes (TREE) : sum=1703  max=1135  mean=851
+SPN nodes (DAG)  : per-world-max=913  all-worlds-unique=1321  intern-table=16252
+SPN leaf nodes   : sum=1458  (max sum-arity=1, max prod-arity=162)
+posterior mixture components (total)  : 243
+time (s): parse=0.0009  symbolic-exec=0.1929  wmc=0.0581  posterior=0.0036  flatten=0.0000  display/naming=0.0001  total=0.2556
+===================
+inference_seconds: 0.25556313
+soccer-T0-identity:
+  True  0.6144638325229089
+  False  0.3855361674770935

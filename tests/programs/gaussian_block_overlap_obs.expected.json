@@ -1,0 +1,30 @@
+[
+  {
+    "query": "(let((x(gaussian { 0.0 , 0.0 } { { 1.0 , 0.5 } , { 0.5 , 1.0 } })) (u(gaussian 0.0 1.0)) (w(gaussian 0.0 1.0)) (b(flip 0.5))) (Posterior b(if b(if(close(vector_index x @0) 1.0) (close(+.(vector_index x @0) (vector_index x @1)) 3.0) False) (if(close u 1.0) (close w 2.0) False))))",
+    "kind": {
+      "result_kind": "distribution",
+      "items": [
+        {
+          "display": "True",
+          "log_probability": -0.4221720726274465,
+          "posteriors": {
+            "beta": [],
+            "dirichlet": [],
+            "gamma": [],
+            "gaussian": []
+          }
+        },
+        {
+          "display": "False",
+          "log_probability": -1.0660131088533373,
+          "posteriors": {
+            "beta": [],
+            "dirichlet": [],
+            "gamma": [],
+            "gaussian": []
+          }
+        }
+      ]
+    }
+  }
+]

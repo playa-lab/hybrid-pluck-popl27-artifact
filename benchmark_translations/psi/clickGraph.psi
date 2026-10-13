@@ -1,0 +1,14 @@
+def main() {
+    c0 := [1, 1, 1, 0, 0];
+    c1 := [1, 1, 1, 0, 0];
+
+    similarityAll := beta(1, 1);
+    for i in [0..5) {
+        sim := flip(similarityAll);
+        b1 := beta(1, 1);
+        b2 := if sim { b1 } else { beta(1, 1) };
+        observe(flip(b1) == c0[i]);
+        observe(flip(b2) == c1[i]);
+    }
+    return Expectation(similarityAll);
+}

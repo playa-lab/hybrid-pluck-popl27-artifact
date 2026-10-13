@@ -1,0 +1,9 @@
+def main() {
+    s := 1;
+    for i in [0..100) {
+        route := flip(0.5);
+        drop := flip(0.0001);
+        s = if (!drop || route) { s } else { 0 };
+    }
+    return Expectation(s);
+}

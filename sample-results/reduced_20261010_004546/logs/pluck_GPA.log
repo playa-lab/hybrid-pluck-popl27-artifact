@@ -1,0 +1,51 @@
+===== ok  wall=0.1096s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 2
+BDD vars allocated (discrete bits)    : 7
+BDD recursive calls (compile work)    : 289
+BDD guard nodes  : sum=8  max=4  mean=4
+SPN nodes (TREE) : sum=6  max=3  mean=3
+SPN nodes (DAG)  : per-world-max=3  all-worlds-unique=5  intern-table=9
+SPN leaf nodes   : sum=2  (max sum-arity=1, max prod-arity=0)
+posterior mixture components (total)  : 2
+time (s): parse=0.0000  symbolic-exec=0.0012  wmc=0.0001  posterior=0.0001  flatten=0.0000  display/naming=0.0002  total=0.0017
+===================
+inference_seconds: 0.00174650
+GPA:
+  True  0.6115107913669062
+  False  0.38848920863309366
+===== ok  wall=0.1064s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 2
+BDD vars allocated (discrete bits)    : 7
+BDD recursive calls (compile work)    : 289
+BDD guard nodes  : sum=8  max=4  mean=4
+SPN nodes (TREE) : sum=6  max=3  mean=3
+SPN nodes (DAG)  : per-world-max=3  all-worlds-unique=5  intern-table=9
+SPN leaf nodes   : sum=2  (max sum-arity=1, max prod-arity=0)
+posterior mixture components (total)  : 2
+time (s): parse=0.0000  symbolic-exec=0.0001  wmc=0.0000  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0001
+===================
+inference_seconds: 0.00013625
+GPA:
+  True  0.6115107913669062
+  False  0.38848920863309366
+===== ok  wall=0.1059s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 2
+continuous latents (Beta/Gaussian/…) : 2
+BDD vars allocated (discrete bits)    : 7
+BDD recursive calls (compile work)    : 289
+BDD guard nodes  : sum=8  max=4  mean=4
+SPN nodes (TREE) : sum=6  max=3  mean=3
+SPN nodes (DAG)  : per-world-max=3  all-worlds-unique=5  intern-table=9
+SPN leaf nodes   : sum=2  (max sum-arity=1, max prod-arity=0)
+posterior mixture components (total)  : 2
+time (s): parse=0.0000  symbolic-exec=0.0001  wmc=0.0000  posterior=0.0000  flatten=0.0000  display/naming=0.0000  total=0.0001
+===================
+inference_seconds: 0.00013083
+GPA:
+  True  0.6115107913669062
+  False  0.38848920863309366

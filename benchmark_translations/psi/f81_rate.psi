@@ -1,0 +1,22 @@
+def main() {
+    t0 := [0,1,2,1,0,2,3,3,0,1,0,1,3,2,0];
+    t1 := [0,1,2,3,1,2,2,3,0,3,0,1,3,2,0];
+    t2 := [0,3,2,1,3,2,3,3,0,1,1,1,3,2,0];
+    t3 := [0,3,2,1,3,3,3,1,0,1,3,1,2,2,0];
+
+    p := beta(1, 1);
+    for s in [0..15) {
+        root := categorical([0.3, 0.2, 0.2, 0.3]);
+        L := if flip(p) { root } else { categorical([0.3, 0.2, 0.2, 0.3]) };
+        M := if flip(p) { root } else { categorical([0.3, 0.2, 0.2, 0.3]) };
+        tip0 := if flip(p) { L } else { categorical([0.3, 0.2, 0.2, 0.3]) };
+        tip1 := if flip(p) { L } else { categorical([0.3, 0.2, 0.2, 0.3]) };
+        tip2 := if flip(p) { M } else { categorical([0.3, 0.2, 0.2, 0.3]) };
+        tip3 := if flip(p) { M } else { categorical([0.3, 0.2, 0.2, 0.3]) };
+        observe(tip0 == t0[s]);
+        observe(tip1 == t1[s]);
+        observe(tip2 == t2[s]);
+        observe(tip3 == t3[s]);
+    }
+    return Expectation(p);
+}

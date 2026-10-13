@@ -1,0 +1,72 @@
+===== ok  wall=73.9694s  rc=0  =====
+outliers (Turing PG)  N=18  particles=64  iters=400
+recovered line: alpha= 1.98  beta= 1.07   (true alpha=2, beta=1)
+RESULT: 1.980397
+P(outlier) per point (* = planted):
+  x= 1.0   P(outlier)=0.50
+  x= 2.0   P(outlier)=0.09
+  x= 3.0   P(outlier)=0.11
+  x= 4.0*  P(outlier)=1.00
+  x= 5.0   P(outlier)=0.07
+  x= 6.0   P(outlier)=0.08
+  x= 7.0   P(outlier)=0.10
+  x= 8.0   P(outlier)=0.09
+  x= 9.0   P(outlier)=0.06
+  x=10.0   P(outlier)=0.07
+  x=11.0*  P(outlier)=1.00
+  x=12.0   P(outlier)=0.09
+  x=13.0   P(outlier)=0.10
+  x=14.0   P(outlier)=0.08
+  x=15.0   P(outlier)=0.10
+  x=16.0   P(outlier)=0.10
+  x=17.0   P(outlier)=0.12
+  x=18.0*  P(outlier)=1.00
+inference_seconds: 60.136
+===== ok  wall=60.6687s  rc=0  =====
+outliers (Turing PG)  N=18  particles=64  iters=400
+recovered line: alpha= 2.02  beta= 1.29   (true alpha=2, beta=1)
+RESULT: 2.018401
+P(outlier) per point (* = planted):
+  x= 1.0   P(outlier)=0.15
+  x= 2.0   P(outlier)=0.10
+  x= 3.0   P(outlier)=0.10
+  x= 4.0*  P(outlier)=1.00
+  x= 5.0   P(outlier)=0.11
+  x= 6.0   P(outlier)=0.09
+  x= 7.0   P(outlier)=0.12
+  x= 8.0   P(outlier)=0.14
+  x= 9.0   P(outlier)=0.11
+  x=10.0   P(outlier)=0.14
+  x=11.0*  P(outlier)=1.00
+  x=12.0   P(outlier)=0.24
+  x=13.0   P(outlier)=0.23
+  x=14.0   P(outlier)=0.24
+  x=15.0   P(outlier)=0.25
+  x=16.0   P(outlier)=0.30
+  x=17.0   P(outlier)=0.32
+  x=18.0*  P(outlier)=1.00
+inference_seconds: 47.162
+===== ok  wall=72.1756s  rc=0  =====
+outliers (Turing PG)  N=18  particles=64  iters=400
+recovered line: alpha= 1.97  beta= 0.93   (true alpha=2, beta=1)
+RESULT: 1.965755
+P(outlier) per point (* = planted):
+  x= 1.0   P(outlier)=0.11
+  x= 2.0   P(outlier)=0.08
+  x= 3.0   P(outlier)=0.07
+  x= 4.0*  P(outlier)=1.00
+  x= 5.0   P(outlier)=0.08
+  x= 6.0   P(outlier)=0.12
+  x= 7.0   P(outlier)=0.12
+  x= 8.0   P(outlier)=0.08
+  x= 9.0   P(outlier)=0.09
+  x=10.0   P(outlier)=0.10
+  x=11.0*  P(outlier)=1.00
+  x=12.0   P(outlier)=0.11
+  x=13.0   P(outlier)=0.11
+  x=14.0   P(outlier)=0.10
+  x=15.0   P(outlier)=0.13
+  x=16.0   P(outlier)=0.17
+  x=17.0   P(outlier)=0.15
+  x=18.0*  P(outlier)=1.00
+inference_seconds: 59.286

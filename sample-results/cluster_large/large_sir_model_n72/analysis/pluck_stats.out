@@ -1,0 +1,4 @@
+run dir : /results/cluster_large/large_sir_model_n72
+families: ['sir_model', 'hmm_first_order', 'secret_ballot']
+wrote   : /results/cluster_large/large_sir_model_n72/analysis/pluck_stats.tex
+wrote   : /results/cluster_large/large_sir_model_n72/analysis/pluck_stats_full.tex (1 program rows)

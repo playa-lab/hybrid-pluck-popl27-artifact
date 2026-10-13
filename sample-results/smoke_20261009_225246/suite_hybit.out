@@ -1,0 +1,44 @@
+Benchmark run — N=1 runs/program, per-run timeout = 120s
+run id:  smoke_20261009_225246
+run dir: /results/smoke_20261009_225246
+logs:    /results/smoke_20261009_225246/logs
+scratch: /results/smoke_20261009_225246/scratch
+programs: coinBias changepoint_coal_k1
+
+==> Running hybit programs (N=1, timeout 120s, Julia + Alea.jl + sysimage)
+  hybit  changepoint_coal_k1    ... ok            n=1  wall=32.66±0
+  hybit  coinBias               ... ok            n=1  wall=10.25±0
+
+======================================== RESULTS ========================================
+SYSTEM  PROGRAM                STATUS         RUNS WALL(s)          INFER(s)           RESULT        
+------  -------                ------         ---- -------          --------           ------        
+hybit   changepoint_coal_k1    ok                1 32.66±0         2.986±0           3.02136       
+hybit   coinBias               ok                1 10.25±0         0.09193±0         0.415843      
+=========================================================================================
+RUNS     = successful runs measured (1 if the first run timed out / errored / was BAD).
+WALL(s)  = median ± sample-stddev of total process wall-clock over RUNS runs.
+INFER(s) = median ± sample-stddev of inference-only time.
+           pluck: inference_seconds (via PLUCK_STATS); hybit: reported t.time.
+           psi:   '-' (no inference line) — use WALL(s) as the comparable number.
+           slicstan: WALL(s)=total pipeline (slic+stanc+build+sample); INFER(s)=slic
+           +sample (SlicStan->Stan compile + HMC; EXCLUDES the stanc + C++ build that
+           are CmdStan overhead). mean(param)+Rhat and the per-component breakdown are
+           in the SlicStan timing table above (also logs/slicstan_<name>.log).
+STATUS   = ok | TIMEOUT | OOM | ERROR(rc=N) | BAD | ERROR(run)
+           | ERROR(slic) | ERROR(stanc) | ERROR(build) | NODATA.
+           OOM = SIGKILLed before the timeout = out of memory (the container hit its
+           memory limit); WALL is the actual time it ran before dying, not a real
+           inference time. Give Docker more memory to measure these.
+           slicstan: ERROR(slic) = .slicstan uses a feature SlicStan's DSL lacks;
+           ERROR(stanc)/ERROR(build) = its generated Stan is invalid / fails to
+           compile (SlicStan codegen); ERROR(run) = HMC could not initialize;
+           NODATA = compiles but no slicstan-data/<name>.json.
+           BAD = process exited 0 but did not actually infer. For PSI this is
+           'Pr[error] = 1' (posterior collapsed, e.g. observing a continuous
+           variable at an exact value — measure-zero in PSI's exact semantics).
+           A BAD/ERROR/TIMEOUT row's WALL is the single failing run, NOT a real
+           inference time — do not compare it against ok rows.
+
+logs:    /results/smoke_20261009_225246/logs/<system>_<program>.log   (every run preserved)
+table:   /results/smoke_20261009_225246/results_hybit.txt
+csv:     /results/smoke_20261009_225246/results_hybit.csv

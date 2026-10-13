@@ -1,0 +1,23 @@
+def evolve(parent: ℕ, p: ℝ, q0:ℝ, q1:ℝ, q2:ℝ, q3:ℝ) {
+    return if flip(p) { parent } else { categorical([q0,q1,q2,q3]) };
+}
+
+def main() {
+    p := beta(1,1);
+    g0:=gamma(1,1); g1:=gamma(1,1); g2:=gamma(1,1); g3:=gamma(1,1);
+    s := g0+g1+g2+g3;
+    q0:=g0/s; q1:=g1/s; q2:=g2/s; q3:=g3/s;   // pi ~ Dirichlet(1,1,1,1)
+
+    // alignment: rows = sites, cols c0..c3 = the 4 tips; tree ((L L)(M M)).
+    c0 := [2,3,0,0]; c1 := [0,3,0,2]; c2 := [1,3,2,0]; c3 := [1,3,2,1];
+    for k in [0..4) {
+        root := categorical([q0,q1,q2,q3]);
+        L := evolve(root,p,q0,q1,q2,q3);
+        M := evolve(root,p,q0,q1,q2,q3);
+        observe(evolve(L,p,q0,q1,q2,q3)==c0[k]);
+        observe(evolve(L,p,q0,q1,q2,q3)==c1[k]);
+        observe(evolve(M,p,q0,q1,q2,q3)==c2[k]);
+        observe(evolve(M,p,q0,q1,q2,q3)==c3[k]);
+    }
+    return Expectation(p);   // marginal of the retention prob (true p = 0.8)
+}

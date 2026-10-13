@@ -1,0 +1,51 @@
+;; K = 3 clusters, D-dimensional data:
+;;   mu_{k,d} ~ N(0, 10)          K*D shared cluster means (diffuse prior)
+;;   z_n      ~ categorical(pi)   per-point cluster assignment   (DISCRETE latent)
+;;   y_{n,d}  ~ N(mu_{z_n,d}, 1)
+;;
+;; The per-point assignments z_n are the discrete latents. Exact inference must
+;; enumerate the 3^N joint assignment (the continuous means are carried, so they
+;; do not collapse it), so cost is EXPONENTIAL in N -- this is the regime where a
+;; Gibbs sampler that *instantiates* the assignments wins: given the means, each
+;; z_n is an independent K-way draw (no chain), and given the assignments the
+;; means are a conjugate-Gaussian update. The shared pieces below let the exact
+;; query draw z inline (marginalized) and the Gibbs query expose z as a block.
+
+(define D 3)
+
+;; obs: 3 well-separated clusters (centred near (-3,-3,-3), (3,3,3), (3,-3,-3)),
+;; INTERLEAVED A,B,C so `take N` keeps all clusters represented as N grows.
+(define obs
+  [[-3.0, -2.9, -3.1], [3.0, 3.1, 2.9], [3.1, -3.0, -2.9],
+   [-2.9, -3.1, -3.0], [2.9, 3.0, 3.1], [3.0, -2.9, -3.1],
+   [-3.1, -3.0, -2.9], [3.1, 2.9, 3.0], [2.9, -3.1, -3.0],
+   [-3.0, -3.1, -2.9], [3.0, 3.0, 3.0], [3.0, -3.0, -3.0]])
+
+;; A cluster mean vector: D independent N(0,3) draws. The prior is kept moderate
+;; (not wildly diffuse) so a prior-sampled init lands near the data scale -- with
+;; a very broad prior the init means sit far from every point and the Gaussian
+;; likelihoods underflow to zero, stalling the assignment resample.
+(define (mean-vec) (map (fn i -> (normal 0.0 3.0)) (range D)))
+
+;; per-point assignment prior (fixed, symmetric mixing weights).
+(define (draw-z) (categorical 0.34 0.33 0.33))
+
+(define (pick-cluster z clusters)
+  (if (native_eq z @0) (index 0 clusters)
+    (if (native_eq z @1) (index 1 clusters) (index 2 clusters))))
+
+;; emit a noisy copy of a cluster's mean vector (one N(mu,1) per dimension).
+(define (emit mv) (map (fn mu -> (normal mu 1.0)) mv))
+
+(define (vec=? a b) (list=? real=? a b))
+
+;; Draw each point's assignment, emit its vector, and condition it in the SAME
+;; recursion step (used by the exact query). Interleaved conditioning keeps the
+;; BDD variable order linear: each point's observation variables sort next to
+;; its assignment flips. Building the whole data list and comparing at the end
+;; ((list=? vec=? data (take N obs))) instead costs (11/2)(3^N - 1) BDD nodes.
+(define (points-obs clusters os)
+  (match os
+    Nil => (True)
+    Cons o os => (and (vec=? (emit (pick-cluster (draw-z) clusters)) o)
+                      (points-obs clusters os))))

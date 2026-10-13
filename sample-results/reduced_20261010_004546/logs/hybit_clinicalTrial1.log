@@ -1,0 +1,9 @@
+===== ok  wall=17.7349s  rc=0  =====
+RESULT: 0.17013055178007652
+(bits, p, t.time) = (4, DataStructures.DefaultOrderedDict{Any, Any, Float64}(false => 0.8298694482199201, true => 0.17013055178007652), 4.895315801000001)
+===== ok  wall=22.7008s  rc=0  =====
+RESULT: 0.17013055178007652
+(bits, p, t.time) = (4, DataStructures.DefaultOrderedDict{Any, Any, Float64}(false => 0.8298694482199201, true => 0.17013055178007652), 5.946334291)
+===== ok  wall=32.4885s  rc=0  =====
+RESULT: 0.17013055178007652
+(bits, p, t.time) = (4, DataStructures.DefaultOrderedDict{Any, Any, Float64}(false => 0.8298694482199201, true => 0.17013055178007652), 6.518737127)

@@ -1,0 +1,168 @@
+===== ok  wall=0.1182s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 7
+BDD vars allocated (discrete bits)    : 55
+BDD recursive calls (compile work)    : 10671
+BDD guard nodes  : sum=55  max=55  mean=55
+SPN nodes (TREE) : sum=7745  max=7745  mean=7745
+SPN nodes (DAG)  : per-world-max=1095  all-worlds-unique=1095  intern-table=7629
+SPN leaf nodes   : sum=6768  (max sum-arity=1, max prod-arity=976)
+posterior mixture components (total)  : 35
+time (s): parse=0.0001  symbolic-exec=0.0026  wmc=0.0181  posterior=0.0011  flatten=0.0000  display/naming=0.0001  total=0.0220
+===================
+inference_seconds: 0.02197621
+dawid-skene:
+  p  0.9999999999999998
+    ├ 36.809286%
+    │       p ~ Beta(4.000000, 1.000000)
+    ├ 17.653084%
+    │       p ~ Beta(3.000000, 1.000000)
+    ├ 11.542383%
+    │       p ~ Beta(5.000000, 1.000000)
+    ├ 7.956759%
+    │       p ~ Beta(4.000000, 2.000000)
+    ├ 5.713513%
+    │       p ~ Beta(2.000000, 1.000000)
+    ├ 4.526777%
+    │       p ~ Beta(5.000000, 2.000000)
+    ├ 2.831889%
+    │       p ~ Beta(4.000000, 3.000000)
+    ├ 2.812387%
+    │       p ~ Beta(3.000000, 2.000000)
+    ├ 2.428181%
+    │       p ~ Beta(5.000000, 3.000000)
+    ├ 1.666638%
+    │       p ~ Beta(5.000000, 4.000000)
+    ├ 1.544572%
+    │       p ~ Beta(5.000000, 5.000000)
+    ├ 1.249575%
+    │       p ~ Beta(4.000000, 4.000000)
+    ├ 0.887073%
+    │       p ~ Beta(3.000000, 3.000000)
+    ├ 0.784604%
+    │       p ~ Beta(2.000000, 2.000000)
+    ├ 0.595704%
+    │       p ~ Beta(4.000000, 5.000000)
+    ├ 0.387870%
+    │       p ~ Beta(3.000000, 4.000000)
+    ├ 0.250500%
+    │       p ~ Beta(2.000000, 3.000000)
+    ├ 0.192533%
+    │       p ~ Beta(3.000000, 5.000000)
+    ├ 0.112758%
+    │       p ~ Beta(2.000000, 4.000000)
+    └ 0.053914%
+            p ~ Beta(2.000000, 5.000000)
+===== ok  wall=0.1176s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 7
+BDD vars allocated (discrete bits)    : 55
+BDD recursive calls (compile work)    : 10671
+BDD guard nodes  : sum=55  max=55  mean=55
+SPN nodes (TREE) : sum=7745  max=7745  mean=7745
+SPN nodes (DAG)  : per-world-max=1095  all-worlds-unique=1095  intern-table=7629
+SPN leaf nodes   : sum=6768  (max sum-arity=1, max prod-arity=976)
+posterior mixture components (total)  : 35
+time (s): parse=0.0001  symbolic-exec=0.0060  wmc=0.0188  posterior=0.0010  flatten=0.0000  display/naming=0.0000  total=0.0259
+===================
+inference_seconds: 0.02593500
+dawid-skene:
+  p  0.9999999999999998
+    ├ 36.809286%
+    │       p ~ Beta(4.000000, 1.000000)
+    ├ 17.653084%
+    │       p ~ Beta(3.000000, 1.000000)
+    ├ 11.542383%
+    │       p ~ Beta(5.000000, 1.000000)
+    ├ 7.956759%
+    │       p ~ Beta(4.000000, 2.000000)
+    ├ 5.713513%
+    │       p ~ Beta(2.000000, 1.000000)
+    ├ 4.526777%
+    │       p ~ Beta(5.000000, 2.000000)
+    ├ 2.831889%
+    │       p ~ Beta(4.000000, 3.000000)
+    ├ 2.812387%
+    │       p ~ Beta(3.000000, 2.000000)
+    ├ 2.428181%
+    │       p ~ Beta(5.000000, 3.000000)
+    ├ 1.666638%
+    │       p ~ Beta(5.000000, 4.000000)
+    ├ 1.544572%
+    │       p ~ Beta(5.000000, 5.000000)
+    ├ 1.249575%
+    │       p ~ Beta(4.000000, 4.000000)
+    ├ 0.887073%
+    │       p ~ Beta(3.000000, 3.000000)
+    ├ 0.784604%
+    │       p ~ Beta(2.000000, 2.000000)
+    ├ 0.595704%
+    │       p ~ Beta(4.000000, 5.000000)
+    ├ 0.387870%
+    │       p ~ Beta(3.000000, 4.000000)
+    ├ 0.250500%
+    │       p ~ Beta(2.000000, 3.000000)
+    ├ 0.192533%
+    │       p ~ Beta(3.000000, 5.000000)
+    ├ 0.112758%
+    │       p ~ Beta(2.000000, 4.000000)
+    └ 0.053914%
+            p ~ Beta(2.000000, 5.000000)
+===== ok  wall=0.1169s  rc=0  =====
+=== PLUCK_STATS ===
+worlds (value,BDD-guard pairs)        : 1
+continuous latents (Beta/Gaussian/…) : 7
+BDD vars allocated (discrete bits)    : 55
+BDD recursive calls (compile work)    : 10671
+BDD guard nodes  : sum=55  max=55  mean=55
+SPN nodes (TREE) : sum=7745  max=7745  mean=7745
+SPN nodes (DAG)  : per-world-max=1095  all-worlds-unique=1095  intern-table=7629
+SPN leaf nodes   : sum=6768  (max sum-arity=1, max prod-arity=976)
+posterior mixture components (total)  : 35
+time (s): parse=0.0001  symbolic-exec=0.0023  wmc=0.0168  posterior=0.0009  flatten=0.0000  display/naming=0.0001  total=0.0202
+===================
+inference_seconds: 0.02016742
+dawid-skene:
+  p  0.999999999999998
+    ├ 36.809286%
+    │       p ~ Beta(4.000000, 1.000000)
+    ├ 17.653084%
+    │       p ~ Beta(3.000000, 1.000000)
+    ├ 11.542383%
+    │       p ~ Beta(5.000000, 1.000000)
+    ├ 7.956759%
+    │       p ~ Beta(4.000000, 2.000000)
+    ├ 5.713513%
+    │       p ~ Beta(2.000000, 1.000000)
+    ├ 4.526777%
+    │       p ~ Beta(5.000000, 2.000000)
+    ├ 2.831889%
+    │       p ~ Beta(4.000000, 3.000000)
+    ├ 2.812387%
+    │       p ~ Beta(3.000000, 2.000000)
+    ├ 2.428181%
+    │       p ~ Beta(5.000000, 3.000000)
+    ├ 1.666638%
+    │       p ~ Beta(5.000000, 4.000000)
+    ├ 1.544572%
+    │       p ~ Beta(5.000000, 5.000000)
+    ├ 1.249575%
+    │       p ~ Beta(4.000000, 4.000000)
+    ├ 0.887073%
+    │       p ~ Beta(3.000000, 3.000000)
+    ├ 0.784604%
+    │       p ~ Beta(2.000000, 2.000000)
+    ├ 0.595704%
+    │       p ~ Beta(4.000000, 5.000000)
+    ├ 0.387870%
+    │       p ~ Beta(3.000000, 4.000000)
+    ├ 0.250500%
+    │       p ~ Beta(2.000000, 3.000000)
+    ├ 0.192533%
+    │       p ~ Beta(3.000000, 5.000000)
+    ├ 0.112758%
+    │       p ~ Beta(2.000000, 4.000000)
+    └ 0.053914%
+            p ~ Beta(2.000000, 5.000000)

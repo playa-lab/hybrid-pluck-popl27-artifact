@@ -1,0 +1,65 @@
+(define-type non-terminal (Sent) (NP) (VP) (Verb) (VT) (Det) (Adj) (Noun) (Conj))
+
+(define (generate-english nt)
+  (match nt
+    Sent => (discrete
+             ((append (generate-english (NP)) (generate-english (VP))) 0.7)
+             ((append (append (generate-english (NP)) (generate-english (VP)))
+                      (append (generate-english (Conj)) (generate-english (Sent)))) 0.3))
+    Conj => (Cons (uniform "and" "but") (Nil))
+    NP => (append (generate-english (Det)) (generate-english (Noun)))
+    VP => (uniform (generate-english (Verb)) (append (generate-english (VT)) (generate-english (NP))))
+    Verb => (Cons (uniform "barks" "eats") (Nil))
+    VT => (Cons "eats" (Nil))
+    Adj => (Cons (uniform "happy" "sad" "tasty") (Nil))
+    Det => (Cons (uniform "the" "a") (Nil))
+    Noun => (discrete ((append (generate-english (Adj)) (generate-english (Noun))) 0.3)
+                      ((Cons (uniform "cat" "dog" "bone") (Nil)) 0.7))))
+
+(define sentence=? (list=? string=?))
+
+(define (join-words ws)
+  (match ws
+    Nil => ""
+    Cons w rest => (match rest
+                     Nil => w
+                     Cons _ _ => (append w (append " " (join-words rest))))))
+
+(query
+ probability-of-sentence
+ (Marginal
+  (string=? (join-words (generate-english (Sent)))
+            "the dog eats the bone")))
+
+(query
+ short-sentence
+ (let ((s (generate-english (Sent))))
+   (Posterior
+    (join-words s)
+    (>= 3 (length s)))))
+
+(query
+ infilling-given-fifth-word-tasty
+ (let ((s (generate-english (Sent))))
+   (Posterior
+    (join-words s)
+    (and
+     (<= (length s) 7)
+     (string=? (index 4 s) "tasty")))))
+
+(query
+ sample-long-sentence-with-fifth-word-tasty
+ (let ((s (generate-english (Sent))))
+   (PosteriorSamples
+    (join-words s)
+    (and
+     (>= (length s) 8)
+     (string=? (index 4 s) "tasty"))
+    10)))
+
+
+
+
+
+
+
