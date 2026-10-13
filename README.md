@@ -19,6 +19,8 @@ This guide has four parts:
 
 Nothing in the artifact needs network access at run time. All commands below use `docker run --network none`.
 
+Note that for this artifact review we have provided the images through Docker hub due to technical issues when uploading to Zenodo. We plan to upload everything to Zenodo for archiving once the review is complete.
+
 ## AI Disclosure
 
 We used Claude Code while implementing Hybrid Pluck. The inference algorithm that Hybrid Pluck uses and the code's architecture were primarily designed by the human authors of this submission. The benchmark program translations, benchmark harness scripts, and artifact evaluation scripts were also written with the assistance of Claude Code. All generated code was reviewed by the authors for correctness.
