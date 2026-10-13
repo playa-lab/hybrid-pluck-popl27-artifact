@@ -1,6 +1,7 @@
 # Hybrid Pluck: artifact guide
 
-This is the artifact for the paper *Hybrid Pluck*. It provides a Docker image that contains:
+This is the artifact for the paper *Hybrid Pluck*. It provides instructions to load and run 
+a Docker image that contains:
 
 - **Hybrid Pluck**: the implementation of the Hybrid Pluck probabilistic programming language, in Rust.
 - **Benchmark programs**: the probabilistic programs used to evaluate Hybrid Pluck vs. other systems.
@@ -183,7 +184,7 @@ docker image ls hybrid-pluck                                    # shows hybrid-p
 `docker pull` prints `Digest: sha256:3e1d6f3c…`, which should match the first digest in
 `SHA256SUMS`; that file lists the digests of both images.
 
-The source is the GitHub repository linked from the submission: paths in this guide are
+The source is this GitHub repository: paths in this guide are
 relative to its top folder, which is `/artifact` in the image (the image has everything
 except `sample-results/`).
 
