@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/1416503672.svg)](https://doi.org/10.5281/zenodo.24354914)
+
 # Hybrid Pluck: artifact guide
 
 This is the artifact for the paper *Hybrid Pluck*. It provides instructions to load and run 
